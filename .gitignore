@@ -1,0 +1,34 @@
+# Archivos ignorados
+
+# Node/npm
+node_modules/
+package-lock.json
+package.json
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Builds de Unity (opcional - si no quieres subir los juegos)
+# builds/unity/*
+
+# Assets grandes (opcional)
+# assets/img/projects/*
+
+# Zip
+*.zip
+*.rar
+
+# PDF temporal
+*_temp.pdf
+

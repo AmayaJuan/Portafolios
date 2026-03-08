@@ -1,0 +1,178 @@
+{
+  "profile": {
+    "name": "Juan Pablo Velez Amaya",
+    "title": "Desarrollador de Software y Videojuegos",
+    "tagline": "Creando experiencias interactivas con Unity, Android y más",
+    "bio": "Desarrollador passionate por crear experiencias interactivas. Especializado en desarrollo de videojuegos con Unity y aplicaciones móviles Android.",
+    "avatar": "assets/img/profile/avatar.jpg",
+    "location": "Medellín, Colombia",
+    "email": "velezamayajuanpablo@gmail.com",
+    "availability": "Disponible para proyectos freelance",
+    "social": {
+      "github": "https://github.com/AmayaJuan",
+      "gitlab": "https://gitlab.com/jpva360",
+      "linkedin": "https://linkedin.com/in/tuusuario",
+      "twitter": "https://twitter.com/tuusuario",
+      "itchio": "https://tuusuario.itch.io"
+    }
+  },
+  "skills": [
+    {
+      "name": "Unity",
+      "category": "engine",
+      "icon": "assets/img/skills/unity.svg",
+      "level": 90
+    },
+    {
+      "name": "C#",
+      "category": "language",
+      "icon": "assets/img/skills/csharp.svg",
+      "level": 85
+    },
+    {
+      "name": "Android Studio",
+      "category": "engine",
+      "icon": "assets/img/skills/android.svg",
+      "level": 75
+    },
+    {
+      "name": "Java",
+      "category": "language",
+      "icon": "assets/img/skills/java.svg",
+      "level": 70
+    },
+    {
+      "name": "JavaScript",
+      "category": "language",
+      "icon": "assets/img/skills/javascript.svg",
+      "level": 80
+    },
+    {
+      "name": "HTML/CSS",
+      "category": "language",
+      "icon": "assets/img/skills/htmlcss.svg",
+      "level": 85
+    }
+  ],
+  "projects": [
+    {
+      "id": "unity-01",
+      "name": "Space Shooter",
+      "category": "unity",
+      "shortDescription": "Juego de naves espaciales con shooter clásico",
+      "description": "Un juego de naves espaciales donde el jugador debe destruir enemigos y asteroides. Incluye sistema de puntuación, power-ups y múltiples niveles de dificultad.",
+      "thumbnail": "assets/img/projects/unity/space-shooter-thumb.jpg",
+      "gallery": [
+        "assets/img/projects/unity/space-shooter-1.jpg",
+        "assets/img/projects/unity/space-shooter-2.jpg"
+      ],
+      "technologies": ["Unity", "C#", "Raycasting"],
+      "featured": true,
+      "links": {
+        "play": "builds/unity/space-shooter/index.html",
+        "github": "https://github.com/tuusuario/space-shooter",
+        "download": null
+      },
+      "year": "2024"
+    },
+    {
+      "id": "unity-02",
+      "name": "Puzzle Adventure",
+      "category": "unity",
+      "shortDescription": "Juego de puzzles en 3D con narrativa",
+      "description": "Adventure puzzle game con mecánicas de física y narrativa ramificada. El jugador resuelve puzzles para avanzar en la historia.",
+      "thumbnail": "assets/img/projects/unity/puzzle-adventure-thumb.jpg",
+      "gallery": [
+        "assets/img/projects/unity/puzzle-adventure-1.jpg"
+      ],
+      "technologies": ["Unity", "C#", "Narrative Designer"],
+      "featured": true,
+      "links": {
+        "play": "builds/unity/puzzle-adventure/index.html",
+        "github": "https://github.com/tuusuario/puzzle-adventure",
+        "download": null
+      },
+      "year": "2023"
+    },
+    {
+      "id": "android-01",
+      "name": "Task Manager Pro",
+      "category": "android",
+      "shortDescription": "Aplicación de gestión de tareas con Material Design",
+      "description": "Aplicación móvil para gestión de tareas diarias con funcionalidades de categorías, recordatorios y sincronización en la nube.",
+      "thumbnail": "assets/img/projects/android/task-manager-thumb.jpg",
+      "gallery": [
+        "assets/img/projects/android/task-manager-1.jpg",
+        "assets/img/projects/android/task-manager-2.jpg"
+      ],
+      "technologies": ["Android Studio", "Java", "Room Database", "Material Design"],
+      "featured": true,
+      "links": {
+        "play": "https://play.google.com/store/apps/details?id=com.tuusuario.taskmanager",
+        "github": "https://github.com/tuusuario/task-manager",
+        "download": "assets/downloads/task-manager.apk"
+      },
+      "year": "2023"
+    },
+    {
+      "id": "software-01",
+      "name": "Inventory System",
+      "category": "software",
+      "shortDescription": "Sistema de inventario para pequeños negocios",
+      "description": "Software de escritorio para gestión de inventario con generación de reportes, control de stock y alertas de reposición.",
+      "thumbnail": "assets/img/projects/software/inventory-thumb.jpg",
+      "gallery": [
+        "assets/img/projects/software/inventory-1.jpg"
+      ],
+      "technologies": ["C#", ".NET", "SQL Server", "WPF"],
+      "featured": false,
+      "links": {
+        "play": null,
+        "github": "https://github.com/tuusuario/inventory-system",
+        "download": "assets/downloads/inventory-system.exe"
+      },
+      "year": "2022"
+    }
+  ],
+  "experience": [
+    {
+      "company": "Empresa de Desarrollo",
+      "position": "Desarrollador de Software",
+      "period": "2022 - Presente",
+      "description": "Desarrollo de aplicaciones empresariales y sistemas internos."
+    },
+    {
+      "company": "Freelance",
+      "position": "Desarrollador de Videojuegos",
+      "period": "2020 - 2022",
+      "description": "Creación de juegos indie y proyectos personalizados para clientes."
+    }
+  ],
+  "contact": {
+    "email": "velezamayajuanpablo@gmail.com",
+    "subject": "Contacto desde Portafolio Web",
+    "successMessage": "¡Gracias por contactarme! Te responderé pronto.",
+    "fields": {
+      "name": "Nombre",
+      "email": "Email",
+      "subject": "Asunto",
+      "message": "Mensaje"
+    },
+    "emailjs": {
+      "publicKey": "qr2Q8A7CGohDxK5_8",
+      "serviceId": "service_gj0z1c7",
+      "templateId": "template_likc0ei"
+    }
+  },
+  "cv": {
+    "file": "assets/cv/cv.pdf",
+    "downloadName": "Juan_Pablo_Velez_Amaya_CV.pdf"
+  },
+  "settings": {
+    "theme": "dark",
+    "language": "es",
+    "animations": true,
+    "projectsPerPage": 6
+  }
+}
+
