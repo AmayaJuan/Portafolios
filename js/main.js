@@ -1,4 +1,4 @@
-/**
+﻿/**
  * ============================================
  * Main JavaScript - Portafolio Web Personal
  * Carga datos dinamicamente desde portfolio.json
@@ -25,6 +25,7 @@ const state = {
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => document.querySelectorAll(selector);
 
+// Funcion para crear elementos HTML dinamicamente
 function createElement(tag, attrs = {}, children = []) {
     const el = document.createElement(tag);
     
@@ -36,7 +37,12 @@ function createElement(tag, attrs = {}, children = []) {
                 el.dataset[dataKey] = dataValue;
             });
         } else if (key.startsWith('on')) {
-            el.addEventListener(key.slice(2).toLowerCase(), value);
+            const eventName = key.slice(2).toLowerCase();
+            if (typeof value === 'string') {
+                el.setAttribute(key, value);
+            } else if (typeof value === 'function') {
+                el.addEventListener(eventName, value);
+            }
         } else {
             el.setAttribute(key, value);
         }
@@ -53,6 +59,7 @@ function createElement(tag, attrs = {}, children = []) {
     return el;
 }
 
+// Funcion para obtener icono de categoria
 function getCategoryIcon(category) {
     const icons = {
         unity: 'fa-gamepad',
@@ -63,6 +70,7 @@ function getCategoryIcon(category) {
     return createElement('i', { class: `fas ${iconClass}` });
 }
 
+// Funcion para formatear URLs
 function formatUrl(url) {
     if (!url) return '';
     return url.replace(/^https?:\/\//, '').replace(/\/$/, '');
@@ -215,11 +223,12 @@ function renderProjects(projects) {
             tagsContainer.appendChild(tag);
         });
         
+        // Crear boton de jugar para proyectos Unity
         let playButton;
         if (project.category === 'unity' && project.links && project.links.play) {
             playButton = createElement('button', {
                 class: 'play-btn',
-                onclick: () => openGameModal(project.links.play),
+                onclick: function() { openGameModal(project.links.play); },
                 title: 'Jugar'
             });
             playButton.appendChild(createElement('i', { class: 'fas fa-play' }));
@@ -243,8 +252,7 @@ function renderProjects(projects) {
             const playLink = createElement('a', {
                 href: project.links.play,
                 target: '_blank',
-                class: 'card-link',
-                onclick: project.category === 'unity' ? `openGameModal('${project.links.play}'); return false;` : null
+                class: 'card-link'
             });
             playLink.appendChild(createElement('i', { class: 'fas fa-external-link-alt' }));
             playLink.appendChild(document.createTextNode(' Ver'));
@@ -392,6 +400,7 @@ function closeGameModal() {
 // ============================================
 
 function setupNavigation() {
+    // Links de navegacion suave
     $$('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -402,6 +411,7 @@ function setupNavigation() {
         });
     });
     
+    // Resaltar seccion actual en el menu
     const sections = $$('section[id]');
     const navLinks = $$('.nav-link');
     
@@ -424,6 +434,7 @@ function setupNavigation() {
         });
     });
     
+    // Menu movil
     const navToggle = $('#navToggle');
     const navMenu = $('#navMenu');
     
@@ -452,19 +463,21 @@ function setupContactForm() {
     
     // Credenciales de EmailJS
     const emailjsConfig = {
-        publicKey: 'qr2Q8A7CGohDxK5_8',
+        publicKey: '9bdYHELMIBud0OpOW',
         serviceId: 'service_gj0z1c7',
         templateId: 'template_likc0ei'
     };
     
-    // Inicializar EmailJS
+    // Inicializar EmailJS con la public key
     if (typeof emailjs !== 'undefined') {
         emailjs.init(emailjsConfig.publicKey);
     }
     
-    // Usar evento click del boton
-    submitBtn.addEventListener('click', async () => {
-        // Validar que los campos required esten llenos
+    // Configurar evento submit del formulario
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        // Validar que los campos requeridos esten llenos
         if (!form.checkValidity()) {
             form.reportValidity();
             return;
@@ -500,7 +513,7 @@ function setupContactForm() {
                 showNotification('Mensaje enviado correctamente! Te respondere pronto.', 'success');
             } else {
                 console.log('EmailJS no cargado. Datos:', templateParams);
-                showNotification('Mensaje enviado (simulacion)!', 'success');
+                showNotification('EmailJS no esta cargado. Datos: ' + JSON.stringify(templateParams), 'error');
             }
             
             // Limpiar formulario
@@ -508,7 +521,7 @@ function setupContactForm() {
             
         } catch (error) {
             console.error('Error al enviar:', error);
-            showNotification('Error al enviar. Intenta de nuevo.', 'error');
+            showNotification('Error al enviar: ' + error.message, 'error');
         } finally {
             submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
@@ -516,10 +529,11 @@ function setupContactForm() {
     });
 }
 
+// Funcion para mostrar notificaciones
 function showNotification(message, type = 'info') {
     const notification = createElement('div', {
         class: `alert alert-${type === 'success' ? 'success' : 'error'}`,
-        style: 'position: fixed; top: 20px; right: 20px; z-index: 9999;'
+        style: 'position: fixed; top: 20px; right: 20px; z-index: 9999; background: ' + (type === 'success' ? '#28a745' : '#dc3545') + '; color: white; padding: 15px 20px; border-radius: 5px;'
     }, [message]);
     
     document.body.appendChild(notification);
@@ -529,17 +543,9 @@ function showNotification(message, type = 'info') {
     }, 5000);
 }
 
+// Funcion para mostrar errores
 function showError(message) {
-    const errorDiv = createElement('div', {
-        class: 'alert alert-error',
-        style: 'position: fixed; top: 20px; right: 20px; z-index: 9999;'
-    }, [message]);
-    
-    document.body.appendChild(errorDiv);
-    
-    setTimeout(() => {
-        errorDiv.remove();
-    }, 5000);
+    showNotification(message, 'error');
 }
 
 // ============================================
@@ -560,10 +566,12 @@ async function init() {
         setupNavigation();
         setupContactForm();
         
+        // Configurar filtros de proyectos
         $$('.filter-btn').forEach(btn => {
             btn.addEventListener('click', () => filterProjects(btn.dataset.filter));
         });
         
+        // Configurar modal de juegos
         $('#modalClose').addEventListener('click', closeGameModal);
         $('#gameModal').addEventListener('click', (e) => {
             if (e.target.id === 'gameModal') closeGameModal();
@@ -577,78 +585,5 @@ async function init() {
     }
 }
 
+// Iniciar cuando el DOM este listo
 document.addEventListener('DOMContentLoaded', init);
-
-// ============================================
-// Funciones globales para onClick HTML
-// ============================================
-
-// Funcion para enviar mensaje (llamada desde onclick en HTML)
-window.enviarMensaje = async function() {
-    const submitBtn = document.getElementById('submit-btn');
-    const form = document.getElementById('contact-form');
-    
-    if (!submitBtn || !form) {
-        console.error('No se encontraron los elementos del formulario');
-        return;
-    }
-    
-    // Validar que los campos required esten llenos
-    if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-    }
-    
-    // Credenciales de EmailJS
-    const emailjsConfig = {
-        publicKey: 'qr2Q8A7CGohDxK5_8',
-        serviceId: 'service_gj0z1c7',
-        templateId: 'template_likc0ei'
-    };
-    
-    const originalText = submitBtn.innerHTML;
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
-    submitBtn.disabled = true;
-    
-    try {
-        // Obtener valores del formulario
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-        
-        const templateParams = {
-            name: name,
-            email: email,
-            message: message
-        };
-        
-        console.log('Enviando email:', templateParams);
-        
-        // Inicializar EmailJS si no esta listo
-        if (typeof emailjs !== 'undefined') {
-            // Enviar usando EmailJS
-            const response = await emailjs.send(
-                emailjsConfig.serviceId,
-                emailjsConfig.templateId,
-                templateParams
-            );
-            
-            console.log('Email enviado:', response);
-            alert('Mensaje enviado correctamente! Te respondere pronto.');
-        } else {
-            console.log('EmailJS no cargado. Datos:', templateParams);
-            alert('Mensaje enviado (simulacion)!');
-        }
-        
-        // Limpiar formulario
-        form.reset();
-        
-    } catch (error) {
-        console.error('Error al enviar:', error);
-        alert('Error al enviar. Intenta de nuevo.');
-    } finally {
-        submitBtn.innerHTML = originalText;
-        submitBtn.disabled = false;
-    }
-};
-
