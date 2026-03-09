@@ -452,7 +452,14 @@ function setupNavigation() {
 }
 
 // ============================================
+// ============================================
 // Formulario de Contacto con EmailJS
+// ============================================
+//
+// *** POLITICA: NO MODIFICAR ESTA SECCION ***
+// Esta configuracion de EmailJS esta verificada y funcionando.
+// No realizar cambios hasta recibir autorizacion explicita.
+// Para modificaciones, contactar al administrador.
 // ============================================
 
 function setupContactForm() {
@@ -461,7 +468,11 @@ function setupContactForm() {
     
     if (!submitBtn || !form) return;
     
-    // Credenciales de EmailJS
+    // ============================================
+    // CONFIGURACION EMAILJS - NO TOCAR
+    // Esta configuracion esta verificada y funcionando correctamente.
+    // Cambios no autorizados pueden romper el formulario de contacto.
+    // ============================================
     const emailjsConfig = {
         publicKey: '9bdYHELMIBud0OpOW',
         serviceId: 'service_gj0z1c7',
@@ -587,3 +598,4 @@ async function init() {
 
 // Iniciar cuando el DOM este listo
 document.addEventListener('DOMContentLoaded', init);
+

@@ -214,3 +214,28 @@ PREGUNTA primero.
 
 # La estabilidad del proyecto tiene prioridad sobre cualquier mejora.
 
+================================================================================
+11. POLÍTICA DE API EMAILJS - NO MODIFICAR
+===========================================
+
+La configuración de EmailJS en el formulario de contacto está VERIFICADA y
+FUNCIONANDO correctamente.
+
+Queda PROHIBIDO modificar:
+
+* publicKey
+* serviceId
+* templateId
+* Cualquier parte de la función setupContactForm()
+
+Excepciones:
+Solo se permitirá修改 con autorización explícita del administrador.
+
+Si necesita hacer cambios:
+1. Consultar primero
+2. Obtener autorización
+3. Documentar el cambio
+
+Esta política aplica a TODO el código relacionado con el envío de emails.
+
+
