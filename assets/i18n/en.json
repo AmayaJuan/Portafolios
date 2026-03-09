@@ -1,0 +1,67 @@
+{
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "projects": "Projects",
+        "skills": "Skills",
+        "contact": "Contact",
+        "cv": "CV"
+    },
+    "hero": {
+        "badge": "Video Games & Software Developer",
+        "greeting": "Hi, I'm",
+        "tagline": "Creating interactive experiences",
+        "viewProjects": "View Projects",
+        "contact": "Contact Me"
+    },
+    "about": {
+        "title": "About Me",
+        "projects": "Projects",
+        "yearsExperience": "Years Experience",
+        "clients": "Clients"
+    },
+    "projects": {
+        "title": "My Projects",
+        "filters": {
+            "all": "All",
+            "unity": "Unity",
+            "android": "Android",
+            "software": "Software"
+        },
+        "code": "Code",
+        "play": "Play",
+        "view": "View",
+        "download": "Download"
+    },
+    "skills": {
+        "title": "Technical Skills"
+    },
+    "cv": {
+        "title": "Resume",
+        "description": "Download my CV to see my complete work experience and education.",
+        "download": "Download CV"
+    },
+    "contact": {
+        "title": "Contact",
+        "subtitle": "Do you have a project in mind?",
+        "description": "Contact me and let's talk about how I can help you bring your idea to life.",
+        "form": {
+            "name": "Name",
+            "email": "Email",
+            "message": "Message",
+            "submit": "Send Message",
+            "sending": "Sending..."
+        },
+        "success": "Message sent successfully! I'll reply soon.",
+        "error": "Error sending message. Please try again."
+    },
+    "footer": {
+        "rights": "All rights reserved."
+    },
+    "language": {
+        "select": "Language",
+        "es": "Español",
+        "en": "English"
+    }
+}
+
