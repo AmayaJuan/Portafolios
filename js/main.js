@@ -555,13 +555,6 @@ function showError(message) {
 async function init() {
     console.log('Inicializando portafolio...');
     
-    // Inicializar sistema de internacionalizacion (i18n)
-    if (typeof window.i18n !== 'undefined') {
-        await window.i18n.init();
-        // Crear selector de idioma en el navbar
-        window.i18n.createLanguageSelector();
-    }
-    
     const data = await loadPortfolioData();
     
     if (data) {
