@@ -1,8 +1,13 @@
 /* ============================================
    Base Styles - Reset y Estilos Fundamentales
+   Incluye reset, tipografía, utilidades y animaciones
    ============================================ */
 
-/* Reset básico */
+/* ---------- Reset Básico ---------- */
+/**
+ * Reset universal para normalizar estilos entre navegadores
+ * box-sizing: border-box incluye padding y border en el ancho/alto
+ */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -87,7 +92,11 @@ input, textarea, select {
     color: white;
 }
 
-/* Scrollbar */
+/* ---------- Scrollbar Personalizado ---------- */
+/**
+ * Estilos para el scrollbar en navegadores webkit
+ * Proporciona una experiencia visual coherente con el tema oscuro
+ */
 ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
@@ -106,7 +115,11 @@ input, textarea, select {
     background: var(--color-text-muted);
 }
 
-/* Utility Classes */
+/* ---------- Clases de Utilidad (Utilities) ---------- */
+/**
+ * Contenedor principal con ancho máximo centrado
+ * padding laterales para evitar contenido pegado a bordes
+ */
 .container {
     width: 100%;
     max-width: var(--max-width);
@@ -114,6 +127,10 @@ input, textarea, select {
     padding: 0 var(--spacing-lg);
 }
 
+/**
+ * Sección genérica con espaciado vertical
+ * padding-top y padding-bottom para separación entre secciones
+ */
 .section {
     padding: var(--spacing-3xl) 0;
 }
@@ -184,7 +201,11 @@ input, textarea, select {
     animation: slideUp var(--transition-slow) ease forwards;
 }
 
-/* Responsive typography */
+/* ---------- Tipografía Responsive ---------- */
+/**
+ * Ajustes de tamaño de fuente para pantallas más pequeñas
+ * Mejora la legibilidad en dispositivos móviles
+ */
 @media (max-width: 768px) {
     h1 { font-size: 2rem; }
     h2 { font-size: 1.75rem; }

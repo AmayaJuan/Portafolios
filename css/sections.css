@@ -3,6 +3,10 @@
    ============================================ */
 
 /* ---------- Navbar ---------- */
+/**
+ * Barra de navegación fija en la parte superior
+ * Incluye menú de navegación y logo
+ */
 .navbar {
     position: fixed;
     top: 0;
@@ -71,6 +75,42 @@
 .nav-link:hover::after,
 .nav-link.active::after {
     width: 100%;
+}
+
+/**
+ * Botón toggle para menú móvil (hamburguesa)
+ * Solo visible en pantallas menores a 768px
+ */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    padding: var(--spacing-sm);
+    background: transparent;
+    cursor: pointer;
+    border: none;
+}
+
+.nav-toggle .bar {
+    width: 25px;
+    height: 2px;
+    background: var(--color-text-primary);
+    transition: all var(--transition-fast);
+}
+
+/**
+ * Estado activo del toggle (cuando el menú está abierto)
+ */
+.nav-toggle.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* ---------- Hero Section ---------- */
@@ -203,6 +243,10 @@
 }
 
 /* ---------- About Section ---------- */
+/**
+ * Sección "Sobre mí" con biografía y estadísticas
+ * Grid: 2fr para texto, 1fr para stats (escritorio)
+ */
 .about-content {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -241,6 +285,67 @@
     color: var(--color-text-muted);
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+/**
+ * Responsive específico para la sección About
+ * Asegura que se visualice correctamente en todos los dispositivos
+ */
+@media screen and (max-width: 768px) {
+    #about .about-content {
+        grid-template-columns: 1fr !important;
+        gap: var(--spacing-xl) !important;
+    }
+    
+    #about .about-text {
+        text-align: center !important;
+    }
+    
+    #about .about-text p {
+        font-size: 1rem !important;
+        line-height: 1.7 !important;
+    }
+    
+    #about .about-stats {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: var(--spacing-sm) !important;
+    }
+    
+    #about .stat-item {
+        padding: var(--spacing-md) !important;
+    }
+    
+    #about .stat-number {
+        font-size: 2rem !important;
+    }
+    
+    #about .stat-label {
+        font-size: 0.7rem !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #about .about-stats {
+        grid-template-columns: 1fr !important;
+        gap: var(--spacing-md) !important;
+    }
+    
+    #about .stat-item {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: var(--spacing-md) var(--spacing-lg) !important;
+        text-align: left !important;
+    }
+    
+    #about .stat-number {
+        font-size: 1.75rem !important;
+        margin-bottom: 0 !important;
+    }
+    
+    #about .stat-label {
+        font-size: 0.85rem !important;
+    }
 }
 
 /* ---------- Projects Section ---------- */
@@ -554,6 +659,10 @@
 }
 
 /* ---------- Responsive ---------- */
+/**
+ * Breakpoint 1024px - Tablets grandes y laptops
+ * Ajustes de layout para pantallas medianas
+ */
 @media (max-width: 1024px) {
     .hero-content {
         grid-template-columns: 1fr;
@@ -568,8 +677,9 @@
         justify-content: center;
     }
     
+    /* Foto debajo del texto en tablets */
     .hero-visual {
-        order: -1;
+        order: 1;
     }
     
     .profile-image-container {
@@ -586,7 +696,68 @@
     }
 }
 
+/**
+ * Breakpoint 768px - Tablets y móviles grandes
+ * Optimización de componentes para pantallas táctiles
+ * Se activa el menú hamburguesa
+ */
 @media (max-width: 768px) {
+    /* Navbar móvil */
+    .nav-toggle {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: var(--navbar-height);
+        left: 0;
+        width: 100%;
+        background: var(--color-bg-secondary);
+        flex-direction: column;
+        padding: var(--spacing-lg);
+        gap: var(--spacing-md);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all var(--transition-normal);
+        z-index: 99;
+    }
+    
+    .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+/* Hero responsive - Orden específico para móvil */
+    .hero {
+        padding-top: calc(var(--navbar-height) + var(--spacing-xl));
+        padding-bottom: var(--spacing-xl);
+    }
+    
+    .hero {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        order: 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* Foto después del texto */
+    .hero-visual {
+        order: 1;
+        margin-top: var(--spacing-xl);
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
     .hero-title {
         font-size: 2.5rem;
     }
@@ -595,59 +766,170 @@
         font-size: 1.25rem;
     }
     
+    .hero-bio {
+        max-width: 100%;
+    }
+    
     .hero-actions {
         flex-direction: column;
+        width: 100%;
     }
     
-    .about-stats {
-        grid-template-columns: repeat(3, 1fr);
+    .hero-actions .btn {
+        width: 100%;
     }
     
+    /* Projects responsive */
     .projects-grid {
         grid-template-columns: 1fr;
     }
     
-    /* Skills grid - 3 columns on tablet */
+    /* Skills - grid para tablets */
+    .skills-container {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .skills-nav-btn {
+        display: none;
+    }
+    
+    .skills-scroll {
+        width: 100%;
+    }
+    
     .skills-grid {
+        display: grid;
         grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+        gap: var(--spacing-sm);
+    }
+    
+    .skill-item {
+        min-width: auto;
+        max-width: none;
+    }
+    
+    /* Contact responsive */
+    .contact-form {
+        padding: var(--spacing-lg);
+    }
+    
+    .form-group {
+        margin-bottom: var(--spacing-md);
     }
 }
 
+/**
+ * Breakpoint 480px - Móviles pequeños
+ * Ajustes finales para pantallas reducidas
+ */
 @media (max-width: 480px) {
+    /* Hero muy pequeño */
     .hero-title {
         font-size: 2rem;
+    }
+    
+    .hero-badge {
+        font-size: 0.75rem;
+        padding: var(--spacing-xs) var(--spacing-sm);
     }
     
     .profile-image-container {
         width: 220px;
         height: 220px;
+        border-width: 3px;
     }
     
+    /* About stats - columna única */
     .about-stats {
         grid-template-columns: 1fr;
         gap: var(--spacing-md);
     }
     
-    .skill-item {
-        flex-direction: column;
-        text-align: center;
+    .stat-item {
+        padding: var(--spacing-md);
     }
     
-    /* Slider responsive styles */
-    .skills-slider {
-        gap: var(--spacing-sm);
+    .stat-number {
+        font-size: 2rem;
     }
     
-    .slider-arrow {
-        width: 36px;
-        height: 36px;
-        font-size: 0.9rem;
-    }
-    
-    /* Skills grid - 2 columns on mobile */
+    /* Skills - 2 columnas en móvil */
     .skills-grid {
         grid-template-columns: repeat(2, 1fr);
-        min-width: 100%;
+    }
+    
+    .skill-item {
+        padding: var(--spacing-sm);
+    }
+    
+    .skill-icon {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .skill-icon img {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .skill-name {
+        font-size: 0.7rem;
+    }
+    
+    /* Project cards */
+    .project-card .card-content {
+        padding: var(--spacing-md);
+    }
+    
+    .project-card .card-title {
+        font-size: 1.1rem;
+    }
+    
+    .project-card .card-links {
+        flex-direction: column;
+    }
+    
+    .project-card .card-link {
+        justify-content: center;
+    }
+    
+    /* Contact */
+    .contact-info h3 {
+        font-size: 1.5rem;
+    }
+    
+    .cv-preview {
+        padding: var(--spacing-xl);
+    }
+    
+    /* Footer */
+    .footer {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+    
+    .footer p {
+        font-size: 0.8rem;
+    }
+}
+
+/**
+ * Breakpoint 360px - Móviles muy pequeños
+ * Para dispositivos antiguos o pantallas extremadamente pequeñas
+ */
+@media (max-width: 360px) {
+    .hero-title {
+        font-size: 1.75rem;
+    }
+    
+    .profile-image-container {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
     }
 }
 

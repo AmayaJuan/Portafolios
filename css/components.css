@@ -1,8 +1,13 @@
 /* ============================================
    Components - Componentes Reutilizables
+   Incluye botones, tarjetas, formularios, modales y más
    ============================================ */
 
-/* ---------- Botones ---------- */
+/* ---------- Botones (Buttons) ---------- */
+/**
+ * Estilos base para todos los botones
+ * Incluye variantes primary, secondary y download
+ */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -50,7 +55,10 @@
     background: var(--color-accent-hover);
 }
 
-/* ---------- Tarjetas ---------- */
+/* ---------- Tarjetas (Cards) ---------- */
+/**
+ * Componente de tarjeta base con efectos hover
+ */
 .card {
     background: var(--color-bg-card);
     border-radius: var(--radius-lg);
@@ -207,6 +215,10 @@
 }
 
 /* ---------- Modal ---------- */
+/**
+ * Modal para mostrar juegos Unity en el portafolio
+ * Incluye overlay oscuro y contenido centrado
+ */
 .modal {
     display: none;
     position: fixed;
@@ -266,6 +278,26 @@
     height: 100%;
 }
 
+/** Responsive para modal en móviles */
+@media (max-width: 768px) {
+    .modal {
+        padding: var(--spacing-sm);
+    }
+    
+    .modal-content {
+        height: 85%;
+        border-radius: var(--radius-md);
+    }
+    
+    .modal-close {
+        width: 36px;
+        height: 36px;
+        font-size: 1.25rem;
+        top: var(--spacing-sm);
+        right: var(--spacing-sm);
+    }
+}
+
 /* ---------- Loading ---------- */
 .loading {
     display: flex;
@@ -321,7 +353,11 @@
     color: var(--color-error);
 }
 
-/* ---------- Navegación Móvil ---------- */
+/* ---------- Navegación Móvil (Toggle) ---------- */
+/**
+ * Estilos para el botón hamburguesa en móviles
+ * Los estilos del menú están en sections.css
+ */
 .nav-toggle {
     display: none;
     flex-direction: column;
@@ -335,31 +371,5 @@
     height: 2px;
     background: var(--color-text-primary);
     transition: all var(--transition-fast);
-}
-
-@media (max-width: 768px) {
-    .nav-toggle {
-        display: flex;
-    }
-    
-    .nav-menu {
-        position: fixed;
-        top: var(--navbar-height);
-        left: 0;
-        width: 100%;
-        background: var(--color-bg-secondary);
-        flex-direction: column;
-        padding: var(--spacing-lg);
-        gap: var(--spacing-md);
-        transform: translateY(-100%);
-        opacity: 0;
-        transition: all var(--transition-normal);
-        z-index: 100;
-    }
-    
-    .nav-menu.active {
-        transform: translateY(0);
-        opacity: 1;
-    }
 }
 

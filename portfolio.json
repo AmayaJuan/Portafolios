@@ -21,7 +21,7 @@
       "name": "Android Studio",
       "category": "engine",
       "icon": "assets/img/skills/android.svg",
-      "level": 75
+"level": 85
     },
     {
       "name": "C#",
@@ -30,28 +30,28 @@
       "level": 85
     },
     {
-      "name": "HTML/CSS",
+"name": "HTML/CSS",
       "category": "language",
       "icon": "assets/img/skills/htmlcss.svg",
+      "level": 90
+    },
+    {
+"name": "Java",
+      "category": "language",
+      "icon": "assets/img/skills/java.svg",
       "level": 85
     },
     {
-      "name": "Java",
-      "category": "language",
-      "icon": "assets/img/skills/java.svg",
-      "level": 70
-    },
-    {
-      "name": "JavaScript",
+"name": "JavaScript",
       "category": "language",
       "icon": "assets/img/skills/javascript.svg",
-      "level": 80
+      "level": 90
     },
     {
-      "name": "Python",
+"name": "Python",
       "category": "language",
       "icon": "assets/img/skills/python.svg",
-      "level": 65
+      "level": 80
     },
     {
       "name": "Unity",
