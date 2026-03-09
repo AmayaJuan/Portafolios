@@ -15,7 +15,16 @@ const CONFIG = {
 const state = {
     data: null,
     currentFilter: 'all',
-    isLoading: true
+    isLoading: true,
+    // Slider de habilidades
+    skillsSlider: {
+        currentIndex: 0,
+        itemsPerView: 3,
+        totalItems: 0,
+        isDragging: false,
+        startX: 0,
+        currentX: 0
+    }
 };
 
 // ============================================
@@ -358,6 +367,81 @@ function renderContact(data) {
 }
 
 // ============================================
+// Funcionalidad del Slider de Habilidades (Simplificado)
+// ============================================
+
+function initSkillsSlider(skills) {
+    const scrollContainer = document.getElementById('skillsScroll');
+    const prevBtn = document.getElementById('skillsPrev');
+    const nextBtn = document.getElementById('skillsNext');
+    const countEl = document.getElementById('skillsCount');
+    
+    if (!scrollContainer) return;
+    
+    // Mostrar total de habilidades
+    if (countEl) {
+        countEl.textContent = `${skills.length} habilidades`;
+    }
+    
+    // Función para desplazar
+    const scrollAmount = 250;
+    
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            scrollContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+    }
+    
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+    }
+    
+    // Actualizar estado de los botones
+    const updateButtons = () => {
+        if (prevBtn) {
+            prevBtn.disabled = scrollContainer.scrollLeft <= 0;
+        }
+        if (nextBtn) {
+            nextBtn.disabled = scrollContainer.scrollLeft >= scrollContainer.scrollWidth - scrollContainer.clientWidth - 1;
+        }
+    };
+    
+    // Event listeners para scroll
+    scrollContainer.addEventListener('scroll', updateButtons);
+    updateButtons();
+    
+    // Support for touch swipe
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    scrollContainer.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    
+    scrollContainer.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, { passive: true });
+    
+    const handleSwipe = () => {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+        
+        if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0) {
+                // Swipe left - scroll right
+                scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            } else {
+                // Swipe right - scroll left
+                scrollContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            }
+        }
+    };
+}
+
+// ============================================
 // Funcionalidad de Proyectos
 // ============================================
 
@@ -573,6 +657,11 @@ async function init() {
         renderProjects(data.projects);
         renderSkills(data.skills);
         renderContact(data);
+        
+        // Inicializar slider de habilidades
+        if (data.skills && data.skills.length > 0) {
+            initSkillsSlider(data.skills);
+        }
         
         setupNavigation();
         setupContactForm();

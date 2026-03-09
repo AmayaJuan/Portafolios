@@ -18,10 +18,10 @@
   },
   "skills": [
     {
-      "name": "Unity",
+      "name": "Android Studio",
       "category": "engine",
-      "icon": "assets/img/skills/unity.svg",
-      "level": 90
+      "icon": "assets/img/skills/android.svg",
+      "level": 75
     },
     {
       "name": "C#",
@@ -30,10 +30,10 @@
       "level": 85
     },
     {
-      "name": "Android Studio",
-      "category": "engine",
-      "icon": "assets/img/skills/android.svg",
-      "level": 75
+      "name": "HTML/CSS",
+      "category": "language",
+      "icon": "assets/img/skills/htmlcss.svg",
+      "level": 85
     },
     {
       "name": "Java",
@@ -48,10 +48,16 @@
       "level": 80
     },
     {
-      "name": "HTML/CSS",
+      "name": "Python",
       "category": "language",
-      "icon": "assets/img/skills/htmlcss.svg",
-      "level": 85
+      "icon": "assets/img/skills/python.svg",
+      "level": 65
+    },
+    {
+      "name": "Unity",
+      "category": "engine",
+      "icon": "assets/img/skills/unity.svg",
+      "level": 90
     }
   ],
   "projects": [
