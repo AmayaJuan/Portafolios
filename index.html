@@ -33,15 +33,21 @@
             </button>
             
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="nav-link active">Inicio</a></li>
-                <li><a href="#about" class="nav-link">Sobre Mí</a></li>
-                <li><a href="#projects" class="nav-link">Proyectos</a></li>
-                <li><a href="#skills" class="nav-link">Habilidades</a></li>
-                <li><a href="#contact" class="nav-link">Contacto</a></li>
+                <li><a href="#home" class="nav-link active" data-i18n="nav.inicio">Inicio</a></li>
+                <li><a href="#about" class="nav-link" data-i18n="nav.sobre">Sobre Mí</a></li>
+                <li><a href="#projects" class="nav-link" data-i18n="nav.proyectos">Proyectos</a></li>
+                <li><a href="#skills" class="nav-link" data-i18n="nav.habilidades">Habilidades</a></li>
+                <li><a href="#contact" class="nav-link" data-i18n="nav.contacto">Contacto</a></li>
                 <li><a href="#cv" class="nav-link btn-download" id="downloadCV">
                     <i class="fas fa-download"></i> CV
                 </a></li>
             </ul>
+
+            <!--BOTONES DE IDIOMA-->
+            <div class="language-switch">
+                <button onclick="cargarIdioma('es')">ES</button>
+                <button onclick="cargarIdioma('en')">EN</button>
+            </div>
         </div>
     </nav>
 
