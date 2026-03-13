@@ -531,20 +531,23 @@
 }
 
 .skill-icon {
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--color-bg-tertiary);
-    border-radius: var(--radius-sm);
+    background: var(--color-accent-light);
+    border: 2px solid var(--color-accent);
+    border-radius: var(--radius-full);
     flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
 
 .skill-icon img {
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
     object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 .skill-name {

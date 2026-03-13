@@ -6,7 +6,7 @@
     "tagline_en": "Creating interactive experiences with Unity, Android and more",
     "bio": "Desarrollador passionate por crear experiencias interactivas. Especializado en desarrollo de videojuegos con Unity y aplicaciones móviles Android.",
     "bio_en": "Passionate developer creating interactive experiences. Specialized in Unity game development and Android mobile apps.",
-    "avatar": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773364320/juan_dz1lnh.png",
+    "avatar": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773422593/Portafolios/profile/copy_of_juan_dz1lnh_1aed6f.png",
     "location": "Medellín, Colombia",
     "email": "velezamayajuanpablo@gmail.com",
     "availability": "Disponible para proyectos freelance",
@@ -22,43 +22,43 @@
     {
       "name": "Android Studio",
       "category": "engine",
-      "icon": "assets/img/skills/android.svg",
+      "icon": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773421281/android_a9yqza.png",
       "level": 85
     },
     {
       "name": "C#",
       "category": "language",
-      "icon": "assets/img/skills/csharp.svg",
+      "icon": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773422788/Csharp_Logo_rbozg9.png",
       "level": 85
     },
     {
       "name": "HTML/CSS",
       "category": "language",
-      "icon": "assets/img/skills/htmlcss.svg",
+      "icon": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773421789/html_e3r3ba.png",
       "level": 90
     },
     {
       "name": "Java",
       "category": "language",
-      "icon": "assets/img/skills/java.svg",
+      "icon": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773424037/java_xlah7x.jpg",
       "level": 85
     },
     {
       "name": "JavaScript",
       "category": "language",
-      "icon": "assets/img/skills/javascript.svg",
+      "icon": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773422002/javascript_ycsvzg.png",
       "level": 90
     },
     {
       "name": "Python",
       "category": "language",
-      "icon": "assets/img/skills/python.svg",
+      "icon": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773422142/python_isimiq.png",
       "level": 80
     },
     {
       "name": "Unity",
       "category": "engine",
-      "icon": "assets/img/skills/unity.svg",
+      "icon": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773424114/unity_gdgnjd.jpg",
       "level": 90
     }
   ],
@@ -183,3 +183,4 @@
     "projectsPerPage": 6
   }
 }
+
