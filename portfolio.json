@@ -2,11 +2,11 @@
   "profile": {
     "name": "Juan Pablo Velez Amaya",
     "title": "Desarrollador de Software y Videojuegos",
-    "tagline":"Creando experiencias interactivas con Unity, Android y más",
+    "tagline": "Creando experiencias interactivas con Unity, Android y más",
     "tagline_en": "Creating interactive experiences with Unity, Android and more",
     "bio": "Desarrollador passionate por crear experiencias interactivas. Especializado en desarrollo de videojuegos con Unity y aplicaciones móviles Android.",
     "bio_en": "Passionate developer creating interactive experiences. Specialized in Unity game development and Android mobile apps.",
-    "avatar": "assets/img/profile/juan.png",
+    "avatar": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773364320/juan_dz1lnh.png",
     "location": "Medellín, Colombia",
     "email": "velezamayajuanpablo@gmail.com",
     "availability": "Disponible para proyectos freelance",
@@ -23,7 +23,7 @@
       "name": "Android Studio",
       "category": "engine",
       "icon": "assets/img/skills/android.svg",
-"level": 85
+      "level": 85
     },
     {
       "name": "C#",
@@ -32,25 +32,25 @@
       "level": 85
     },
     {
-"name": "HTML/CSS",
+      "name": "HTML/CSS",
       "category": "language",
       "icon": "assets/img/skills/htmlcss.svg",
       "level": 90
     },
     {
-"name": "Java",
+      "name": "Java",
       "category": "language",
       "icon": "assets/img/skills/java.svg",
       "level": 85
     },
     {
-"name": "JavaScript",
+      "name": "JavaScript",
       "category": "language",
       "icon": "assets/img/skills/javascript.svg",
       "level": 90
     },
     {
-"name": "Python",
+      "name": "Python",
       "category": "language",
       "icon": "assets/img/skills/python.svg",
       "level": 80
@@ -183,4 +183,3 @@
     "projectsPerPage": 6
   }
 }
-
