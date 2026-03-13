@@ -380,7 +380,7 @@ function initSkillsSlider(skills) {
     
     // Mostrar total de habilidades
     if (countEl) {
-        countEl.textContent = `${skills.length} habilidades`;
+countEl.innerHTML = `${skills.length} <span data-i18n="skills.count"></span>`;
     }
     
     // Función para desplazar
@@ -654,6 +654,7 @@ async function init() {
     
     if (data) {
         renderProfile(data);
+        guardarTextosPerfilBilingue(data);
         renderProjects(data.projects);
         renderSkills(data.skills);
         renderContact(data);
@@ -685,6 +686,104 @@ async function init() {
     }
 }
 
+// Funciones i18n - Sistema de cambio de idioma
+let translations = {};
+
+// Cargar idioma desde archivo JSON
+async function cargarIdioma(lang) {
+    try {
+        const response = await fetch(`lang/${lang}.json`);
+        if (!response.ok) throw new Error(`No se pudo cargar ${lang}.json`);
+        translations = await response.json();
+        localStorage.setItem('lang', lang);
+        document.documentElement.lang = lang;
+        aplicarTraduccion();
+        actualizarBotonesIdioma(lang);
+    } catch (error) {
+        console.error('Error cargando idioma:', error);
+    }
+}
+
+// Obtener traducción para clave con notación punto (nav.inicio)
+function obtenerTraduccion(key) {
+    return key.split('.').reduce((obj, k) => obj && obj[k], translations) || key;
+}
+
+// Aplicar traducciones a elementos con data-i18n
+function aplicarTraduccion() {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        const translation = obtenerTraduccion(key);
+        if (el.children.length === 0 || (el.children.length === 1 && el.children[0].tagName === 'I')) {
+            el.textContent = translation;
+        } else {
+            // Si hay icono <i>, reemplazar solo el nodo de texto
+            const textNode = Array.from(el.childNodes).find(node => node.nodeType === 3);
+            if (textNode) {
+                textNode.textContent = translation;
+            } else {
+                el.textContent = translation;
+            }
+        }
+    });
+}
+
+// Actualizar botones activos de idioma
+function actualizarBotonesIdioma(lang) {
+    document.querySelectorAll('.language-switch button').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.toLowerCase() === lang.toUpperCase());
+    });
+}
+
+// Traducir elementos dinámicos después de renderizar (llamar desde init)
+function traducirDinamicos() {
+    aplicarTraduccion(); // Re-aplica a todo
+}
+
+// Variables y funciones para textos dinámicos del perfil
+let profileTexts = {};
+let currentLang = 'es';
+
+function guardarTextosPerfilBilingue(data) {
+    const profile = data.profile;
+    profileTexts.tagline_es = profile.tagline;
+    profileTexts.tagline_en = profile.tagline_en || profile.tagline;
+    profileTexts.bio_es = profile.bio;
+    profileTexts.bio_en = profile.bio_en || profile.bio;
+}
+
+// Modificar aplicarTraduccion para textos dinámicos
+const originalAplicarTraduccion = aplicarTraduccion;
+aplicarTraduccion = function() {
+    originalAplicarTraduccion();
+    
+    if (profileTexts.tagline_es) {
+        const taglineKey = `tagline_${currentLang}`;
+        const bioKey = `bio_${currentLang}`;
+        $('#profileTagline').textContent = profileTexts[taglineKey];
+        $('#profileBio').textContent = profileTexts[bioKey];
+    }
+};
+
+// Modificar cargarIdioma para actualizar currentLang
+const originalCargarIdioma = cargarIdioma;
+cargarIdioma = async function(lang) {
+    currentLang = lang;
+    await originalCargarIdioma(lang);
+};
+
+// Modificar init para usar traducirDinamicos al final
+const originalInit = init;
+init = async function() {
+    await originalInit();
+    traducirDinamicos();
+};
+
+
 // Iniciar cuando el DOM este listo
-document.addEventListener('DOMContentLoaded', init);
+document.addEventListener('DOMContentLoaded', () => {
+    const lang = localStorage.getItem('lang') || 'es';
+    cargarIdioma(lang);
+    init();
+});
 

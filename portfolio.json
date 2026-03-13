@@ -2,8 +2,10 @@
   "profile": {
     "name": "Juan Pablo Velez Amaya",
     "title": "Desarrollador de Software y Videojuegos",
-    "tagline": "Creando experiencias interactivas con Unity, Android y más",
+    "tagline":"Creando experiencias interactivas con Unity, Android y más",
+    "tagline_en": "Creating interactive experiences with Unity, Android and more",
     "bio": "Desarrollador passionate por crear experiencias interactivas. Especializado en desarrollo de videojuegos con Unity y aplicaciones móviles Android.",
+    "bio_en": "Passionate developer creating interactive experiences. Specialized in Unity game development and Android mobile apps.",
     "avatar": "assets/img/profile/juan.png",
     "location": "Medellín, Colombia",
     "email": "velezamayajuanpablo@gmail.com",

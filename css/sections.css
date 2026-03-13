@@ -933,3 +933,41 @@
     }
 }
 
+/* Estilos para language-switch */
+.language-switch {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.language-switch button {
+  padding: 0.375rem 0.75rem;
+  border: 1px solid var(--color-accent);
+  background: transparent;
+  color: var(--color-text-primary);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.language-switch button:hover,
+.language-switch button.active {
+  background: var(--color-accent);
+  color: white;
+  border-color: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+  .language-switch {
+    display: flex !important;
+    gap: 0.125rem;
+  }
+  
+  .language-switch button {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+  }
+}
+

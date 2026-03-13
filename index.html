@@ -56,18 +56,18 @@
         <!-- Hero Section -->
         <section id="home" class="hero">
             <div class="hero-content">
-                <div class="hero-badge">Desarrollador de Videojuegos & Software</div>
+                <div class="hero-badge" data-i18n="hero.badge">Desarrollador de Videojuegos & Software</div>
                 <h1 class="hero-title">
-                    Hola, soy <span class="highlight" id="profileName">Tu Nombre</span>
+                    <span data-i18n="hero.greeting">Hola, soy</span> <span class="highlight" id="profileName">Tu Nombre</span>
                 </h1>
                 <p class="hero-tagline" id="profileTagline">Creando experiencias interactivas</p>
                 <p class="hero-bio" id="profileBio">Descripción breve sobre ti...</p>
                 
                 <div class="hero-actions">
-                    <a href="#projects" class="btn btn-primary">
+                    <a href="#projects" class="btn btn-primary" data-i18n="hero.cta_projects">
                         <i class="fas fa-gamepad"></i> Ver Proyectos
                     </a>
-                    <a href="#contact" class="btn btn-secondary">
+                    <a href="#contact" class="btn btn-secondary" data-i18n="hero.cta_contact">
                         <i class="fas fa-envelope"></i> Contactar
                     </a>
                 </div>
@@ -88,7 +88,7 @@
         <!-- About Section -->
         <section id="about" class="section">
             <div class="container">
-                <h2 class="section-title">Sobre Mí</h2>
+                <h2 class="section-title" data-i18n="about.title">Sobre Mí</h2>
                 <div class="about-content">
                     <div class="about-text">
                         <p id="profileFullBio">Biografía completa...</p>
@@ -96,7 +96,7 @@
                     <div class="about-stats">
                         <div class="stat-item">
                             <span class="stat-number" id="projectCount">0</span>
-                            <span class="stat-label">Proyectos</span>
+                            <span class="stat-label" data-i18n="about.projects">Proyectos</span>
                         </div>
                         <div class="stat-item">
                             <span class="stat-number" id="yearsExperience">0+</span>
@@ -114,13 +114,13 @@
         <!-- Projects Section -->
         <section id="projects" class="section">
             <div class="container">
-                <h2 class="section-title">Mis Proyectos</h2>
+                <h2 class="section-title" data-i18n="projects.title">Mis Proyectos</h2>
                 
                 <!-- Category Filters -->
                 <div class="project-filters">
-                    <button class="filter-btn active" data-filter="all">Todos</button>
-                    <button class="filter-btn" data-filter="unity">Unity</button>
-                    <button class="filter-btn" data-filter="android">Android</button>
+                    <button class="filter-btn active" data-filter="all" data-i18n="projects.all">Todos</button>
+                    <button class="filter-btn" data-filter="unity" data-i18n="projects.unity">Unity</button>
+                    <button class="filter-btn" data-filter="android" data-i18n="projects.android">Android</button>
                     <button class="filter-btn" data-filter="software">Software</button>
                 </div>
                 
@@ -133,7 +133,7 @@
         <!-- Skills Section -->
         <section id="skills" class="section">
             <div class="container">
-                <h2 class="section-title">Habilidades Técnicas</h2>
+                <h2 class="section-title" data-i18n="skills.title">Habilidades Técnicas</h2>
                 
                 <!-- Skills Container with Scroll -->
                 <div class="skills-container" id="skillsContainer">
@@ -162,11 +162,11 @@
         <!-- CV Section -->
         <section id="cv" class="section">
             <div class="container">
-                <h2 class="section-title">Currículum Vitae</h2>
+                <h2 class="section-title" data-i18n="cv.title">Currículum Vitae</h2>
                 <div class="cv-preview">
                     <div class="cv-info">
                         <p>Descarga mi CV para ver mi experiencia laboral completa y educación.</p>
-                        <a href="assets/cv/cv.pdf" class="btn btn-primary" download id="cvDownloadBtn">
+                        <a href="assets/cv/cv.pdf" class="btn btn-primary" download id="cvDownloadBtn" data-i18n="cv.download">
                             <i class="fas fa-download"></i> Descargar CV
                         </a>
                     </div>
@@ -177,11 +177,11 @@
         <!-- Contact Section -->
         <section id="contact" class="section">
             <div class="container">
-                <h2 class="section-title">Contacto</h2>
+                <h2 class="section-title" data-i18n="contact.title">Contacto</h2>
                 <div class="contact-content">
                     <div class="contact-info">
-                        <h3>¿Tienes un proyecto en mente?</h3>
-                        <p>Contáctame y hablemos sobre cómo puedo ayudarte a materializar tu idea.</p>
+                        <h3 data-i18n="contact.introTitle">¿Tienes un proyecto en mente?</h3>
+                        <p data-i18n="contact.introText">Contáctame y hablemos sobre cómo puedo ayudarte a materializar tu idea.</p>
                         
                         <div class="contact-details">
                             <div class="contact-item">
@@ -197,18 +197,18 @@
                     
                     <form class="contact-form" id="contact-form">
                         <div class="form-group">
-                            <label for="name">Nombre</label>
+                            <label for="name" data-i18n="contact.name">Nombre</label>
                             <input type="text" id="name" name="name" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email</label>
+                            <label for="email" data-i18n="contact.email">Email</label>
                             <input type="email" id="email" name="email" required>
                         </div>
                         <div class="form-group">
-                            <label for="message">Mensaje</label>
+                            <label for="message" data-i18n="contact.message">Mensaje</label>
                             <textarea id="message" name="message" rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary" id="submit-btn">
+                        <button type="submit" class="btn btn-primary" id="submit-btn" data-i18n="contact.send">
                             <i class="fas fa-paper-plane"></i> Enviar Mensaje
                         </button>
                     </form>
