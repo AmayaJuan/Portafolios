@@ -113,10 +113,17 @@ async function loadPortfolioData() {
 function renderProfile(data) {
     const { profile } = data;
     
-    $('#profileName').textContent = profile.name;
-    $('#profileTagline').textContent = profile.tagline;
-    $('#profileBio').textContent = profile.bio;
-    $('#profileFullBio').textContent = profile.bio;
+    const nameEl = $('#profileName');
+    if (nameEl) nameEl.textContent = profile.name || '';
+    
+    const taglineEl = $('#profileTagline');
+    if (taglineEl) taglineEl.textContent = profile.tagline || '';
+    
+    const bioEl = $('#profileBio');
+    if (bioEl) bioEl.textContent = profile.bio || '';
+    
+    const fullBioEl = $('#profileFullBio');
+    if (fullBioEl) fullBioEl.textContent = profile.bio || '';
     
     const avatarImg = $('#profileAvatar');
     avatarImg.src = profile.avatar;
@@ -210,12 +217,15 @@ function renderProjects(projects) {
         const card = createElement('div', { class: 'project-card' });
         
         let imageContent;
-        if (project.thumbnail) {
+        if (project.thumbnail && isValidImageUrl(project.thumbnail)) {
             imageContent = createElement('img', {
                 src: project.thumbnail,
-                alt: project.name,
-                class: 'card-image',
-                onerror: "this.style.display='none'; this.nextElementSibling.style.display='flex'"
+                alt: project.name || '',
+                class: 'card-image'
+            });
+            imageContent.addEventListener('error', () => {
+                imageContent.style.display = 'none';
+                imageContent.nextElementSibling.style.display = 'flex';
             });
         }
         
@@ -225,21 +235,21 @@ function renderProjects(projects) {
         }, [getCategoryIcon(project.category)]);
         
         const tagsContainer = createElement('div', { class: 'card-tags' });
-        project.technologies.forEach(tech => {
+        (project.technologies || []).forEach(tech => {
             const tag = createElement('span', {
-                class: `tag tag-${project.category}`
+                class: `tag tag-${['unity','android','software'].includes(project.category) ? project.category : 'software'}`
             }, [tech]);
             tagsContainer.appendChild(tag);
         });
         
         // Crear boton de jugar para proyectos Unity
         let playButton;
-        if (project.category === 'unity' && project.links && project.links.play) {
+        if (['unity'].includes(project.category) && project.links && project.links.play && isValidExternalUrl(project.links.play)) {
             playButton = createElement('button', {
                 class: 'play-btn',
-                onclick: function() { openGameModal(project.links.play); },
                 title: 'Jugar'
             });
+            playButton.addEventListener('click', () => openGameModal(project.links.play));
             playButton.appendChild(createElement('i', { class: 'fas fa-play' }));
         }
         
@@ -638,9 +648,39 @@ function showNotification(message, type = 'info') {
     }, 5000);
 }
 
-// Funcion para mostrar errores
+// Funciones para mostrar errores y notificaciones (mover al top para loadPortfolioData)
+function showNotification(message, type = 'info') {
+    const notification = createElement('div', {
+        class: `alert alert-${type === 'success' ? 'success' : 'error'}`,
+        style: 'position: fixed; top: 20px; right: 20px; z-index: 9999; background: ' + (type === 'success' ? '#28a745' : '#dc3545') + '; color: white; padding: 15px 20px; border-radius: 5px;'
+    }, [message]);
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.remove();
+    }, 5000);
+}
+
 function showError(message) {
     showNotification(message, 'error');
+}
+
+// Funciones de validación seguridad
+function isValidImageUrl(url) {
+    if (!url) return false;
+    return /^https?:\/\/.*\.(jpg|jpeg|png|gif|webp|svg)$/i.test(url) || 
+           /^data:image\/(jpeg|png|gif|webp|svg\+xml)/i.test(url);
+}
+
+function isValidExternalUrl(url) {
+    if (!url) return false;
+    try {
+        const u = new URL(url, window.location.origin);
+        return u.protocol === 'https:' && !u.hostname.includes('localhost') && u.protocol !== 'javascript:';
+    } catch {
+        return false;
+    }
 }
 
 // ============================================
@@ -654,7 +694,6 @@ async function init() {
     
     if (data) {
         renderProfile(data);
-        guardarTextosPerfilBilingue(data);
         renderProjects(data.projects);
         renderSkills(data.skills);
         renderContact(data);
@@ -741,43 +780,8 @@ function traducirDinamicos() {
 }
 
 // Variables y funciones para textos dinámicos del perfil
-let profileTexts = {};
-let currentLang = 'es';
-
-function guardarTextosPerfilBilingue(data) {
-    const profile = data.profile;
-    profileTexts.tagline_es = profile.tagline;
-    profileTexts.tagline_en = profile.tagline_en || profile.tagline;
-    profileTexts.bio_es = profile.bio;
-    profileTexts.bio_en = profile.bio_en || profile.bio;
-}
-
-// Modificar aplicarTraduccion para textos dinámicos
-const originalAplicarTraduccion = aplicarTraduccion;
-aplicarTraduccion = function() {
-    originalAplicarTraduccion();
-    
-    if (profileTexts.tagline_es) {
-        const taglineKey = `tagline_${currentLang}`;
-        const bioKey = `bio_${currentLang}`;
-        $('#profileTagline').textContent = profileTexts[taglineKey];
-        $('#profileBio').textContent = profileTexts[bioKey];
-    }
-};
-
-// Modificar cargarIdioma para actualizar currentLang
-const originalCargarIdioma = cargarIdioma;
-cargarIdioma = async function(lang) {
-    currentLang = lang;
-    await originalCargarIdioma(lang);
-};
-
-// Modificar init para usar traducirDinamicos al final
-const originalInit = init;
-init = async function() {
-    await originalInit();
-    traducirDinamicos();
-};
+// i18n limpio - profile texts ya en lang/*.json via data-i18n
+// Removido monkey patching guardarTextosPerfilBilingue + overrides problemáticos
 
 
 // Iniciar cuando el DOM este listo
