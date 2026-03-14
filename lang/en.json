@@ -1,1 +1,49 @@
-{"nav":{"inicio":"Home","sobre":"About Me","proyectos":"Projects","habilidades":"Skills","contacto":"Contact","cv":"Download CV"},"hero":{"subtitle":"Game & Software Developer","verProyectos":"View Projects","contactar":"Contact"},"about":{"title":"About Me","projects":"Projects","years":"Years Experience","clients":"Clients"},"projects":{"title":"My Projects","all":"All","unity":"Unity","android":"Android","software":"Software"},"skills":{"title":"Technical Skills","count":"skills"},"profile":{"tagline":"Creating interactive experiences","bio":"Full Stack Developer specialized in Unity games and mobile apps. Experience in C#, JavaScript, React and web development tools."},"cv":{"title":"Curriculum Vitae","intro":"Download my CV to see my full work experience and education.","download":"Download CV"},"contact":{"title":"Contact","introTitle":"Got a project in mind?","introText":"Contact me and let's talk about how I can help you bring your idea to life.","name":"Name","email":"Email","message":"Message","send":"Send Message"},"footer":{"rights":"All rights reserved."}}
+{
+  "nav": {
+    "inicio": "Home",
+    "sobre": "About Me",
+    "proyectos": "Projects",
+    "habilidades": "Skills",
+    "contacto": "Contact",
+    "cv": "Download CV"
+  },
+  "hero": {
+    "subtitle": "Game & Software Developer",
+    "verProyectos": "View Projects",
+    "contactar": "Contact"
+  },
+  "about": {
+    "title": "About Me",
+    "projects": "Projects",
+    "years": "Years Experience",
+    "clients": "Clients"
+  },
+  "projects": {
+    "title": "My Projects",
+    "all": "All",
+    "unity": "Unity",
+    "android": "Android",
+    "software": "Software"
+  },
+  "skills": {
+    "title": "Technical Skills",
+    "count": "skills"
+  },
+  "cv": {
+    "title": "Curriculum Vitae",
+    "intro": "Download my CV to see my full work experience and education.",
+    "download": "Download CV"
+  },
+  "contact": {
+    "title": "Contact",
+    "introTitle": "Got a project in mind?",
+    "introText": "Contact me and let's talk about how I can help you bring your idea to life.",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send Message"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}
