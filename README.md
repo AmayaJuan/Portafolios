@@ -115,7 +115,14 @@ El orden de las secciones se controla en `index.html`. Puedes reordernar los ele
 - Font Awesome para iconos
 - Unity WebGL (para juegos)
 
+## Cambios Recientes
+
+- **2024-10**: Actualizado index.html (ajustes menores de UI: 4 líneas agregadas, 3 eliminadas).
+- **Próximos**: Configurar assets/img, portfolio.json, integrar juegos Unity WebGL, agregar archivos faltantes como css/components.css, css/sections.css, css/variables.css según estructura documentada.
+
 ## Licencia
 
-MIT License -自由 usar y modificar para tu propio portafolio.
+MIT License - libre usar y modificar para tu propio portafolio.
+
+
 
