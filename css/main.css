@@ -138,6 +138,58 @@ html {
 }
 
 /* Reducir animaciones si el usuario lo prefiere */
+/* Loader Styles */
+.loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--color-bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.loader-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loader-spinner {
+    width: 64px;
+    height: 64px;
+    border: 5px solid var(--color-bg-secondary);
+    border-top: 5px solid var(--color-accent);
+    border-radius: 50%;
+    animation: spin 1.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Hide content during load */
+body.content-loading #mainContent,
+body.content-loading .navbar {
+    opacity: 0 !important;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .loader-spinner {
+        width: 56px;
+        height: 56px;
+        border-width: 4px;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -151,4 +203,5 @@ html {
         scroll-behavior: auto;
     }
 }
+
 

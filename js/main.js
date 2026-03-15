@@ -207,7 +207,10 @@ function renderProjects(projects) {
     $('#projectCount').textContent = projects.length;
     
     const projectCards = projects.map(project => {
-        const card = createElement('div', { class: 'project-card' });
+        const card = createElement('div', { 
+            class: 'project-card', 
+            dataset: {category: project.category} 
+        });
         
         let imageContent;
         if (project.thumbnail) {
@@ -286,7 +289,12 @@ function renderProjects(projects) {
             linksContainer
         ]);
         
-        card.append(imageContent, placeholder, playButton, content);
+        //FIX: evitar append de elementos undefined
+        if(imageContent) card.appendChild(imageContent);
+        card.appendChild(placeholder);
+
+        if(playButton) card.appendChild(playButton);
+        card.appendChild(content);
         
         return card;
     });
@@ -453,8 +461,7 @@ function filterProjects(category) {
     });
     
     $$('.project-card').forEach(card => {
-        const projectCategory = card.querySelector('.tag').classList.contains('tag-unity') ? 'unity' :
-                                card.querySelector('.tag').classList.contains('tag-android') ? 'android' : 'software';
+        const projectCategory = card.dataset.category;
         
         const shouldShow = category === 'all' || projectCategory === category;
         card.classList.toggle('hidden', !shouldShow);
@@ -499,23 +506,35 @@ function setupNavigation() {
     const sections = $$('section[id]');
     const navLinks = $$('.nav-link');
     
+    // MEJORAR: limitar ejecucion del scroll
+    let scrollTimeout;
+
     window.addEventListener('scroll', () => {
-        let current = '';
+
+        if(scrollTimeout) return;
+
+        scrollTimeout = setTimeout(() => {
+
+            scrollTimeout = null;
+
+            let current = '';
         
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
             
-            if (scrollY >= sectionTop - 200) {
-                current = section.getAttribute('id');
-            }
-        });
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
         
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
+            navLinks.forEach(link => {
+               link.classList.remove('active');
+
+               if (link.getAttribute('href') === `#${current}`) {
+                   link.classList.add('active');
+               }
+            });
+        }, 100);
     });
     
     // Menu movil
@@ -650,6 +669,9 @@ function showError(message) {
 async function init() {
     console.log('Inicializando portafolio...');
     
+    // Activar loader
+    document.body.classList.add('content-loading');
+    
     const data = await loadPortfolioData();
     
     if (data) {
@@ -673,14 +695,27 @@ async function init() {
         });
         
         // Configurar modal de juegos
-        $('#modalClose').addEventListener('click', closeGameModal);
-        $('#gameModal').addEventListener('click', (e) => {
+        // FIX: Evitar error si el elemento no existe
+        const modalClose = $('#modalClose');
+        if(modalClose)
+            modalClose.addEventListener('click', closeGameModal);
+        
+        const gameModal = $('#gameModal');
+        if(gameModal)
+           gameModal.addEventListener('click', (e) => {
             if (e.target.id === 'gameModal') closeGameModal();
         });
         
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closeGameModal();
         });
+        
+        // Ocultar loader y mostrar contenido
+        document.body.classList.remove('content-loading');
+        const loader = document.getElementById('loader-overlay');
+        if (loader) {
+            loader.classList.add('hidden');
+        }
         
         console.log('Portafolio cargado correctamente');
     }
@@ -731,7 +766,7 @@ function aplicarTraduccion() {
 // Actualizar botones activos de idioma
 function actualizarBotonesIdioma(lang) {
     document.querySelectorAll('.language-switch button').forEach(btn => {
-        btn.classList.toggle('active', btn.textContent.toLowerCase() === lang.toUpperCase());
+        btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
     });
 }
 
