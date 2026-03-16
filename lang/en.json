@@ -1,10 +1,10 @@
 {
   "nav": {
-    "inicio": "Home",
-    "sobre": "About Me",
-    "proyectos": "Projects",
-    "habilidades": "Skills",
-    "contacto": "Contact",
+    "initiation": "Home",
+    "about": "About Me",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact",
     "cv": "Download CV"
   },
   "hero": {

@@ -5,18 +5,19 @@
  * ============================================
  */
 
-// Configuracion global
-const CONFIG = {
+// Configuración global - Nombres en inglés
+const config = {
     dataFile: './portfolio.json',
     animationDelay: 100
 };
 
-// Estado de la aplicacion
-const state = {
+
+// App state
+const appState = {
     data: null,
     currentFilter: 'all',
     isLoading: true,
-    // Slider de habilidades
+    // Skills slider
     skillsSlider: {
         currentIndex: 0,
         itemsPerView: 3,
@@ -26,6 +27,8 @@ const state = {
         currentX: 0
     }
 };
+
+
 
 // ============================================
 // Funciones de Utilidad
@@ -89,22 +92,22 @@ function formatUrl(url) {
 // Carga de Datos
 // ============================================
 
+// Load portfolio data
 async function loadPortfolioData() {
     try {
-        const response = await fetch(CONFIG.dataFile);
-        // Verificación segura
-        if (!response.ok) throw new Error('Error al cargar portfolio.json');
+        const response = await fetch(config.dataFile);
+        // Safe verification
+        if (!response.ok) throw new Error('Error loading portfolio.json');
         
-        state.data = await response.json();
-        state.isLoading = false;
+        appState.data = await response.json();
+        appState.isLoading = false;
         
-        console.log('Datos cargados:', state.data);
-        return state.data;
+        console.log('Data loaded:', appState.data);
+        return appState.data;
     } catch (error) {
-        console.error('Error cargando datos:', error);
-        showError('Error al cargar el portafolio');
-
-        //Evitar que la pagina se rompa
+        console.error('Error loading data:', error);
+        showError('Error loading portfolio');
+        // Prevent page break
         return {
             profile: {},
             projects: [],
@@ -112,6 +115,8 @@ async function loadPortfolioData() {
         };
     }
 }
+
+
 
 // ============================================
 // RENDER PERFIL
