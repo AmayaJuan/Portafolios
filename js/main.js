@@ -7,7 +7,7 @@
 
 // Configuracion global
 const CONFIG = {
-    dataFile: 'portfolio.json',
+    dataFile: './portfolio.json',
     animationDelay: 100
 };
 
@@ -92,7 +92,8 @@ function formatUrl(url) {
 async function loadPortfolioData() {
     try {
         const response = await fetch(CONFIG.dataFile);
-        if (!response.ok) throw new Error('Error al cargar datos');
+        // Verificación segura
+        if (!response.ok) throw new Error('Error al cargar portfolio.json');
         
         state.data = await response.json();
         state.isLoading = false;
@@ -100,33 +101,42 @@ async function loadPortfolioData() {
         console.log('Datos cargados:', state.data);
         return state.data;
     } catch (error) {
-        console.error('Error:', error);
-        showError('Error al cargar los datos del portafolio');
-        return null;
+        console.error('Error cargando datos:', error);
+        showError('Error al cargar el portafolio');
+
+        //Evitar que la pagina se rompa
+        return {
+            profile: {},
+            projects: [],
+            skills: []
+        };
     }
 }
 
 // ============================================
-// Renderizado de Secciones
+// RENDER PERFIL
 // ============================================
 
 function renderProfile(data) {
     const { profile } = data;
     
-    $('#profileName').textContent = profile.name;
-    $('#profileTagline').textContent = profile.tagline;
-    $('#profileBio').textContent = profile.bio;
-    $('#profileFullBio').textContent = profile.bio;
+    $('#profileName').textContent = profile.name || '';
+    $('#profileTagline').textContent = profile.tagline || '';
+    $('#profileBio').textContent = profile.bio || '';
+    //$('#profileFullBio').textContent = profile.bio;
     
     const avatarImg = $('#profileAvatar');
-    avatarImg.src = profile.avatar;
-    avatarImg.alt = profile.name;
-    
+
+    if(avatarImg && profile.avatar) {
+        avatarImg.src = profile.avatar;
+        avatarImg.alt = profile.name;
+    }
+
     $('#footerName').textContent = profile.name;
     $('#currentYear').textContent = new Date().getFullYear();
     
     const socialContainer = $('#socialLinks');
-    if (profile.social) {
+    if (profile.social && socialContainer) {
         const socialLinks = [];
         
         if (profile.social.github) {
@@ -218,6 +228,7 @@ function renderProjects(projects) {
                 src: project.thumbnail,
                 alt: project.name,
                 class: 'card-image',
+                loading: 'lazy',
                 onerror: "this.style.display='none'; this.nextElementSibling.style.display='flex'"
             });
         }
@@ -228,7 +239,7 @@ function renderProjects(projects) {
         }, [getCategoryIcon(project.category)]);
         
         const tagsContainer = createElement('div', { class: 'card-tags' });
-        project.technologies.forEach(tech => {
+        (project.technologies || []).forEach(tech => {
             const tag = createElement('span', {
                 class: `tag tag-${project.category}`
             }, [tech]);
@@ -469,6 +480,8 @@ function filterProjects(category) {
 }
 
 function openGameModal(gameUrl) {
+    if(!gameUrl) return;
+
     const modal = $('#gameModal');
     const frame = $('#gameFrame');
     
@@ -816,9 +829,13 @@ init = async function() {
 
 
 // Iniciar cuando el DOM este listo
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async() => {
     const lang = localStorage.getItem('lang') || 'es';
-    cargarIdioma(lang);
-    init();
+
+    //Esperar a que cargue el idioma
+    await cargarIdioma(lang)
+
+    // iniciar app después de cargar traduciones
+    await init();
 });
 

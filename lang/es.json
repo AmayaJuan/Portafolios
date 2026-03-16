@@ -8,9 +8,10 @@
     "cv": "Descargar CV"
   },
   "hero": {
-    "subtitle": "Desarrollador de Videojuegos & Software",
-    "verProyectos": "Ver Proyectos",
-    "contactar": "Contactar"
+    "badge": "Desarrollador de Videojuegos & Software",
+    "greeting": "Hola, soy",
+    "cta_projects": "Ver Proyectos",
+    "cta_contact": "Contactar"
   },
   "about": {
     "title": "Sobre Mí",
