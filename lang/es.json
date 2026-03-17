@@ -1,50 +1,53 @@
-{
-  "nav": {
-    "initiation": "Inicio",
-    "about": "Sobre mí",
-    "projects": "Proyectos",
-    "skills": "Habilidades",
-    "contact": "Contacto",
-    "cv": "Descargar CV"
-  },
-  "hero": {
-    "badge": "Desarrollador de Videojuegos & Software",
-    "greeting": "Hola, soy",
-    "cta_projects": "Ver Proyectos",
-    "cta_contact": "Contactar"
-  },
-  "about": {
-    "title": "Sobre Mí",
-    "projects": "Proyectos",
-    "years": "Años Experiencia",
-    "clients": "Clientes"
-  },
-  "projects": {
-    "title": "Mis Proyectos",
-    "all": "Todos",
-    "unity": "Unity",
-    "android": "Android",
-    "software": "Software"
-  },
-  "skills": {
-    "title": "Habilidades Técnicas",
-    "count": "habilidades"
-  },
-  "cv": {
-    "title": "Currículum Vitae",
-    "intro": "Descarga mi CV para ver mi experiencia laboral completa y educación.",
-    "download": "Descargar CV"
-  },
-  "contact": {
-    "title": "Contacto",
-    "introTitle": "¿Tienes un proyecto en mente?",
-    "introText": "Contáctame y hablemos sobre cómo puedo ayudarte a materializar tu idea.",
-    "name": "Nombre",
-    "email": "Email",
-    "message": "Mensaje",
-    "send": "Enviar Mensaje"
-  },
-  "footer": {
-    "rights": "Todos los derechos reservados."
+  {
+    "nav": {
+      "initiation": "Inicio",
+      "about": "Sobre mí",
+      "projects": "Proyectos",
+      "skills": "Habilidades",
+      "contact": "Contacto",
+      "cv": "Descargar CV"
+    },
+    "hero": {
+      "badge": "Desarrollador de Videojuegos & Software",
+      "greeting": "Hola, soy",
+      "cta_projects": "Ver Proyectos",
+      "cta_contact": "Contactar"
+    },
+    "about": {
+      "title": "Sobre Mí",
+      "projects": "Proyectos",
+      "years": "Años Experiencia",
+      "clients": "Clientes"
+    },
+    "projects": {
+      "title": "Mis Proyectos",
+      "all": "Todos",
+      "unity": "Unity",
+      "android": "Android",
+      "software": "Software",
+      "code": "Código",
+      "view": "Ver",
+      "download": "Descargar"
+    },
+    "skills": {
+      "title": "Habilidades Técnicas",
+      "count": "habilidades"
+    },
+    "cv": {
+      "title": "Currículum Vitae",
+      "intro": "Descarga mi CV para ver mi experiencia laboral completa y educación.",
+      "download": "Descargar CV"
+    },
+    "contact": {
+      "title": "Contacto",
+      "introTitle": "¿Tienes un proyecto en mente?",
+      "introText": "Contáctame y hablemos sobre cómo puedo ayudarte a materializar tu idea.",
+      "name": "Nombre",
+      "email": "Email",
+      "message": "Mensaje",
+      "send": "Enviar Mensaje"
+    },
+    "footer": {
+      "rights": "Todos los derechos reservados."
+    }
   }
-}

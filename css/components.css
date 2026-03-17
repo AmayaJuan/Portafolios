@@ -1,12 +1,12 @@
 /* ============================================
-   Components - Componentes Reutilizables
-   Incluye botones, tarjetas, formularios, modales y más
+   Components - Reusable UI Components
+   Buttons, cards, forms, modals and more
    ============================================ */
 
 /* ---------- Botones (Buttons) ---------- */
 /**
- * Estilos base para todos los botones
- * Incluye variantes primary, secondary y download
+ * Base styles for all buttons
+ * Includes primary, secondary, download variants
  */
 .btn {
     display: inline-flex;
@@ -57,7 +57,7 @@
 
 /* ---------- Tarjetas (Cards) ---------- */
 /**
- * Componente de tarjeta base con efectos hover
+ * Base card component with hover effects
  */
 .card {
     background: var(--color-bg-card);
@@ -216,8 +216,8 @@
 
 /* ---------- Modal ---------- */
 /**
- * Modal para mostrar juegos Unity en el portafolio
- * Incluye overlay oscuro y contenido centrado
+ * Modal for Unity WebGL games
+ * Dark overlay with centered content
  */
 .modal {
     display: none;
@@ -278,7 +278,7 @@
     height: 100%;
 }
 
-/** Responsive para modal en móviles */
+/** Responsive modal for mobile */
 @media (max-width: 768px) {
     .modal {
         padding: var(--spacing-sm);

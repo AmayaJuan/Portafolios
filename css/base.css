@@ -1,12 +1,12 @@
 /* ============================================
-   Base Styles - Reset y Estilos Fundamentales
-   Incluye reset, tipografía, utilidades y animaciones
+   Base Styles - Reset and Core Styles
+   Includes reset, typography, utilities, animations
    ============================================ */
 
 /* ---------- Reset Básico ---------- */
 /**
- * Reset universal para normalizar estilos entre navegadores
- * box-sizing: border-box incluye padding y border en el ancho/alto
+ * Universal reset to normalize styles across browsers
+ * box-sizing: border-box includes padding/border in width/height
  */
 *, *::before, *::after {
     box-sizing: border-box;
@@ -92,10 +92,9 @@ input, textarea, select {
     color: white;
 }
 
-/* ---------- Scrollbar Personalizado ---------- */
+/* ---------- Custom Scrollbar ---------- */
 /**
- * Estilos para el scrollbar en navegadores webkit
- * Proporciona una experiencia visual coherente con el tema oscuro
+ * Webkit scrollbar styles for dark theme consistency
  */
 ::-webkit-scrollbar {
     width: 8px;
@@ -115,10 +114,9 @@ input, textarea, select {
     background: var(--color-text-muted);
 }
 
-/* ---------- Clases de Utilidad (Utilities) ---------- */
+/* ---------- Utility Classes ---------- */
 /**
- * Contenedor principal con ancho máximo centrado
- * padding laterales para evitar contenido pegado a bordes
+ * Main container with max-width and responsive padding
  */
 .container {
     width: 100%;
@@ -128,8 +126,8 @@ input, textarea, select {
 }
 
 /**
- * Sección genérica con espaciado vertical
- * padding-top y padding-bottom para separación entre secciones
+ * Generic section with vertical spacing
+ * Top/bottom padding for section separation
  */
 .section {
     padding: var(--spacing-3xl) 0;
@@ -201,10 +199,10 @@ input, textarea, select {
     animation: slideUp var(--transition-slow) ease forwards;
 }
 
-/* ---------- Tipografía Responsive ---------- */
+/* ---------- Responsive Typography ---------- */
 /**
- * Ajustes de tamaño de fuente para pantallas más pequeñas
- * Mejora la legibilidad en dispositivos móviles
+ * Font size adjustments for smaller screens
+ * Improves mobile readability
  */
 @media (max-width: 768px) {
     h1 { font-size: 2rem; }

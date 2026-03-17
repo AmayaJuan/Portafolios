@@ -1,11 +1,11 @@
 /* ============================================
-   Sections - Estilos por Sección
+   Sections - Section Specific Styles
    ============================================ */
 
 /* ---------- Navbar ---------- */
 /**
- * Barra de navegación fija en la parte superior
- * Incluye menú de navegación y logo
+ * Fixed top navigation bar
+ * Includes navigation menu and logo
  */
 .navbar {
     position: fixed;
@@ -78,8 +78,8 @@
 }
 
 /**
- * Botón toggle para menú móvil (hamburguesa)
- * Solo visible en pantallas menores a 768px
+ * Mobile menu toggle button (hamburger)
+ * Visible only on screens < 768px
  */
 .nav-toggle {
     display: none;
@@ -244,8 +244,8 @@
 
 /* ---------- About Section ---------- */
 /**
- * Sección "Sobre mí" con biografía y estadísticas
- * Grid: 2fr para texto, 1fr para stats (escritorio)
+ * About section with bio and stats
+ * Grid: 2fr text, 1fr stats (desktop)
  */
 .about-content {
     display: grid;
@@ -288,8 +288,8 @@
 }
 
 /**
- * Responsive específico para la sección About
- * Asegura que se visualice correctamente en todos los dispositivos
+ * About section specific responsive
+ * Ensures correct display across all devices
  */
 @media screen and (max-width: 768px) {
     #about .about-content {

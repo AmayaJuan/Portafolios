@@ -1,247 +1,247 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portafolio de Desarrollador de Software y Videojuegos">
-    <title>Juan Pablo Velez Amaya | Desarrollador de Videojuegos y Software</title>
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/main.css">
-    
-    <!-- Font Awesome para iconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- EmailJS para formulario de contacto -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    </head>
-<body>
-    <!-- Loader Overlay -->
-    <div id="loader-overlay" class="loader-overlay">
-        <div class="loader-spinner"></div>
-    </div>
-
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-
-        <div class="nav-container">
-            <a href="#home" class="nav-logo">
-                <span class="logo-text">Dev</span><span class="logo-accent">Portfolio</span>
-            </a>
-            
-            <button class="nav-toggle" id="navToggle" aria-label="Menú">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-            
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="nav-link active" data-i18n="nav.initiation">Inicio</a></li>
-                <li><a href="#about" class="nav-link" data-i18n="nav.about">Sobre Mí</a></li>
-                <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Proyectos</a></li>
-                <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Habilidades</a></li>
-                <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contacto</a></li>
-                <li><a href="#cv" class="nav-link btn-download" id="downloadCV">
-                    <i class="fas fa-download"></i> CV
-                </a></li>
-            </ul>
-
-            <!--BOTONES DE IDIOMA-->
-            <div class="language-switch">
-                <button onclick="cargarIdioma('es')">ES</button>
-                <button onclick="cargarIdioma('en')">EN</button>
-            </div>
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Portafolio de Desarrollador de Software y Videojuegos">
+        <title>Juan Pablo Velez Amaya | Desarrollador de Videojuegos y Software</title>
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+        
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/main.css">
+        
+        <!-- Font Awesome for icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        
+        <!-- EmailJS for contact form -->
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        </head>
+    <body>
+        <!-- Loader Overlay -->
+        <div id="loader-overlay" class="loader-overlay">
+            <div class="loader-spinner"></div>
         </div>
-    </nav>
 
-    <!-- Main Content -->
-    <main id="mainContent">
-        <!-- Hero Section -->
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <div class="hero-badge" data-i18n="hero.badge">Desarrollador de Videojuegos & Software</div>
-                <h1 class="hero-title">
-                    <span data-i18n="hero.greeting">Hola, soy</span> 
-                    <span class="highlight" id="profileName">Tu Nombre</span>
-                </h1>
-                <p class="hero-tagline" id="profileTagline">Creando experiencias interactivas</p>
-                <p class="hero-bio" id="profileBio">Descripción breve sobre ti...</p>
+        <!-- Navigation -->
+        <nav class="navbar" id="navbar">
+
+            <div class="nav-container">
+                <a href="#home" class="nav-logo">
+                    <span class="logo-text">Dev</span><span class="logo-accent">Portfolio</span>
+                </a>
                 
-                <div class="hero-actions">
-                    <a href="#projects" class="btn btn-primary" data-i18n="hero.cta_projects">
-                        <i class="fas fa-gamepad"></i> Ver Proyectos
-                    </a>
-                    <a href="#contact" class="btn btn-secondary" data-i18n="hero.cta_contact">
-                        <i class="fas fa-envelope"></i> Contactar
-                    </a>
-                </div>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
                 
-                <div class="hero-social" id="socialLinks">
-                    <!-- Redes sociales cargadas dinámicamente -->
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link active" data-i18n="nav.initiation">Inicio</a></li>
+                    <li><a href="#about" class="nav-link" data-i18n="nav.about">Sobre Mí</a></li>
+                    <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Proyectos</a></li>
+                    <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Habilidades</a></li>
+                    <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contacto</a></li>
+                    <li><a href="#cv" class="nav-link btn-download" id="downloadCV">
+                        <i class="fas fa-download"></i> CV
+                    </a></li>
+                </ul>
+
+                <!-- Language switch buttons -->
+                <div class="language-switch">
+                    <button onclick="cargarIdioma('es')">ES</button>
+                    <button onclick="cargarIdioma('en')">EN</button>
                 </div>
             </div>
-            
-            <!-- Foto de perfil a la derecha -->
-            <div class="hero-visual">
-                <div class="profile-image-container">
-                    <img src="https://res.cloudinary.com/dulyljo7w/image/upload/v1773364320/juan_dz1lnh.png" alt="Foto de perfil" id="profileAvatar" class="profile-image" loading="lazy" decoding="async">
-                </div>
-            </div>
-        </section>
+        </nav>
 
-        <!-- About Section -->
-        <section id="about" class="section">
-            <div class="container">
-                <h2 class="section-title" data-i18n="about.title">Sobre Mí</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p id="profileFullBio">Biografía completa...</p>
-                    </div>
-                    <div class="about-stats">
-                        <div class="stat-item">
-                            <span class="stat-number" id="projectCount">0</span>
-                            <span class="stat-label" data-i18n="about.projects">Proyectos</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number" id="yearsExperience">0+</span>
-                            <span class="stat-label">Años Experiencia</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number" id="clientsCount">0</span>
-                            <span class="stat-label">Clientes</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="section">
-            <div class="container">
-                <h2 class="section-title" data-i18n="projects.title">Mis Proyectos</h2>
-                
-                <!-- Category Filters -->
-                <div class="project-filters">
-                    <button class="filter-btn active" data-filter="all" data-i18n="projects.all">Todos</button>
-                    <button class="filter-btn" data-filter="unity" data-i18n="projects.unity">Unity</button>
-                    <button class="filter-btn" data-filter="android" data-i18n="projects.android">Android</button>
-                    <button class="filter-btn" data-filter="software">Software</button>
-                </div>
-                
-                <!-- Projects Grid -->
-                <div class="projects-grid" id="projectsGrid">
-                    <!-- Proyectos cargados dinámicamente -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="section">
-            <div class="container">
-                <h2 class="section-title" data-i18n="skills.title">Habilidades Técnicas</h2>
-                
-                <!-- Skills Container with Scroll -->
-                <div class="skills-container" id="skillsContainer">
-                    <button class="skills-nav-btn" id="skillsPrev" aria-label="Anterior">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
+        <!-- Main Content -->
+        <main id="mainContent">
+            <!-- Hero Section -->
+            <section id="home" class="hero">
+                <div class="hero-content">
+                    <div class="hero-badge" data-i18n="hero.badge">Desarrollador de Videojuegos & Software</div>
+                    <h1 class="hero-title">
+                        <span data-i18n="hero.greeting">Hola, soy</span> 
+                        <span class="highlight" id="profileName">Tu Nombre</span>
+                    </h1>
+                    <p class="hero-tagline" id="profileTagline">Creando experiencias interactivas</p>
+                    <p class="hero-bio" id="profileBio">Descripción breve sobre ti...</p>
                     
-                    <div class="skills-scroll" id="skillsScroll">
-                        <div class="skills-grid" id="skillsGrid">
-                            <!-- Habilidades cargadas dinámicamente -->
-                        </div>
-                    </div>
-                    
-                    <button class="skills-nav-btn" id="skillsNext" aria-label="Siguiente">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                </div>
-                
-                <!-- Position Indicator -->
-                <div class="skills-position" id="skillsPosition">
-                    <span id="skillsCount">7 habilidades</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- CV Section -->
-        <section id="cv" class="section">
-            <div class="container">
-                <h2 class="section-title" data-i18n="cv.title">Currículum Vitae</h2>
-                <div class="cv-preview">
-                    <div class="cv-info">
-                        <p>Descarga mi CV para ver mi experiencia laboral completa y educación.</p>
-                        <a href="assets/cv/cv.pdf" class="btn btn-primary" download id="cvDownloadBtn" data-i18n="cv.download">
-                            <i class="fas fa-download"></i> Descargar CV
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary" data-i18n="hero.cta_projects">
+                            <i class="fas fa-gamepad"></i> Ver Proyectos
+                        </a>
+                        <a href="#contact" class="btn btn-secondary" data-i18n="hero.cta_contact">
+                            <i class="fas fa-envelope"></i> Contactar
                         </a>
                     </div>
+                    
+                    <div class="hero-social" id="socialLinks">
+                        <!-- Redes sociales cargadas dinámicamente -->
+                    </div>
                 </div>
-            </div>
-        </section>
+                
+                <!-- Foto de perfil a la derecha -->
+                <div class="hero-visual">
+                    <div class="profile-image-container">
+                        <img src="https://res.cloudinary.com/dulyljo7w/image/upload/v1773364320/juan_dz1lnh.png" alt="Foto de perfil" id="profileAvatar" class="profile-image" loading="lazy" decoding="async">
+                    </div>
+                </div>
+            </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="section">
-            <div class="container">
-                <h2 class="section-title" data-i18n="contact.title">Contacto</h2>
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <h3 data-i18n="contact.introTitle">¿Tienes un proyecto en mente?</h3>
-                        <p data-i18n="contact.introText">Contáctame y hablemos sobre cómo puedo ayudarte a materializar tu idea.</p>
-                        
-                        <div class="contact-details">
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <span id="contactEmail">email@ejemplo.com</span>
+            <!-- About Section -->
+            <section id="about" class="section">
+                <div class="container">
+                    <h2 class="section-title" data-i18n="about.title">Sobre Mí</h2>
+                    <div class="about-content">
+                        <div class="about-text">
+                            <p id="profileFullBio">Biografía completa...</p>
+                        </div>
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <span class="stat-number" id="projectCount">0</span>
+                                <span class="stat-label" data-i18n="about.projects">Proyectos</span>
                             </div>
-                            <div class="contact-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span id="contactLocation">Ubicación</span>
+                            <div class="stat-item">
+                                <span class="stat-number" id="yearsExperience">0+</span>
+                                <span class="stat-label" data-i18n="about.years">Años Experiencia</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" id="clientsCount">0</span>
+                                <span class="stat-label" data-i18n="about.clients">Clientes</span>
                             </div>
                         </div>
                     </div>
-                    
-                    <form class="contact-form" id="contact-form">
-                        <div class="form-group">
-                            <label for="name" data-i18n="contact.name">Nombre</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email" data-i18n="contact.email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message" data-i18n="contact.message">Mensaje</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary" id="submit-btn" data-i18n="contact.send">
-                            <i class="fas fa-paper-plane"></i> Enviar Mensaje
-                        </button>
-                    </form>
                 </div>
-        </section>
-    </main>
+            </section>
 
-    <!-- Modal for Unity Games -->
-    <div class="modal" id="gameModal">
-        <div class="modal-content">
-            <button class="modal-close" id="modalClose">&times;</button>
-            <div class="modal-body">
-                <iframe id="gameFrame" width="100%" height="100%" frameborder="0" title="Unity Game"></iframe>
+            <!-- Projects Section -->
+            <section id="projects" class="section">
+                <div class="container">
+                    <h2 class="section-title" data-i18n="projects.title">Mis Proyectos</h2>
+                    
+                    <!-- Category Filters -->
+                    <div class="project-filters">
+                        <button class="filter-btn active" data-filter="all" data-i18n="projects.all">Todos</button>
+                        <button class="filter-btn" data-filter="unity" data-i18n="projects.unity">Unity</button>
+                        <button class="filter-btn" data-filter="android" data-i18n="projects.android">Android</button>
+                        <button class="filter-btn" data-filter="software">Software</button>
+                    </div>
+                    
+                    <!-- Projects Grid -->
+                    <div class="projects-grid" id="projectsGrid">
+                        <!-- Proyectos cargados dinámicamente -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="section">
+                <div class="container">
+                    <h2 class="section-title" data-i18n="skills.title">Habilidades Técnicas</h2>
+                    
+                    <!-- Skills Container with Scroll -->
+                    <div class="skills-container" id="skillsContainer">
+                        <button class="skills-nav-btn" id="skillsPrev" aria-label="Anterior">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        
+                        <div class="skills-scroll" id="skillsScroll">
+                            <div class="skills-grid" id="skillsGrid">
+                                <!-- Habilidades cargadas dinámicamente -->
+                            </div>
+                        </div>
+                        
+                        <button class="skills-nav-btn" id="skillsNext" aria-label="Siguiente">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Position Indicator -->
+                    <div class="skills-position" id="skillsPosition">
+                        <span id="skillsCount">7 habilidades</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CV Section -->
+            <section id="cv" class="section">
+                <div class="container">
+                    <h2 class="section-title" data-i18n="cv.title">Currículum Vitae</h2>
+                    <div class="cv-preview">
+                        <div class="cv-info">
+                            <p data-i18n="cv.intro">Descarga mi CV para ver mi experiencia laboral completa y educación.</p>
+                            <a href="assets/cv/cv.pdf" class="btn btn-primary" download id="cvDownloadBtn" data-i18n="cv.download">
+                                <i class="fas fa-download"></i> Descargar CV
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="section">
+                <div class="container">
+                    <h2 class="section-title" data-i18n="contact.title">Contacto</h2>
+                    <div class="contact-content">
+                        <div class="contact-info">
+                            <h3 data-i18n="contact.introTitle">¿Tienes un proyecto en mente?</h3>
+                            <p data-i18n="contact.introText">Contáctame y hablemos sobre cómo puedo ayudarte a materializar tu idea.</p>
+                            
+                            <div class="contact-details">
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <span id="contactEmail">email@ejemplo.com</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span id="contactLocation">Ubicación</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <form class="contact-form" id="contact-form">
+                            <div class="form-group">
+                                <label for="name" data-i18n="contact.name">Nombre</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" data-i18n="contact.email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message" data-i18n="contact.message">Mensaje</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" id="submit-btn" data-i18n="contact.send">
+                                <i class="fas fa-paper-plane"></i> Enviar Mensaje
+                            </button>
+                        </form>
+                    </div>
+            </section>
+        </main>
+
+        <!-- Modal for Unity WebGL games -->
+        <div class="modal" id="gameModal">
+            <div class="modal-content">
+                <button class="modal-close" id="modalClose">&times;</button>
+                <div class="modal-body">
+                    <iframe id="gameFrame" width="100%" height="100%" frameborder="0" title="Unity Game"></iframe>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; <span id="currentYear"></span> <span id="footerName">Tu Nombre</span>. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; <span id="currentYear"></span> <span id="footerName">Tu Nombre</span>. Todos los derechos reservados.</p>
+            </div>
+        </footer>
 
-    <!-- JavaScript -->
-    <script src="js/main.js"></script>
-</body>
-</html>
+        <!-- JavaScript -->
+        <script src="js/main.js"></script>
+    </body>
+    </html>
 
