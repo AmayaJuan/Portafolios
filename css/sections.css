@@ -99,7 +99,7 @@
 }
 
 /**
- * Estado activo del toggle (cuando el menú está abierto)
+ * Active state of the toggle (when the menu is open)
  */
 .nav-toggle.active .bar:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
@@ -663,8 +663,8 @@
 
 /* ---------- Responsive ---------- */
 /**
- * Breakpoint 1024px - Tablets grandes y laptops
- * Ajustes de layout para pantallas medianas
+ * Breakpoint 1024px - Large Tablets and laptops
+ * Layout adjustments for medium screens
  */
 @media (max-width: 1024px) {
     .hero-content {
@@ -700,12 +700,12 @@
 }
 
 /**
- * Breakpoint 768px - Tablets y móviles grandes
- * Optimización de componentes para pantallas táctiles
- * Se activa el menú hamburguesa
+ * Breakpoint 768px - Tablets and large mobiles
+ * Component optimization for touchscreens
+ * The hamburger munu is activated
  */
 @media (max-width: 768px) {
-    /* Navbar móvil */
+    /* Mobile Navbar */
     .nav-toggle {
         display: flex;
     }
@@ -732,7 +732,7 @@
         visibility: visible;
     }
     
-/* Hero responsive - Orden específico para móvil */
+/* Hero responsive - Specific order for mobile */
     .hero {
         padding-top: calc(var(--navbar-height) + var(--spacing-xl));
         padding-bottom: var(--spacing-xl);
@@ -752,7 +752,7 @@
         text-align: center;
     }
     
-    /* Foto después del texto */
+    /* Photo after text */
     .hero-visual {
         order: 1;
         margin-top: var(--spacing-xl);
@@ -824,11 +824,11 @@
 }
 
 /**
- * Breakpoint 480px - Móviles pequeños
- * Ajustes finales para pantallas reducidas
+ * Breakpoint 480px - Small mobile phones
+ * Final adjustments for reduced screen sizes
  */
 @media (max-width: 480px) {
-    /* Hero muy pequeño */
+    /* Very small hero */
     .hero-title {
         font-size: 2rem;
     }
@@ -844,7 +844,7 @@
         border-width: 3px;
     }
     
-    /* About stats - columna única */
+    /* About stats - single column */
     .about-stats {
         grid-template-columns: 1fr;
         gap: var(--spacing-md);
@@ -858,7 +858,7 @@
         font-size: 2rem;
     }
     
-    /* Skills - 2 columnas en móvil */
+    /* Skills - 2 columns on mobile */
     .skills-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -918,8 +918,8 @@
 }
 
 /**
- * Breakpoint 360px - Móviles muy pequeños
- * Para dispositivos antiguos o pantallas extremadamente pequeñas
+ * Breakpoint 360px - Very small mobile phones
+ * For older devices or extremely small screens
  */
 @media (max-width: 360px) {
     .hero-title {
@@ -936,7 +936,7 @@
     }
 }
 
-/* Estilos para language-switch */
+/* Styles for language-switch */
 .language-switch {
   display: flex;
   gap: 0.25rem;

@@ -149,7 +149,7 @@
     color: white;
 }
 
-/* ---------- Formularios ---------- */
+/* ---------- Forms ---------- */
 .form-group {
     margin-bottom: var(--spacing-lg);
 }
@@ -186,7 +186,7 @@
     min-height: 120px;
 }
 
-/* ---------- Filtros ---------- */
+/* ---------- Filters ---------- */
 .project-filters {
     display: flex;
     justify-content: center;
@@ -334,7 +334,7 @@
     letter-spacing: 0.5px;
 }
 
-/* ---------- Alertas ---------- */
+/* ---------- Alert ---------- */
 .alert {
     padding: var(--spacing-md) var(--spacing-lg);
     border-radius: var(--radius-md);
@@ -353,10 +353,10 @@
     color: var(--color-error);
 }
 
-/* ---------- Navegación Móvil (Toggle) ---------- */
+/* ---------- Mobile Navigation (Toggle) ---------- */
 /**
- * Estilos para el botón hamburguesa en móviles
- * Los estilos del menú están en sections.css
+ * Styles for the hamburger button on mobile devices
+ * Menu styles are in sections.css
  */
 .nav-toggle {
     display: none;

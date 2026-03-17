@@ -3,7 +3,7 @@
    Includes reset, typography, utilities, animations
    ============================================ */
 
-/* ---------- Reset Básico ---------- */
+/* ---------- Reset Básic ---------- */
 /**
  * Universal reset to normalize styles across browsers
  * box-sizing: border-box includes padding/border in width/height
@@ -30,7 +30,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Tipografía */
+/* Typography */
 h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     line-height: 1.2;
@@ -59,19 +59,19 @@ a:hover {
     color: var(--color-accent-hover);
 }
 
-/* Imágenes */
+/* Images */
 img {
     max-width: 100%;
     height: auto;
     display: block;
 }
 
-/* Listas */
+/* Lists */
 ul, ol {
     list-style: none;
 }
 
-/* Botones base */
+/* Base buttons */
 button {
     font-family: inherit;
     font-size: inherit;
@@ -80,7 +80,7 @@ button {
     background: none;
 }
 
-/* Inputs base */
+/* Base inputs*/
 input, textarea, select {
     font-family: inherit;
     font-size: inherit;
@@ -162,13 +162,13 @@ input, textarea, select {
     border: 0;
 }
 
-/* Focus visible para accesibilidad */
+/* Visible focus on accessibility */
 :focus-visible {
     outline: 2px solid var(--color-accent);
     outline-offset: 2px;
 }
 
-/* Animaciones base */
+/* Base animations */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -190,7 +190,7 @@ input, textarea, select {
     50% { opacity: 0.5; }
 }
 
-/* Clase para animaciones */
+/* Animations for animations */
 .animate-fade-in {
     animation: fadeIn var(--transition-slow) ease forwards;
 }
