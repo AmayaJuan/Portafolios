@@ -54,7 +54,7 @@
         return key.split('.').reduce((obj, k) => obj && obj[k], translations) || key;
     }
 
-    async function cargarIdioma(lang) {
+    async function loadLanguage(lang) {
         try {
             const response = await fetch(`lang/${lang}.json`);
             if (!response.ok) throw new Error(`Could not load lang/${lang}.json`);
@@ -63,14 +63,14 @@
             currentLang = lang;
             localStorage.setItem('lang', lang);
             document.documentElement.lang = lang;
-            aplicarTraduccion();
-            actualizarBotonesIdioma(lang);
+            applyTranslation();
+            updateButtonsLanguage(lang);
         } catch (error) {
             console.error('Error loading language:', error);
         }
     }
 
-    function aplicarTraduccion() {
+    function applyTranslation() {
         // 1. HTML elements with data-i18n
         document.querySelectorAll('[data-i18n]').forEach(el => {
             const key = el.dataset.i18n;
@@ -146,15 +146,39 @@
                 }
             });
         }
+
+        // 6. Education
+        const allEducation = [
+            ...(appState.data?.education?.technical || []),
+            ...(appState.data?.education?.technologist || [])
+        ];
+        allEducation.forEach(item => {
+            const degreeEl = document.querySelector(`[data-edu-id="${item.id}"]`);
+            const statusEl = document.querySelector(`[data-edu-status="${item.id}"]`);
+            const periodEl = document.querySelector(`[data-edu-period="${item.id}"]`);
+            if (degreeEl) degreeEl.textContent = currentLang === 'en' ? item.degree_en : item.degree;
+            if (statusEl) statusEl.textContent = currentLang === 'en' ? item.status_en : item.status;
+            if (periodEl) periodEl.textContent = currentLang === 'en' ? (item.period_en || item.period) : item.period;
+        });
+
+        // 7. Courses
+        appState.data?.education?.courses?.forEach(item => {
+            const nameEl = document.querySelector(`[data-course-id="${item.id}"]`);
+            const periodEl = document.querySelector(`[data-course-period="${item.id}"]`);
+            const hoursEl = document.querySelector(`[data-course-hours="${item.id}"]`);
+            if (nameEl) nameEl.textContent = currentLang === 'en' ? item.name_en : item.name;
+            if (periodEl) periodEl.textContent = currentLang === 'en' ? (item.period_en || item.period) : item.period;
+            if (hoursEl) hoursEl.textContent = currentLang === 'en' ? (item.hours_en || item.hours) : item.hours;
+        });
     }
 
-    function actualizarBotonesIdioma(lang) {
+    function updateButtonsLanguage(lang) {
         document.querySelectorAll('.language-switch button').forEach(btn => {
             btn.classList.toggle('active', btn.textContent.toLowerCase() === lang.toLowerCase());
         });
     }
 
-    function guardarTextosPerfilBilingue(data) {
+    function saveTextsBilingualProfile(data) {
         const p = data.profile;
         profileTexts.tagline_es = p.tagline || '';
         profileTexts.tagline_en = p.tagline_en || p.tagline || '';
@@ -254,7 +278,7 @@
             }, [getCategoryIcon(project.category)]));
 
             if (project.category === 'unity' && project.links?.play) {
-                const pb = createElement('button', { class: 'play-btn', title: 'Jugar' });
+                const pb = createElement('button', { class: 'play-btn', title: 'Game' });
                 pb.onclick = () => openGameModal(project.links.play);
                 pb.appendChild(createElement('i', { class: 'fas fa-play' }));
                 card.appendChild(pb);
@@ -301,6 +325,85 @@
         container.append(...projectCards);
     }
 
+    // ==========================================
+    // Render Education
+    // ==========================================
+
+        function renderEducation(items, containerId) {
+        const container = $(`#${containerId}`);
+        if (!container || !items || items.length === 0) return;
+
+        container.append(...items.map(item => {
+            const card = createElement('div', { class: 'education-card' });
+
+            const header = createElement('div', { class: 'education-header' });
+            header.append(
+                createElement('h3', { class: 'education-institution' }, [item.institution]),
+                createElement('span', {
+                    class: 'education-period',
+                    'data-edu-period': item.id
+                }, [currentLang === 'en' ? (item.period_en || item.period) : item.period])
+            );
+
+            const degree = createElement('p', {
+                class: 'education-degree',
+                'data-edu-id': item.id
+            }, [currentLang === 'en' ? item.degree_en : item.degree]);
+
+            const status = createElement('span', {
+                class: `education-status ${item.status.toLowerCase() === 'en curso' ? 'status-active' : 'status-done'}`,
+                'data-edu-status': item.id
+            }, [currentLang === 'en' ? item.status_en : item.status]);
+
+            card.append(header, degree, status);
+            return card;
+        }));
+    }
+
+    function renderCourses(courses) {
+        const container = $('#coursesGrid');
+        if (!container || !courses || courses.length === 0) return;
+
+        container.append(...courses.map(item => {
+            const card = createElement('div', { class: 'course-card' });
+
+            const platform = createElement('span', { class: 'course-platform' }, [item.platform]);
+
+            const name = createElement('h3', {
+                class: 'course-name',
+                'data-course-id': item.id
+            }, [currentLang === 'en' ? item.name_en : item.name]);
+
+            const footer = createElement('div', { class: 'course-footer' });
+            footer.appendChild(createElement('span', {
+                class: 'course-period',
+                'data-course-period': item.id
+            }, [currentLang === 'en' ? (item.period_en || item.period) : item.period]));
+
+            if (item.hours) {
+                footer.appendChild(createElement('span', {
+                    class: 'course-hours',
+                    'data-course-hours': item.id
+                }, [currentLang === 'en' ? (item.hours_en || item.hours) : item.hours]));
+            }
+
+            if (item.certificate) {
+                const link = createElement('a', {
+                    href: item.certificate,
+                    target: '_blank',
+                    rel: 'noopener noreferrer',
+                    class: 'course-cert-link',
+                    'data-i18n': 'education.certificate'
+                });
+                link.appendChild(createElement('i', { class: 'fas fa-external-link-alt' }));
+                link.appendChild(document.createTextNode(' ' + getTranslation('education.certificate')));
+                footer.appendChild(link);
+            }
+
+            card.append(platform, name, footer);
+            return card;
+        }));
+    }   
     // ============================================
     // Render Skills
     // ============================================
@@ -449,7 +552,7 @@
         const form = document.getElementById('contact-form');
         if (!submitBtn || !form) return;
 
-        // CONFIGURACION EMAILJS - NO TOCAR
+        // CONFIGURATION EMAILJS - DO NOT TOUCH
         const emailjsConfig = { publicKey: '9bdYHELMIBud0OpOW', serviceId: 'service_gj0z1c7', templateId: 'template_likc0ei' };
         if (typeof emailjs !== 'undefined') emailjs.init(emailjsConfig.publicKey);
 
@@ -493,21 +596,36 @@
     function showError(message) { showNotification(message, 'error'); }
 
     // ============================================
-    // Inicialización
+    // Inicializatión
     // ============================================
 
     async function init() {
-        console.log('Inicializando portafolio...');
+        console.log('Initializing portfolio...');
         document.body.classList.add('content-loading');
 
         const data = await loadPortfolioData();
 
         if (data) {
             renderProfile(data);
-            guardarTextosPerfilBilingue(data);
+            saveTextsBilingualProfile(data);
             renderProjects(data.projects);
             renderSkills(data.skills);
             renderContact(data);
+
+            if(data.education) {
+                renderEducation(data.education.technical, 'technicalGrid');
+                renderEducation(data.education.technologist, 'technologistGrid');
+                renderCourses(data.education.courses);
+            }
+
+            $$('.edu-tab').forEach(tab =>{
+               tab.addEventListener('click', () => {
+                   $$('.edu-tab').forEach(t => t.classList.remove('active'));
+                   $$('.edu-content').forEach(c => c.classList.remove('active'));
+                   tab.classList.add('active');
+                   $(`#tab-${tab.dataset.tab}`).classList.add('active');
+               });
+            });
 
             if (data.skills?.length > 0) initSkillsSlider(data.skills);
 
@@ -526,12 +644,12 @@
             const loader = document.getElementById('loader-overlay');
             if (loader) loader.classList.add('hidden');
 
-            console.log('Portafolio cargado correctamente');
+            console.log('Portfolio loaded correctly');
         }
     }
 
     document.addEventListener('DOMContentLoaded', async () => {
         const lang = localStorage.getItem('lang') || 'es';
         await init();
-        await cargarIdioma(lang);
+        await loadLanguage(lang);
     });

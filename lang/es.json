@@ -2,6 +2,7 @@
     "nav": {
       "initiation": "Inicio",
       "about": "Sobre mí",
+      "education": "Educación",
       "projects": "Proyectos",
       "skills": "Habilidades",
       "contact": "Contacto",
@@ -49,5 +50,12 @@
     },
     "footer": {
       "rights": "Todos los derechos reservados."
+    },
+    "education": {
+      "title": "Educación & Cursos",
+      "technical": "Tecnico",
+      "technologist": "Tecnólogo",
+      "course": "Cursos",
+      "certificate": "Ver certificado"
     }
   }

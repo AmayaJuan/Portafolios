@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Portafolio de Desarrollador de Software y Videojuegos">
+        <meta name="description" content="Software and Video Game Developer Portfolio">
         <title>Juan Pablo Velez Amaya | Desarrollador de Videojuegos y Software</title>
         <!-- Favicon -->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
@@ -38,11 +38,12 @@
                 </button>
                 
                 <ul class="nav-menu" id="navMenu">
-                    <li><a href="#home" class="nav-link active" data-i18n="nav.initiation">Inicio</a></li>
-                    <li><a href="#about" class="nav-link" data-i18n="nav.about">Sobre Mí</a></li>
-                    <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Proyectos</a></li>
-                    <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Habilidades</a></li>
-                    <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contacto</a></li>
+                    <li><a href="#home" class="nav-link active" data-i18n="nav.initiation"></a></li>
+                    <li><a href="#about" class="nav-link" data-i18n="nav.about"></a></li>
+                    <li><a href="#education" class="nav-link" data-i18n="nav.education"></a></li>
+                    <li><a href="#projects" class="nav-link" data-i18n="nav.projects"></a></li>
+                    <li><a href="#skills" class="nav-link" data-i18n="nav.skills"></a></li>
+                    <li><a href="#contact" class="nav-link" data-i18n="nav.contact"></a></li>
                     <li><a href="#cv" class="nav-link btn-download" id="downloadCV">
                         <i class="fas fa-download"></i> CV
                     </a></li>
@@ -50,8 +51,8 @@
 
                 <!-- Language switch buttons -->
                 <div class="language-switch">
-                    <button onclick="cargarIdioma('es')">ES</button>
-                    <button onclick="cargarIdioma('en')">EN</button>
+                    <button onclick="loadLanguage('es')">ES</button>
+                    <button onclick="loadLanguage('en')">EN</button>
                 </div>
             </div>
         </nav>
@@ -61,29 +62,29 @@
             <!-- Hero Section -->
             <section id="home" class="hero">
                 <div class="hero-content">
-                    <div class="hero-badge" data-i18n="hero.badge">Desarrollador de Videojuegos & Software</div>
+                    <div class="hero-badge" data-i18n="hero.badge"></div>
                     <h1 class="hero-title">
-                        <span data-i18n="hero.greeting">Hola, soy</span> 
-                        <span class="highlight" id="profileName">Tu Nombre</span>
+                        <span data-i18n="hero.greeting"></span> 
+                        <span class="highlight" id="profileName"></span>
                     </h1>
-                    <p class="hero-tagline" id="profileTagline">Creando experiencias interactivas</p>
-                    <p class="hero-bio" id="profileBio">Descripción breve sobre ti...</p>
+                    <p class="hero-tagline" id="profileTagline"></p>
+                    <p class="hero-bio" id="profileBio"></p>
                     
                     <div class="hero-actions">
                         <a href="#projects" class="btn btn-primary" data-i18n="hero.cta_projects">
-                            <i class="fas fa-gamepad"></i> Ver Proyectos
+                            <i class="fas fa-gamepad"></i> 
                         </a>
                         <a href="#contact" class="btn btn-secondary" data-i18n="hero.cta_contact">
-                            <i class="fas fa-envelope"></i> Contactar
+                            <i class="fas fa-envelope"></i> 
                         </a>
                     </div>
                     
                     <div class="hero-social" id="socialLinks">
-                        <!-- Redes sociales cargadas dinámicamente -->
+                        <!-- Dynamically loaded social networks -->
                     </div>
                 </div>
                 
-                <!-- Foto de perfil a la derecha -->
+                <!-- Profile picture on the right -->
                 <div class="hero-visual">
                     <div class="profile-image-container">
                         <img src="https://res.cloudinary.com/dulyljo7w/image/upload/v1773364320/juan_dz1lnh.png" alt="Foto de perfil" id="profileAvatar" class="profile-image" loading="lazy" decoding="async">
@@ -94,25 +95,54 @@
             <!-- About Section -->
             <section id="about" class="section">
                 <div class="container">
-                    <h2 class="section-title" data-i18n="about.title">Sobre Mí</h2>
+                    <h2 class="section-title" data-i18n="about.title"></h2>
                     <div class="about-content">
                         <div class="about-text">
-                            <p id="profileFullBio">Biografía completa...</p>
+                            <p id="profileFullBio"></p>
                         </div>
                         <div class="about-stats">
                             <div class="stat-item">
                                 <span class="stat-number" id="projectCount">0</span>
-                                <span class="stat-label" data-i18n="about.projects">Proyectos</span>
+                                <span class="stat-label" data-i18n="about.projects"></span>
                             </div>
                             <div class="stat-item">
                                 <span class="stat-number" id="yearsExperience">0+</span>
-                                <span class="stat-label" data-i18n="about.years">Años Experiencia</span>
+                                <span class="stat-label" data-i18n="about.years"></span>
                             </div>
                             <div class="stat-item">
                                 <span class="stat-number" id="clientsCount">0</span>
-                                <span class="stat-label" data-i18n="about.clients">Clientes</span>
+                                <span class="stat-label" data-i18n="about.clients"></span>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education Section-->
+            <section id="education" class="section">
+                <div class="container">
+                    <h2 class="section-title" data-i18n="education.title"></h2>
+
+                    <div class="education-tabs">
+                        <button class="edu-tab active" data-tab="technical" data-i18n="education.technical">
+                            <i class="fas fa-tools"></i>
+                        </button>
+                        <button class="edu-tab" data-tab="technologist" data-i18n="education.technologist">
+                            <i class="fas fa-graduation-cap"></i>
+                        </button>
+                        <button class="edu-tab" data-tab="course" data-i18n="education.course">
+                            <i class="fas fa-certificate"></i>
+                        </button>
+                    </div>
+
+                    <div class="edu-content active" id="tab-technical">
+                        <div id="technicalGrid" class="education-grid"></div>
+                    </div>
+                    <div class="edu-content" id="tab-technologist">
+                        <div id="technologistGrid" class="education-grid"></div>
+                    </div>
+                    <div class="edu-content" id="tab-course">
+                        <div id="coursesGrid" class="courses-grid"></div>
                     </div>
                 </div>
             </section>
@@ -120,19 +150,19 @@
             <!-- Projects Section -->
             <section id="projects" class="section">
                 <div class="container">
-                    <h2 class="section-title" data-i18n="projects.title">Mis Proyectos</h2>
+                    <h2 class="section-title" data-i18n="projects.title"></h2>
                     
                     <!-- Category Filters -->
                     <div class="project-filters">
-                        <button class="filter-btn active" data-filter="all" data-i18n="projects.all">Todos</button>
-                        <button class="filter-btn" data-filter="unity" data-i18n="projects.unity">Unity</button>
-                        <button class="filter-btn" data-filter="android" data-i18n="projects.android">Android</button>
+                        <button class="filter-btn active" data-filter="all" data-i18n="projects.all"></button>
+                        <button class="filter-btn" data-filter="unity" data-i18n="projects.unity"></button>
+                        <button class="filter-btn" data-filter="android" data-i18n="projects.android"></button>
                         <button class="filter-btn" data-filter="software">Software</button>
                     </div>
                     
                     <!-- Projects Grid -->
                     <div class="projects-grid" id="projectsGrid">
-                        <!-- Proyectos cargados dinámicamente -->
+                        <!-- Dynamically loaded projects -->
                     </div>
                 </div>
             </section>
@@ -140,7 +170,7 @@
             <!-- Skills Section -->
             <section id="skills" class="section">
                 <div class="container">
-                    <h2 class="section-title" data-i18n="skills.title">Habilidades Técnicas</h2>
+                    <h2 class="section-title" data-i18n="skills.title"></h2>
                     
                     <!-- Skills Container with Scroll -->
                     <div class="skills-container" id="skillsContainer">
@@ -150,18 +180,18 @@
                         
                         <div class="skills-scroll" id="skillsScroll">
                             <div class="skills-grid" id="skillsGrid">
-                                <!-- Habilidades cargadas dinámicamente -->
+                                <!-- Dynamically loaded skills -->
                             </div>
                         </div>
                         
-                        <button class="skills-nav-btn" id="skillsNext" aria-label="Siguiente">
+                        <button class="skills-nav-btn" id="skillsNext" aria-label="Next">
                             <i class="fas fa-chevron-right"></i>
                         </button>
                     </div>
                     
                     <!-- Position Indicator -->
                     <div class="skills-position" id="skillsPosition">
-                        <span id="skillsCount">7 habilidades</span>
+                        <span id="skillsCount"></span>
                     </div>
                 </div>
             </section>
@@ -172,9 +202,9 @@
                     <h2 class="section-title" data-i18n="cv.title">Currículum Vitae</h2>
                     <div class="cv-preview">
                         <div class="cv-info">
-                            <p data-i18n="cv.intro">Descarga mi CV para ver mi experiencia laboral completa y educación.</p>
+                            <p data-i18n="cv.intro"></p>
                             <a href="assets/cv/cv.pdf" class="btn btn-primary" download id="cvDownloadBtn" data-i18n="cv.download">
-                                <i class="fas fa-download"></i> Descargar CV
+                                <i class="fas fa-download"></i> 
                             </a>
                         </div>
                     </div>
@@ -184,11 +214,11 @@
             <!-- Contact Section -->
             <section id="contact" class="section">
                 <div class="container">
-                    <h2 class="section-title" data-i18n="contact.title">Contacto</h2>
+                    <h2 class="section-title" data-i18n="contact.title"></h2>
                     <div class="contact-content">
                         <div class="contact-info">
-                            <h3 data-i18n="contact.introTitle">¿Tienes un proyecto en mente?</h3>
-                            <p data-i18n="contact.introText">Contáctame y hablemos sobre cómo puedo ayudarte a materializar tu idea.</p>
+                            <h3 data-i18n="contact.introTitle"></h3>
+                            <p data-i18n="contact.introText"></p>
                             
                             <div class="contact-details">
                                 <div class="contact-item">
@@ -197,26 +227,26 @@
                                 </div>
                                 <div class="contact-item">
                                     <i class="fas fa-map-marker-alt"></i>
-                                    <span id="contactLocation">Ubicación</span>
+                                    <span id="contactLocation"></span>
                                 </div>
                             </div>
                         </div>
                         
                         <form class="contact-form" id="contact-form">
                             <div class="form-group">
-                                <label for="name" data-i18n="contact.name">Nombre</label>
+                                <label for="name" data-i18n="contact.name"></label>
                                 <input type="text" id="name" name="name" required>
                             </div>
                             <div class="form-group">
-                                <label for="email" data-i18n="contact.email">Email</label>
+                                <label for="email" data-i18n="contact.email"></label>
                                 <input type="email" id="email" name="email" required>
                             </div>
                             <div class="form-group">
-                                <label for="message" data-i18n="contact.message">Mensaje</label>
+                                <label for="message" data-i18n="contact.message"></label>
                                 <textarea id="message" name="message" rows="5" required></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary" id="submit-btn" data-i18n="contact.send">
-                                <i class="fas fa-paper-plane"></i> Enviar Mensaje
+                                <i class="fas fa-paper-plane"></i> 
                             </button>
                         </form>
                     </div>
@@ -236,7 +266,9 @@
         <!-- Footer -->
         <footer class="footer">
             <div class="container">
-                <p>&copy; <span id="currentYear"></span> <span id="footerName">Tu Nombre</span>. Todos los derechos reservados.</p>
+                <p>&copy; <span id="currentYear"></span>
+                     <span id="footerName"></span>
+                     <span data-i18n="footer.rights"></span></p>
             </div>
         </footer>
 

@@ -974,3 +974,131 @@
   }
 }
 
+.education-tabs {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-2xl);
+    justify-content: center;
+}
+
+.edu-tab {
+    padding: var(--spacing-sm) var(--spacing-xl);
+    background: var(--color-bg-tertiary);
+    border-radius: var(--radius-full);
+    color: var(--color-text-secondary);
+    font-weight: 500;
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    cursor: pointer;
+    border: none;
+}
+
+.edu-tab:hover { background: var(--color-bg-card); color: var(--color-text-primary); }
+.edu-tab.active { background: var(--color-accent); color: white; }
+
+.edu-content { display: none; }
+.edu-content.active { display: block; }
+
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.education-card {
+    background: var(--color-bg-card);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    border: 1px solid transparent;
+    transition: all var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.education-card:hover { border-color: var(--color-accent-light); transform: translateY(-4px); }
+
+.education-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.education-institution { font-size: 1.1rem; color: var(--color-accent); }
+.education-period { font-size: 0.85rem; color: var(--color-text-muted); }
+.education-degree { font-size: 1rem; color: var(--color-text-secondary); }
+
+.status-active {
+    background: rgba(99, 102, 241, 0.15);
+    color: var(--color-accent);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: 600;
+    width: fit-content;
+}
+
+.status-done {
+    background: rgba(16, 185, 129, 0.15);
+    color: var(--color-success);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: 600;
+    width: fit-content;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.course-card {
+    background: var(--color-bg-card);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    border: 1px solid transparent;
+    transition: all var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.course-card:hover { border-color: var(--color-accent-light); transform: translateY(-4px); }
+
+.course-platform {
+    font-size: 0.8rem;
+    color: var(--color-accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.course-name { font-size: 1rem; color: var(--color-text-primary); flex: 1; }
+
+.course-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+    margin-top: auto;
+}
+
+.course-period { font-size: 0.85rem; color: var(--color-text-muted); }
+.course-hours { font-size: 0.8rem; color: var(--color-accent); font-weight: 500; }
+
+.course-cert-link {
+    font-size: 0.85rem;
+    color: var(--color-accent);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.course-cert-link:hover { color: var(--color-accent-hover); }
+

@@ -1,194 +1,263 @@
-  {
-    "profile": {
-      "name": "Juan Pablo Velez Amaya",
-      "tagline": "Creando experiencias interactivas con Unity, Android y más",
-      "tagline_en": "Creating interactive experiences with Unity, Android and more",
-      "bio": "Desarrollador de Software en formación con experiencia en Python (IA y Deep Learning), C#, Java y JavaScript. Desarrollo de aplicaciones en Unity y Android Studio.",
-      "bio_en": "Software Developer in training with experience in Python (AI & Deep Learning), C#, Java and JavaScript. Building applications with Unity and Android Studio..",
-      "fullBio": "Desarrollador de Software en formación, Técnico en Sistemas y Tecnólogo en Desarrollo de Videojuegos, actualmente cursando tercer semestre en Diseño y Programación de Soluciones de Software. Enfocado en el desarrollo de aplicaciones y soluciones tecnológicas, con énfasis en programación, inteligencia artificial y desarrollo multiplataforma. Cuento con experiencia en desarrollo utilizando Python (enfocado en Inteligencia Artificial y Deep Learning), así como en C#, Java, JavaScript y tecnologías web (HTML/CSS). He trabajado en la creación de aplicaciones en Unity y Android Studio, desarrollando proyectos orientados a la interacción, lógica de negocio y experiencia de usuario. Actualmente me encuentro fortaleciendo mis habilidades en Inteligencia Artificial y Deep Learning, aplicando modelos y técnicas modernas para el análisis de datos y automatización de procesos. Me destaco por mi pensamiento lógico, capacidad de resolución de problemas, trabajo en equipo y orientación a resultados.",
-      "fullBio_en": "Software Developer in training, Systems Technician and Technologist in Video Game Development, currently in my third semester of Software Solutions Design and Programming. Focused on application development and technological solutions, with emphasis on programming, artificial intelligence and cross-platform development. I have experience using Python (focused on Artificial Intelligence and Deep Learning), as well as C#, Java, JavaScript and web technologies (HTML/CSS). I have worked on applications in Unity and Android Studio, developing projects focused on interaction, business logic and user experience. I am currently strengthening my skills in Artificial Intelligence and Deep Learning, applying modern models and techniques for data analysis and process automation. I stand out for my logical thinking, problem-solving skills, teamwork and results-oriented mindset.",
-      "avatar": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773422593/Portafolios/profile/copy_of_juan_dz1lnh_1aed6f.png",
-      "location": "Medellín, Colombia",
-      "email": "velezamayajuanpablo@gmail.com",
-      "availability": "Disponible para proyectos freelance",
-      "social": {
-        "github": "https://github.com/AmayaJuan",
-        "gitlab": "https://gitlab.com/jpva360",
-        "linkedin": "https://linkedin.com/in/tuusuario",
-        "twitter": "https://twitter.com/tuusuario",
-        "itchio": "https://tuusuario.itch.io"
-      }
+    {
+      "profile": {
+        "name": "Juan Pablo Velez Amaya",
+        "tagline": "Creando experiencias interactivas con Unity, Android y más",
+        "tagline_en": "Creating interactive experiences with Unity, Android and more",
+        "bio": "Desarrollador de Software en formación con experiencia en Python (IA y Deep Learning), C#, Java y JavaScript. Desarrollo de aplicaciones en Unity y Android Studio.",
+        "bio_en": "Software Developer in training with experience in Python (AI & Deep Learning), C#, Java and JavaScript. Building applications with Unity and Android Studio..",
+        "fullBio": "Desarrollador de Software en formación, Técnico en Sistemas y Tecnólogo en Desarrollo de Videojuegos, actualmente cursando tercer semestre en Diseño y Programación de Soluciones de Software. Enfocado en el desarrollo de aplicaciones y soluciones tecnológicas, con énfasis en programación, inteligencia artificial y desarrollo multiplataforma. Cuento con experiencia en desarrollo utilizando Python (enfocado en Inteligencia Artificial y Deep Learning), así como en C#, Java, JavaScript y tecnologías web (HTML/CSS). He trabajado en la creación de aplicaciones en Unity y Android Studio, desarrollando proyectos orientados a la interacción, lógica de negocio y experiencia de usuario. Actualmente me encuentro fortaleciendo mis habilidades en Inteligencia Artificial y Deep Learning, aplicando modelos y técnicas modernas para el análisis de datos y automatización de procesos. Me destaco por mi pensamiento lógico, capacidad de resolución de problemas, trabajo en equipo y orientación a resultados.",
+        "fullBio_en": "Software Developer in training, Systems Technician and Technologist in Video Game Development, currently in my third semester of Software Solutions Design and Programming. Focused on application development and technological solutions, with emphasis on programming, artificial intelligence and cross-platform development. I have experience using Python (focused on Artificial Intelligence and Deep Learning), as well as C#, Java, JavaScript and web technologies (HTML/CSS). I have worked on applications in Unity and Android Studio, developing projects focused on interaction, business logic and user experience. I am currently strengthening my skills in Artificial Intelligence and Deep Learning, applying modern models and techniques for data analysis and process automation. I stand out for my logical thinking, problem-solving skills, teamwork and results-oriented mindset.",
+        "avatar": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773422593/Portafolios/profile/copy_of_juan_dz1lnh_1aed6f.png",
+        "location": "Medellín, Colombia",
+        "email": "velezamayajuanpablo@gmail.com",
+        "availability": "Disponible para proyectos freelance",
+        "social": {
+          "github": "https://github.com/AmayaJuan",
+          "gitlab": "https://gitlab.com/jpva360",
+          "linkedin": "https://linkedin.com/in/tuusuario",
+          "twitter": "https://twitter.com/tuusuario",
+          "itchio": "https://tuusuario.itch.io"
+        }
+      },
+      "skills": [
+        {
+          "name": "Android Studio",
+          "category": "engine",
+          "icon": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773421281/android_a9yqza.png",
+          "level": 85
+        },
+        {
+          "name": "C#",
+          "category": "language",
+          "icon": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773422788/Csharp_Logo_rbozg9.png",
+          "level": 85
+        },
+        {
+          "name": "HTML/CSS",
+          "category": "language",
+          "icon": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773421789/html_e3r3ba.png",
+          "level": 90
+        },
+        {
+          "name": "Java",
+          "category": "language",
+          "icon": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773424037/java_xlah7x.jpg",
+          "level": 85
+        },
+        {
+          "name": "JavaScript",
+          "category": "language",
+          "icon": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773422002/javascript_ycsvzg.png",
+          "level": 90
+        },
+        {
+          "name": "Python",
+          "category": "language",
+          "icon": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773422142/python_isimiq.png",
+          "level": 80
+        },
+        {
+          "name": "Unity",
+          "category": "engine",
+          "icon": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773424114/unity_gdgnjd.jpg",
+          "level": 90
+        }
+      ],
+      "projects": [
+        {
+          "id": "unity-01",
+          "name": "Space Shooter",
+          "category": "unity",
+          "shortDescription": "Juego de naves espaciales con shooter clásico",
+          "shortDescription_en": "Classic space shooter game",
+          "description": "Un juego de naves espaciales donde el jugador debe destruir enemigos y asteroides. Incluye sistema de puntuación, power-ups y múltiples niveles de dificultad.",
+          "description_en": "A space shooter game where the player must destroy enemies and asteroids. Features a scoring system, power-ups and multiple difficulty levels.",
+          "thumbnail": "assets/img/projects/unity/space-shooter-thumb.jpg",
+          "gallery": [
+            "assets/img/projects/unity/space-shooter-1.jpg",
+            "assets/img/projects/unity/space-shooter-2.jpg"
+          ],
+          "technologies": ["Unity", "C#", "Raycasting"],
+          "featured": true,
+          "links": {
+            "play": "builds/unity/space-shooter/index.html",
+            "github": "https://github.com/tuusuario/space-shooter",
+            "download": null
+          },
+          "year": "2024"
+        },
+        {
+          "id": "unity-02",
+          "name": "Puzzle Adventure",
+          "category": "unity",
+          "shortDescription": "Juego de puzzles en 3D con narrativa",
+          "shortDescription_en": "3D puzzle game with branching narrative",
+          "description": "Adventure puzzle game con mecánicas de física y narrativa ramificada. El jugador resuelve puzzles para avanzar en la historia.",
+          "description_en": "An adventure puzzle game with physics mechanics and branching narrative. The player solves puzzles to progress through the story.",
+          "thumbnail": "assets/img/projects/unity/puzzle-adventure-thumb.jpg",
+          "gallery": [
+            "assets/img/projects/unity/puzzle-adventure-1.jpg"
+          ],
+          "technologies": ["Unity", "C#", "Narrative Designer"],
+          "featured": true,
+          "links": {
+            "play": "builds/unity/puzzle-adventure/index.html",
+            "github": "https://github.com/tuusuario/puzzle-adventure",
+            "download": null
+          },
+          "year": "2023"
+        },
+        {
+          "id": "android-01",
+          "name": "Task Manager Pro",
+          "category": "android",
+          "shortDescription": "Aplicación de gestión de tareas con Material Design",
+          "shortDescription_en": "Task management app with Material Design",
+          "description": "Aplicación móvil para gestión de tareas diarias con funcionalidades de categorías, recordatorios y sincronización en la nube.",
+          "description_en": "Mobile app for daily task management with category features, reminders and cloud synchronization.",
+          "thumbnail": "assets/img/projects/android/task-manager-thumb.jpg",
+          "gallery": [
+            "assets/img/projects/android/task-manager-1.jpg",
+            "assets/img/projects/android/task-manager-2.jpg"
+          ],
+          "technologies": ["Android Studio", "Java", "Room Database", "Material Design"],
+          "featured": true,
+          "links": {
+            "play": "https://play.google.com/store/apps/details?id=com.tuusuario.taskmanager",
+            "github": "https://github.com/tuusuario/task-manager",
+            "download": "assets/downloads/task-manager.apk"
+          },
+          "year": "2023"
+        },
+        {
+          "id": "software-01",
+          "name": "Inventory System",
+          "category": "software",
+          "shortDescription": "Sistema de inventario para pequeños negocios",
+          "shortDescription_en": "Inventory system for small businesses",
+          "description": "Software de escritorio para gestión de inventario con generación de reportes, control de stock y alertas de reposición.",
+          "description_en": "Desktop software for inventory management with report generation, stock control and restocking alerts.",
+          "thumbnail": "assets/img/projects/software/inventory-thumb.jpg",
+          "gallery": [
+            "assets/img/projects/software/inventory-1.jpg"
+          ],
+          "technologies": ["C#", ".NET", "SQL Server", "WPF"],
+          "featured": false,
+          "links": {
+            "play": null,
+            "github": "https://github.com/tuusuario/inventory-system",
+            "download": "assets/downloads/inventory-system.exe"
+          },
+          "year": "2022"
+        }
+      ],
+      "experience": [
+        {
+          "company": "Empresa de Desarrollo",
+          "position": "Desarrollador de Software",
+          "period": "2022 - Presente",
+          "description": "Desarrollo de aplicaciones empresariales y sistemas internos."
+        },
+        {
+          "company": "Freelance",
+          "position": "Desarrollador de Videojuegos",
+          "period": "2020 - 2022",
+          "description": "Creación de juegos indie y proyectos personalizados para clientes."
+        }
+      ],
+      "education": {
+        "technical":[
+          {
+            "id": "tec-01",
+            "institution": "ESCOLME",
+            "degree": "Técnico en Sistemas y Redes",
+            "degree_en": "Systems and Networks Technician",
+            "period": "2009 - 2010",
+            "status": "Graduado",
+            "status_en": "Graduated"
+        }
+      ],
+      "technologist":[
+        {
+          "id": "tec-02",
+          "institution": "SENA",
+          "degree": "Tecnólogo en Desarrollo de Videojuegos",
+          "degree_en": "Video Game Development Technologist",
+          "period": "2015 - 2017",
+          "status": "Graduado",
+          "status_en": "Graduated"
+        },
+        {
+          "id": "tec-03",
+          "institution": "ITM",
+          "degree": "Diseño y Programación de Solución de Software como servicio",
+          "degree_en": "Software as a Service Solution Design and Programming",
+          "period": "2024 - Presente",
+          "period_en": "2024 - Present",
+          "status":"En Curso",
+          "status_en":"In progress"
+        }
+      ],
+      "courses": [
+        {
+          "id": "course-01",
+          "platform": "Academy by Polygonus",
+          "name": "Desarrollo de VideoJuegos con Unity",
+          "name_en": "Video Game Development in Unity",
+          "period": "Diciembre 2025",
+          "period_en": "December 2025",
+          "hours": "352 horas",
+          "hours_en": "352 hours",
+          "certificate":""
+        },
+        {
+          "id":"course-02",
+          "platform":"Academy by Polygonus",
+          "name": "Ingles Especializado",
+          "name_en":"Specialized English",
+          "period": "Diciembre 2025",
+          "period_en": "December 2025",
+          "hours": "352 houras",
+          "hours_en": "352 hours",
+          "certificate": ""
+        },
+        {
+          "id": "course-03",
+          "platform": "Academy by Polygonus",
+          "name": "Habilidades Blandas",
+          "name_en": "Soft Skills",
+          "period": "Diciembre 2025",
+          "period_en": "December 2025",
+          "hours": "352 horas",
+          "hours_en": "352 hours",
+          "certificate": ""
+        }
+      ]
     },
-    "skills": [
-      {
-        "name": "Android Studio",
-        "category": "engine",
-        "icon": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773421281/android_a9yqza.png",
-        "level": 85
-      },
-      {
-        "name": "C#",
-        "category": "language",
-        "icon": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773422788/Csharp_Logo_rbozg9.png",
-        "level": 85
-      },
-      {
-        "name": "HTML/CSS",
-        "category": "language",
-        "icon": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773421789/html_e3r3ba.png",
-        "level": 90
-      },
-      {
-        "name": "Java",
-        "category": "language",
-        "icon": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773424037/java_xlah7x.jpg",
-        "level": 85
-      },
-      {
-        "name": "JavaScript",
-        "category": "language",
-        "icon": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773422002/javascript_ycsvzg.png",
-        "level": 90
-      },
-      {
-        "name": "Python",
-        "category": "language",
-        "icon": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773422142/python_isimiq.png",
-        "level": 80
-      },
-      {
-        "name": "Unity",
-        "category": "engine",
-        "icon": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773424114/unity_gdgnjd.jpg",
-        "level": 90
-      }
-    ],
-    "projects": [
-      {
-        "id": "unity-01",
-        "name": "Space Shooter",
-        "category": "unity",
-        "shortDescription": "Juego de naves espaciales con shooter clásico",
-        "shortDescription_en": "Classic space shooter game",
-        "description": "Un juego de naves espaciales donde el jugador debe destruir enemigos y asteroides. Incluye sistema de puntuación, power-ups y múltiples niveles de dificultad.",
-        "description_en": "A space shooter game where the player must destroy enemies and asteroids. Features a scoring system, power-ups and multiple difficulty levels.",
-        "thumbnail": "assets/img/projects/unity/space-shooter-thumb.jpg",
-        "gallery": [
-          "assets/img/projects/unity/space-shooter-1.jpg",
-          "assets/img/projects/unity/space-shooter-2.jpg"
-        ],
-        "technologies": ["Unity", "C#", "Raycasting"],
-        "featured": true,
-        "links": {
-          "play": "builds/unity/space-shooter/index.html",
-          "github": "https://github.com/tuusuario/space-shooter",
-          "download": null
+      "contact": {
+        "email": "velezamayajuanpablo@gmail.com",
+        "subject": "Contacto desde Portafolio Web",
+        "successMessage": "¡Gracias por contactarme! Te responderé pronto.",
+        "fields": {
+          "name": "Nombre",
+          "email": "Email",
+          "subject": "Asunto",
+          "message": "Mensaje"
         },
-        "year": "2024"
+        "emailjs": {
+          "publicKey": "qr2Q8A7CGohDxK5_8",
+          "serviceId": "service_gj0z1c7",
+          "templateId": "template_likc0ei"
+        }
       },
-      {
-        "id": "unity-02",
-        "name": "Puzzle Adventure",
-        "category": "unity",
-        "shortDescription": "Juego de puzzles en 3D con narrativa",
-        "shortDescription_en": "3D puzzle game with branching narrative",
-        "description": "Adventure puzzle game con mecánicas de física y narrativa ramificada. El jugador resuelve puzzles para avanzar en la historia.",
-        "description_en": "An adventure puzzle game with physics mechanics and branching narrative. The player solves puzzles to progress through the story.",
-        "thumbnail": "assets/img/projects/unity/puzzle-adventure-thumb.jpg",
-        "gallery": [
-          "assets/img/projects/unity/puzzle-adventure-1.jpg"
-        ],
-        "technologies": ["Unity", "C#", "Narrative Designer"],
-        "featured": true,
-        "links": {
-          "play": "builds/unity/puzzle-adventure/index.html",
-          "github": "https://github.com/tuusuario/puzzle-adventure",
-          "download": null
-        },
-        "year": "2023"
+      "cv": {
+        "file": "assets/cv/cv.pdf",
+        "downloadName": "Juan_Pablo_Velez_Amaya_CV.pdf"
       },
-      {
-        "id": "android-01",
-        "name": "Task Manager Pro",
-        "category": "android",
-        "shortDescription": "Aplicación de gestión de tareas con Material Design",
-        "shortDescription_en": "Task management app with Material Design",
-        "description": "Aplicación móvil para gestión de tareas diarias con funcionalidades de categorías, recordatorios y sincronización en la nube.",
-        "description_en": "Mobile app for daily task management with category features, reminders and cloud synchronization.",
-        "thumbnail": "assets/img/projects/android/task-manager-thumb.jpg",
-        "gallery": [
-          "assets/img/projects/android/task-manager-1.jpg",
-          "assets/img/projects/android/task-manager-2.jpg"
-        ],
-        "technologies": ["Android Studio", "Java", "Room Database", "Material Design"],
-        "featured": true,
-        "links": {
-          "play": "https://play.google.com/store/apps/details?id=com.tuusuario.taskmanager",
-          "github": "https://github.com/tuusuario/task-manager",
-          "download": "assets/downloads/task-manager.apk"
-        },
-        "year": "2023"
-      },
-      {
-        "id": "software-01",
-        "name": "Inventory System",
-        "category": "software",
-        "shortDescription": "Sistema de inventario para pequeños negocios",
-        "shortDescription_en": "Inventory system for small businesses",
-        "description": "Software de escritorio para gestión de inventario con generación de reportes, control de stock y alertas de reposición.",
-        "description_en": "Desktop software for inventory management with report generation, stock control and restocking alerts.",
-        "thumbnail": "assets/img/projects/software/inventory-thumb.jpg",
-        "gallery": [
-          "assets/img/projects/software/inventory-1.jpg"
-        ],
-        "technologies": ["C#", ".NET", "SQL Server", "WPF"],
-        "featured": false,
-        "links": {
-          "play": null,
-          "github": "https://github.com/tuusuario/inventory-system",
-          "download": "assets/downloads/inventory-system.exe"
-        },
-        "year": "2022"
+      "settings": {
+        "theme": "dark",
+        "language": "es",
+        "animations": true,
+        "projectsPerPage": 6
       }
-    ],
-    "experience": [
-      {
-        "company": "Empresa de Desarrollo",
-        "position": "Desarrollador de Software",
-        "period": "2022 - Presente",
-        "description": "Desarrollo de aplicaciones empresariales y sistemas internos."
-      },
-      {
-        "company": "Freelance",
-        "position": "Desarrollador de Videojuegos",
-        "period": "2020 - 2022",
-        "description": "Creación de juegos indie y proyectos personalizados para clientes."
-      }
-    ],
-    "contact": {
-      "email": "velezamayajuanpablo@gmail.com",
-      "subject": "Contacto desde Portafolio Web",
-      "successMessage": "¡Gracias por contactarme! Te responderé pronto.",
-      "fields": {
-        "name": "Nombre",
-        "email": "Email",
-        "subject": "Asunto",
-        "message": "Mensaje"
-      },
-      "emailjs": {
-        "publicKey": "qr2Q8A7CGohDxK5_8",
-        "serviceId": "service_gj0z1c7",
-        "templateId": "template_likc0ei"
-      }
-    },
-    "cv": {
-      "file": "assets/cv/cv.pdf",
-      "downloadName": "Juan_Pablo_Velez_Amaya_CV.pdf"
-    },
-    "settings": {
-      "theme": "dark",
-      "language": "es",
-      "animations": true,
-      "projectsPerPage": 6
     }
-  }
