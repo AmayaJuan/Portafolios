@@ -358,7 +358,19 @@
                 'data-edu-status': item.id
             }, [currentLang === 'en' ? item.status_en : item.status]);
 
-            card.append(header, degree, status);
+            if(item.certificate) {
+                const certLink = createElement('a', {
+                     href: '#',
+                     class: 'course-cert-link'
+                });
+                certLink.appendChild(createElement('i', {class: 'fas fas fa-certificate'}));
+                certLink.appendChild(document.createTextNode('' + getTranslation('education.certificate')));
+                certLink.addEventListener('click', (e) => {
+                   e.preventDefault();
+                   openDiplomaModal(item.certificate);
+                });
+                card.append(header, degree, status, certLink)
+            } else card.append(header, degree, status);
             return card;
         }));
     }

@@ -171,7 +171,8 @@
             "degree_en": "Systems and Networks Technician",
             "period": "2009 - 2010",
             "status": "Graduado",
-            "status_en": "Graduated"
+            "status_en": "Graduated",
+            "certificate": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773938118/sistemas_y_redes_oso4bh.jpg"
         }
       ],
       "technologist":[
@@ -183,7 +184,7 @@
           "period": "2015 - 2017",
           "status": "Graduado",
           "status_en": "Graduated",
-          "certificate": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773898059/Desarrollo_de_VideoJuegos_otwcic.pdf"
+          "certificate": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773935551/Desarrollo_de_VideoJuegos_otwcic.jpg"
         },
         {
           "id": "tec-03",
