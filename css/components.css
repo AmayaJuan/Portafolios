@@ -373,3 +373,26 @@
     transition: all var(--transition-fast);
 }
 
+.diploma-modal-content {
+    max-width: 700px;
+    height: auto;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.diploma-modal-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-lg);
+    overflow-y: auto;
+}
+
+.diploma-img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+}
+

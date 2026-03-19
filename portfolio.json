@@ -182,7 +182,8 @@
           "degree_en": "Video Game Development Technologist",
           "period": "2015 - 2017",
           "status": "Graduado",
-          "status_en": "Graduated"
+          "status_en": "Graduated",
+          "certificate": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773898059/Desarrollo_de_VideoJuegos_otwcic.pdf"
         },
         {
           "id": "tec-03",
@@ -205,7 +206,7 @@
           "period_en": "December 2025",
           "hours": "352 horas",
           "hours_en": "352 hours",
-          "certificate":""
+          "certificate":"https://res.cloudinary.com/dulyljo7w/image/upload/v1773897650/desarrollovideojuegos_svbfcr.jpg"
         },
         {
           "id":"course-02",
@@ -216,7 +217,7 @@
           "period_en": "December 2025",
           "hours": "352 houras",
           "hours_en": "352 hours",
-          "certificate": ""
+          "certificate": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773894534/ingles_skjo7x.jpg"
         },
         {
           "id": "course-03",
@@ -227,7 +228,7 @@
           "period_en": "December 2025",
           "hours": "352 horas",
           "hours_en": "352 hours",
-          "certificate": ""
+          "certificate": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773897649/habilidadesblandas_n80wz5.jpg"
         }
       ]
     },

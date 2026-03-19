@@ -392,14 +392,17 @@
 
             if (item.certificate) {
                 const link = createElement('a', {
-                    href: item.certificate,
-                    target: '_blank',
-                    rel: 'noopener noreferrer',
+                    href: '#',
                     class: 'course-cert-link',
                     'data-i18n': 'education.certificate'
                 });
-                link.appendChild(createElement('i', { class: 'fas fa-external-link-alt' }));
+                link.appendChild(createElement('i', { class: 'fas fa-certificate' }));
                 link.appendChild(document.createTextNode(' ' + getTranslation('education.certificate')));
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openDiplomaModal(item.certificate);
+                })
+
                 footer.appendChild(link);
             }
 
@@ -495,11 +498,23 @@
         $$('.project-card').forEach(card => card.classList.toggle('hidden', category !== 'all' && card.dataset.category !== category));
     }
 
+    function openDiplomaModal(imgUrl) {
+        $('#diplomaImg').src = imgUrl;
+        $('#diplomaModal').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
     function openGameModal(gameUrl) {
         if (!gameUrl) return;
         $('#gameFrame').src = gameUrl;
         $('#gameModal').classList.add('active');
         document.body.style.overflow = 'hidden';
+    }
+
+    function closeDiplomaModal() {
+        $('#diplomaImg').src = '';
+        $('#diplomaModal').classList.remove('active');
+        document.body.style.overflow = '';
     }
 
     function closeGameModal() {
@@ -641,7 +656,20 @@
             if (modalClose) modalClose.addEventListener('click', closeGameModal);
             const gameModal = $('#gameModal');
             if (gameModal) gameModal.addEventListener('click', e => { if (e.target.id === 'gameModal') closeGameModal(); });
-            document.addEventListener('keydown', e => { if (e.key === 'Escape') closeGameModal(); });
+            document.addEventListener('keydown', e => { 
+                if (e.key === 'Escape') {
+                     closeGameModal(); 
+                     closeDiplomaModal();
+                }
+            });
+
+            const diplomaClose = $('#diplomaClose');
+            if (diplomaClose) diplomaClose.addEventListener('click', closeDiplomaModal);
+
+            const diplomaModal = $('#diplomaModal');
+            if(diplomaModal) diplomaModal.addEventListener('click', e => {
+               if(e.target.id === 'diplomaModal') closeDiplomaModal();
+            });
 
             document.body.classList.remove('content-loading');
             const loader = document.getElementById('loader-overlay');
