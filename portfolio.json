@@ -131,24 +131,21 @@
         },
         {
           "id": "software-01",
-          "name": "Inventory System",
+          "name": "PA Acoustic",
           "category": "software",
-          "shortDescription": "Sistema de inventario para pequeños negocios",
-          "shortDescription_en": "Inventory system for small businesses",
-          "description": "Software de escritorio para gestión de inventario con generación de reportes, control de stock y alertas de reposición.",
-          "description_en": "Desktop software for inventory management with report generation, stock control and restocking alerts.",
-          "thumbnail": "assets/img/projects/software/inventory-thumb.jpg",
+          "shortDescription": "Sitio web de catálogo para empresa de audio profesional en Medellín",
+          "shortDescription_en": "Catalog website for professional audio company in Medellín",
           "gallery": [
-            "assets/img/projects/software/inventory-1.jpg"
+            "https://res.cloudinary.com/dulyljo7w/image/upload/v1773887480/amayajuan.github.io_PGW_upa2bg.png"
           ],
-          "technologies": ["C#", ".NET", "SQL Server", "WPF"],
+          "technologies": ["HTML5", "CSS3", "JavaScript"],
           "featured": false,
           "links": {
-            "play": null,
-            "github": "https://github.com/tuusuario/inventory-system",
-            "download": "assets/downloads/inventory-system.exe"
+            "play": "https://amayajuan.github.io/PGW/",
+            "github": "https://github.com/AmayaJuan/PGW",
+            "download": null
           },
-          "year": "2022"
+          "year": "2026"
         }
       ],
       "experience": [

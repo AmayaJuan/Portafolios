@@ -223,7 +223,9 @@
         if (fullBioEl) fullBioEl.textContent = profile.fullBio || profile.bio || '';
 
         const avatarImg = $('#profileAvatar');
-        if (avatarImg && profile.avatar) { avatarImg.src = profile.avatar; avatarImg.alt = profile.name; }
+        const avatarDesktop = $('#profileAvatarDesktop')
+        if (avatarImg && profile.avatar) { avatarImg.src = profile.avatar; }
+        if (avatarDesktop && profile.avatar) {avatarDesktop.src = profile.avatar;}
 
         $('#footerName').textContent = profile.name;
         $('#currentYear').textContent = new Date().getFullYear();
@@ -264,17 +266,18 @@
 
         const projectCards = projects.map(project => {
             const card = createElement('div', { class: 'project-card', dataset: { category: project.category } });
+            const imageUrl = project.thumbnail || (project.gallery && project.gallery[0]) || null;
 
-            if (project.thumbnail) {
+            if (imageUrl) {
                 card.appendChild(createElement('img', {
-                    src: project.thumbnail, alt: project.name, class: 'card-image', loading: 'lazy',
+                    src: imageUrl, alt: project.name, class: 'card-image', loading: 'lazy',
                     onerror: "this.style.display='none'; this.nextElementSibling.style.display='flex'"
                 }));
             }
 
             card.appendChild(createElement('div', {
                 class: 'card-image-placeholder',
-                style: 'display: ' + (project.thumbnail ? 'none' : 'flex')
+                style: 'display: ' + (imageUrl ? 'none' : 'flex')
             }, [getCategoryIcon(project.category)]));
 
             if (project.category === 'unity' && project.links?.play) {
