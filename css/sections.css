@@ -113,11 +113,6 @@
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/*Desktop: hides mobile photo*/
-.hero-visual-mobile {
-    display: none;
-}
-
 /* ---------- Hero Section ---------- */
 .hero {
     min-height: 100vh;
@@ -736,9 +731,9 @@
     .hero {
         padding-top: calc(var(--navbar-height) + var(--spacing-xl));
         padding-bottom: var(--spacing-xl);
-        display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
     }
     
     .hero-content {
@@ -747,19 +742,16 @@
         align-items: center;
         width: 100%;
         text-align: center;
-        order: 0;
+        order: 2;
     }
     
     /* Photo after text */
-    .hero-visual-mobile {
-        display: flex !important;
-        justify-content: center;
-        width: 100%;
-        margin: var(--spacing-lg) 0;
-    }
-
     .hero-visual {
-        display: none !important;
+        display: flex !important;
+        order: 1;
+        width: 100%;
+        justify-content: center;
+        margin: var(--spacing-lg) 0;
     }
     
     .hero-title {

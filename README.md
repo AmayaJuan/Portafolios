@@ -98,7 +98,24 @@ Portafolios/
 | **Texts** | `lang/es.json` | All UI strings (translate `en.json`) |
 | **CV** | `assets/cv/cv.pdf` | Drop PDF → auto-links |
 
-## 📊 Post-Review Status (Oct 2024 - BLACKBOXAI)
+## 📊 Changelog
+
+### v1.1.0 - Responsive & UI Fixes (Mar 2026)
+
+| Fix | Archivo | Descripción |
+|-----|---------|-------------|
+| **Foto móvil** | `index.html` + `sections.css` | Una sola imagen, reordenada con CSS `order` |
+| **Hero layout móvil** | `sections.css` | Foto arriba del nombre en mobile via flexbox |
+| **Education tabs** | `sections.css` | Padding reducido, `flex:1` para encajar en móvil |
+| **Media queries** | `sections.css` | Fusionados duplicados de `@media (max-width: 768px)` |
+| **Imagen proyectos** | `js/main.js` | Fallback a `gallery[0]` si no hay `thumbnail` |
+| **Avatar JS** | `js/main.js` | Soporte para `#profileAvatarDesktop` |
+
+### v1.0.0 - Initial Release (Mar 2026)
+- SPA con i18n ES/EN
+- Unity WebGL modal
+- EmailJS contact form
+- Skills slider
 
 ```
 ✅ Code Review: Completed (js/main.js optimized)
@@ -133,5 +150,5 @@ Follow **[POLITICAS_PROYECTO.md](POLITICAS_PROYECTO.md)**:
 MIT © Juan Pablo Vélez Amaya - **Ready for production deployment**
 
 ---
-*Last updated: Oct 2024 | Code Review: BLACKBOXAI*
+*Last updated: Mar 2026 | Code Review: BLACKBOXAI*
 
