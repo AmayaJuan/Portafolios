@@ -41,6 +41,7 @@
                     <li><a href="#home" class="nav-link active" data-i18n="nav.initiation"></a></li>
                     <li><a href="#about" class="nav-link" data-i18n="nav.about"></a></li>
                     <li><a href="#education" class="nav-link" data-i18n="nav.education"></a></li>
+                    <li><a href="#experience" class="nav-link" data-i18n="nav.experience"></a></li>
                     <li><a href="#projects" class="nav-link" data-i18n="nav.projects"></a></li>
                     <li><a href="#skills" class="nav-link" data-i18n="nav.skills"></a></li>
                     <li><a href="#contact" class="nav-link" data-i18n="nav.contact"></a></li>
@@ -62,33 +63,35 @@
             <!-- Hero Section -->
             <section id="home" class="hero">
                 <div class="hero-content">
-                    <div class="hero-badge" data-i18n="hero.badge"></div>
-                    <h1 class="hero-title">
-                        <span data-i18n="hero.greeting"></span> 
-                        <span class="highlight" id="profileName"></span>
-                    </h1>
-                    
-                    <!-- Profile picture DESPUES del título -->
+                    <div class="hero-code">
+                        <div class="code-container">
+                            <pre id="typingCode"><code class="typing-text"></code></pre>
+                        </div>
+                    </div>
+                    <div class="hero-text">
+                        <div class="hero-badge" data-i18n="hero.badge"></div>
+                        <h1 class="hero-title">
+                            <span data-i18n="hero.greeting"></span> 
+                            <span class="highlight" id="profileName"></span>
+                        </h1>
+                        <p class="hero-tagline" id="profileTagline"></p>
+                        <p class="hero-bio" id="profileBio"></p>
+                        <div class="hero-actions">
+                            <a href="#projects" class="btn btn-primary" data-i18n="hero.cta_projects">
+                                <i class="fas fa-gamepad"></i> 
+                            </a>
+                            <a href="#contact" class="btn btn-secondary" data-i18n="hero.cta_contact">
+                                <i class="fas fa-envelope"></i> 
+                            </a>
+                        </div>
+                        <div class="hero-social" id="socialLinks"><!-- Dynamically loaded social networks --></div>
+                    </div>
                     <div class="hero-visual">
                         <div class="profile-image-container">
                             <img src="https://res.cloudinary.com/dulyljo7w/image/upload/v1773364320/juan_dz1lnh.png" 
                             alt="Profile picture" id="profileAvatar" class="profile-image" loading="lazy" decoding="async">
                         </div>
                     </div>
-
-                    <p class="hero-tagline" id="profileTagline"></p>
-                    <p class="hero-bio" id="profileBio"></p>
-                    
-                    <div class="hero-actions">
-                        <a href="#projects" class="btn btn-primary" data-i18n="hero.cta_projects">
-                            <i class="fas fa-gamepad"></i> 
-                        </a>
-                        <a href="#contact" class="btn btn-secondary" data-i18n="hero.cta_contact">
-                            <i class="fas fa-envelope"></i> 
-                        </a>
-                    </div>
-                    
-                    <div class="hero-social" id="socialLinks"><!-- Dynamically loaded social networks --></div>
                 </div>
             </section>
 
@@ -143,6 +146,19 @@
                     </div>
                     <div class="edu-content" id="tab-course">
                         <div id="coursesGrid" class="courses-grid"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience" class="section">
+                <div class="container">
+                    <h2 class="section-title" data-i18n="experience.title"></h2>
+                    <div class="experience-timeline">
+                        <!-- Dynamic experience items will be loaded here from portfolio.json -->
+                        <div class="timeline-placeholder">
+                            <p>Experience items will be loaded dynamically from portfolio.json</p>
+                        </div>
                     </div>
                 </div>
             </section>

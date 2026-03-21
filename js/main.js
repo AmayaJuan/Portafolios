@@ -213,7 +213,28 @@
     // Profile Render
     // ============================================
 
-    function renderProfile(data) {
+function renderExperience() {
+    const experiences = portfolioData.experience || [];
+    const timeline = $('.experience-timeline');
+    if (!timeline || experiences.length === 0) return;
+
+    timeline.innerHTML = '';
+    
+    experiences.forEach((exp, index) => {
+        const item = createElement('div', { class: 'experience-item' });
+        const content = createElement('div', { class: 'experience-content' }, [
+            createElement('div', { class: 'experience-date' }, [exp.period]),
+            createElement('h3', { class: 'experience-title' }, [exp.position]),
+            createElement('div', { class: 'experience-company' }, [exp.company]),
+            createElement('p', { class: 'experience-desc' }, [exp.description])
+        ]);
+        
+        item.appendChild(content);
+        timeline.appendChild(item);
+    });
+}
+
+function renderProfile(data) {
         const { profile } = data;
         $('#profileName').textContent = profile.name || '';
         $('#profileTagline').textContent = profile.tagline || '';
@@ -629,23 +650,159 @@
     // Inicializatión
     // ============================================
 
-    async function init() {
+    let typingState = {
+        currentLine: 0,
+        currentChar: 0,
+        currentSnippet: 0,
+        isDeleting: false,
+        snippetIndex: 0
+    };
+
+    const typingSnippets = [
+        // JavaScript - Fetch API
+        `// Dynamic Portfolio Loader
+const loadPortfolio = async () => {
+  try {
+    const response = await fetch('portfolio.json');
+    const data = await response.json();
+    renderDynamicContent(data);
+  } catch (error) {
+    console.error('Portfolio load failed:', error);
+  }
+};
+
+// i18n System
+const i18n = new IntlSystem({
+  languages: ['es', 'en'],
+  default: 'es'
+});`,
+
+        // Python - ML Model
+        `"""AI Game Agent Training
+PyTorch Reinforcement Learning"""
+import torch
+import torch.nn as nn
+import gym
+
+class GameAgent(nn.Module):
+    def __init__(self, state_size, action_size):
+        super().__init__()
+        self.network = nn.Sequential(
+            nn.Linear(state_size, 128),
+            nn.ReLU(),
+            nn.Linear(128, 128),
+            nn.ReLU(),
+            nn.Linear(128, action_size)
+        )
+    
+    def forward(self, state):
+        return self.network(state)
+
+# Train agent
+agent = GameAgent(8, 4)
+optimizer = torch.optim.Adam(agent.parameters())`,
+
+        // JSON - API Response
+        `{
+  "portfolio": {
+    "profile": {
+      "name": "Juan Pablo Velez Amaya",
+      "role": "Game & Software Developer",
+      "projects": 25,
+      "experience": "3+ years",
+      "skills": [
+        "Unity/C#", "JavaScript", "Python", 
+        "React", "Node.js", "ML/AI"
+      ]
+    },
+    "technologies": {
+      "gameDev": ["Unity", "Unreal", "Godot"],
+      "web": ["React", "Vue", "Node.js"],
+      "ai": ["PyTorch", "TensorFlow"]
+    }
+  }
+}`
+    ];
+
+    function typeLine(element, line, callback) {
+        let i = typingState.currentChar;
+        const speed = typingState.isDeleting ? 30 : 80;
+        
+        function type() {
+            if (typingState.isDeleting) {
+                element.textContent = line.substring(0, i);
+                i--;
+                if (i < 0) {
+                    typingState.currentChar = 0;
+                    typingState.currentLine++;
+                    callback();
+                    return;
+                }
+            } else {
+                element.textContent = line.substring(0, i) + '|';
+                i++;
+                if (i > line.length) {
+                    typingState.currentChar = line.length;
+                    setTimeout(() => {
+                        typingState.isDeleting = true;
+                        type();
+                    }, 1500);
+                    return;
+                }
+            }
+            setTimeout(type, speed);
+        }
+        type();
+    }
+
+    function initTypingAnimation() {
+        const codeElement = $('.typing-text');
+        if (!codeElement) return;
+
+        function cycleSnippets() {
+            const snippet = typingSnippets[typingState.snippetIndex];
+            const lines = snippet.split('\\n');
+            
+            typingState.isDeleting = false;
+            typingState.currentLine = 0;
+            typingState.currentChar = 0;
+            
+            let lineIndex = 0;
+            function processNextLine() {
+                if (lineIndex >= lines.length) {
+                    // Next snippet
+                    typingState.snippetIndex = (typingState.snippetIndex + 1) % typingSnippets.length;
+                    setTimeout(cycleSnippets, 2000);
+                    return;
+                }
+                typeLine(codeElement, lines[lineIndex], () => {
+                    lineIndex++;
+                    processNextLine();
+                });
+            }
+            processNextLine();
+        }
+        cycleSnippets();
+    }
+
+async function init() {
         console.log('Initializing portfolio...');
         document.body.classList.add('content-loading');
 
-        const data = await loadPortfolioData();
+        portfolioData = await loadPortfolioData();
 
-        if (data) {
-            renderProfile(data);
-            saveTextsBilingualProfile(data);
-            renderProjects(data.projects);
-            renderSkills(data.skills);
-            renderContact(data);
+        if (portfolioData) {
+            renderProfile(portfolioData);
+            saveTextsBilingualProfile(portfolioData);
+            renderProjects(portfolioData.projects);
+            renderExperience();
+            renderSkills(portfolioData.skills);
+            renderContact(portfolioData);
 
-            if(data.education) {
-                renderEducation(data.education.technical, 'technicalGrid');
-                renderEducation(data.education.technologist, 'technologistGrid');
-                renderCourses(data.education.courses);
+            if(portfolioData.education) {
+                renderEducation(portfolioData.education.technical, 'technicalGrid');
+                renderEducation(portfolioData.education.technologist, 'technologistGrid');
+                renderCourses(portfolioData.education.courses);
             }
 
             $$('.edu-tab').forEach(tab =>{
@@ -657,10 +814,11 @@
                });
             });
 
-            if (data.skills?.length > 0) initSkillsSlider(data.skills);
+            if (portfolioData.skills?.length > 0) initSkillsSlider(portfolioData.skills);
 
             setupNavigation();
             setupContactForm();
+            initTypingAnimation();
 
             $$('.filter-btn').forEach(btn => btn.addEventListener('click', () => filterProjects(btn.dataset.filter)));
 
