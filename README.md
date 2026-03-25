@@ -22,15 +22,6 @@
 | **Project Filters** | ✅ | Unity/Android/Software categories |
 | **Fully Responsive** | ✅ | Mobile-first 360px → desktop |
 
-## 🚀 Quick Start
-
-```bash
-cd \"d:/Documents/Git/HTML CSS JS/Portafolios\"
-# Python (recommended)
-python -m http.server 8000
-# Open http://localhost:8000
-```
-
 ## 📁 Structure
 
 ```
