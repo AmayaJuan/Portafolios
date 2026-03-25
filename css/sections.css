@@ -1276,6 +1276,15 @@
     line-height: 1.6;
 }
 
+.experience-desc ul {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.experience-desc li {
+    margin-bottom: 6px;
+}
+
 .experience-dot {
     width: 20px;
     height: 20px;

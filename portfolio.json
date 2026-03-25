@@ -5,8 +5,8 @@
         "tagline_en": "Creating interactive experiences with Unity, Android and more",
         "bio": "Desarrollador de Software en formación con experiencia en Python (IA y Deep Learning), C#, Java y JavaScript. Desarrollo de aplicaciones en Unity y Android Studio.",
         "bio_en": "Software Developer in training with experience in Python (AI & Deep Learning), C#, Java and JavaScript. Building applications with Unity and Android Studio..",
-        "fullBio": "Desarrollador de Software en formación, Técnico en Sistemas y Tecnólogo en Desarrollo de Videojuegos, actualmente cursando tercer semestre en Diseño y Programación de Soluciones de Software. Enfocado en el desarrollo de aplicaciones y soluciones tecnológicas, con énfasis en programación, inteligencia artificial y desarrollo multiplataforma. Cuento con experiencia en desarrollo utilizando Python (enfocado en Inteligencia Artificial y Deep Learning), así como en C#, Java, JavaScript y tecnologías web (HTML/CSS). He trabajado en la creación de aplicaciones en Unity y Android Studio, desarrollando proyectos orientados a la interacción, lógica de negocio y experiencia de usuario. Actualmente me encuentro fortaleciendo mis habilidades en Inteligencia Artificial y Deep Learning, aplicando modelos y técnicas modernas para el análisis de datos y automatización de procesos. Me destaco por mi pensamiento lógico, capacidad de resolución de problemas, trabajo en equipo y orientación a resultados.",
-        "fullBio_en": "Software Developer in training, Systems Technician and Technologist in Video Game Development, currently in my third semester of Software Solutions Design and Programming. Focused on application development and technological solutions, with emphasis on programming, artificial intelligence and cross-platform development. I have experience using Python (focused on Artificial Intelligence and Deep Learning), as well as C#, Java, JavaScript and web technologies (HTML/CSS). I have worked on applications in Unity and Android Studio, developing projects focused on interaction, business logic and user experience. I am currently strengthening my skills in Artificial Intelligence and Deep Learning, applying modern models and techniques for data analysis and process automation. I stand out for my logical thinking, problem-solving skills, teamwork and results-oriented mindset.",
+        "fullBio": "Desarrollador de Software en formación y Tecnólogo en Desarrollo de Videojuegos, con experiencia en soporte técnico, desarrollo de aplicaciones y soluciones multiplataforma. He trabajado en la creación de videojuegos en Unity y aplicaciones en Android, enfocándome en la lógica de negocio, la interactividad y la experiencia de usuario. \n Cuento con conocimientos en Python aplicado a Inteligencia Artificial y Deep Learning, así como en C#, Java, JavaScript y tecnologías web (HTML/CSS). He desarrollado proyectos orientados a la automatización de procesos y desarrollo de soluciones tipo SaaS. \n Me destaco por mi pensamiento lógico, capacidad de resolución de problemas y trabajo en equipo, con enfoque en el aprendizaje continuo y la construcción de soluciones tecnológicas eficientes.",
+        "fullBio_en": "Software Developer in training and Video Game Development Technologist with experience in technical support, application development, and cross-platform solutions. Experienced in building interactive games using Unity and mobile applications with Android Studio, focusing on user experience and business logic. Skilled in Python with a focus on Artificial Intelligence and Deep Learning, as well as C#, Java, JavaScript, and web technologies (HTML/CSS). Experience in developing projects related to process automation and SaaS solutions.Strong problem-solving skills, logical thinking, and teamwork, with a continuous learning mindset and a focus on building efficient technological solutions.",
         "avatar": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773422593/Portafolios/profile/copy_of_juan_dz1lnh_1aed6f.png",
         "location": "Medellín, Colombia",
         "email": "velezamayajuanpablo@gmail.com",
@@ -150,10 +150,10 @@
       ],
       "experience": [
         {
-          "company": "Empresa de Desarrollo",
-          "position": "Desarrollador de Software",
-          "period": "2022 - Presente",
-          "description": "Desarrollo de aplicaciones empresariales y sistemas internos."
+          "company": "Parlantes & Sonidos",
+          "position": "Diseñador y Desarrollador Web Freelance",
+          "period": "Marzo 2026 - Presente",
+          "description": "Diseño y desarrollo de sitio web corporativo desde cero para empresa de audio profesional, enfocado en catálogo de productos y conversión. <ul><li>Desarrollo de interfaz moderna y responsive con HTML, CSS y JavaScript.</li><li>Integración y organización de contenido proporcionado por el cliente.</li><li>Implementación de catálogo de productos con navegación optimizada.</li><li>Optimización de recursos multimedia utilizando Cloudinary.</li><li>Gestión de versiones mediante GitHub.</li><li>Implementación de contacto directo por WhatsApp.</li><li>Mejora de la experiencia de usuario (UX/UI).</li><li>Proyecto actualmente en fase de ajustes finales.</li></ul>"
         },
         {
           "company": "Freelance",
@@ -250,7 +250,8 @@
         }
       },
       "cv": {
-        "file": "assets/cv/cv.pdf",
+        "file": "https://res.cloudinary.com/dulyljo7w/image/upload/v1774400854/CV_ES_sqznh9.pdf",
+        "file_en": "https://res.cloudinary.com/dulyljo7w/image/upload/v1774400854/CV_EN_oqpe3l.pdf",
         "downloadName": "Juan_Pablo_Velez_Amaya_CV.pdf"
       },
       "settings": {
