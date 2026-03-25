@@ -101,23 +101,12 @@
     // Actualiza botones CV (onclick en lugar de href)
     function setupCVButtons(cvData) {
         const cvViewBtn = $('#cvViewBtn');
-        const cvDownloadBtn = $('#cvDownloadBtn');
-        const downloadCV = $('#downloadCV');
         const cvUrl = getCVUrl(cvData);
-        const downloadName = cvData.downloadName || (currentLang === 'en' ? 'CV_JuanPablo_EN.pdf' : 'CV_JuanPablo_ES.pdf');
 
         if (cvViewBtn) cvViewBtn.onclick = (e) => {
             e.preventDefault();
             openCVModal(cvUrl);
         };
-        if (cvDownloadBtn) {
-            cvDownloadBtn.href = cvUrl;
-            cvDownloadBtn.download = downloadName;
-        }
-        if (downloadCV) {
-            downloadCV.href = cvUrl;
-            downloadCV.download = downloadName;
-        }
         
         console.log(`CV configurado ${currentLang.toUpperCase()}: ${cvUrl}`);
     }
@@ -277,131 +266,198 @@
     // ============================================
 
 function renderExperience() {
-    const experiences = appState.data.experience || [];
-    const projects = appState.data.projects || [];
+    const experiences = appState.data.experience   || [];
+    const projects    = appState.data.projects     || [];
     const achievements = appState.data.achievements || [];
-    const section = document.querySelector('#experience .container');
-    const timeline = $('.experience-timeline');
-    if (!timeline || experiences.length === 0) return;
+    const section     = document.querySelector('#experience .container');
+    const timeline    = $('.experience-timeline');
+    if (!section || !timeline) return;
 
-    //── TABS ──────────────────────────────────────────────────
-    const tabsDiv = createElement('div', {class: 'exp-switch'});
-
-    const btnExp = createElement('button', { class: 'exp-tab-btn active', 'data-i18n' : 'experience.tab_exp'},
-        [getTranslation('experience.tab_exp') || 'Experience']);
-    const btnAch = createElement('button', { class: 'exp-tab-btn', 'data-i18n': 'experience.tab_ach'},
-        [getTranslation('experience.tab_ach') || 'achievements']);
-
+    // ── TABS PRINCIPALES ──────────────────────────────────────
+    const tabsDiv = createElement('div', { class: 'exp-switch' });
+    const btnExp  = createElement('button',
+        { class: 'exp-tab-btn active', 'data-i18n': 'experience.tab_exp' },
+        [getTranslation('experience.tab_exp') || 'Experiencia']);
+    const btnAch  = createElement('button',
+        { class: 'exp-tab-btn', 'data-i18n': 'experience.tab_ach' },
+        [getTranslation('experience.tab_ach') || 'Logros']);
     tabsDiv.append(btnExp, btnAch);
     section.insertBefore(tabsDiv, timeline);
 
-    // ── EXPERIENCE PANEL ──────────────────────────────────────
-    timeline.id = 'exp-panel';
+    // ── PANEL EXPERIENCIA ─────────────────────────────────────
+    timeline.id        = 'exp-panel';
     timeline.innerHTML = '';
 
-    if(experiences.length === 0)
-        timeline.innerHTML = '<div class="timeline-placeholder"><p>There is no recorded experience.</p></div>'; 
+    if (experiences.length === 0) {
+        timeline.innerHTML = '<div class="timeline-placeholder"><p>No hay experiencia registrada.</p></div>';
+    }
 
-    experiences.forEach(exp =>{
-        const dot = createElement('div', { class: 'experience-dot' });
-        const dateEl = createElement('div', { class: 'experience-date', 'data-exp-period': exp.company}, [exp.period]);
-        const titleEl = createElement('h3', { class: 'experience-title', 'data-exp-position': exp.company},
+    experiences.forEach(exp => {
+        const dot     = createElement('div', { class: 'experience-dot' });
+        const dateEl  = createElement('div', { class: 'experience-date',    'data-exp-period':   exp.company }, [exp.period]);
+        const titleEl = createElement('h3',  { class: 'experience-title',   'data-exp-position': exp.company },
             [currentLang === 'en' ? (exp.position_en || exp.position) : exp.position]);
-        const compEl = createElement('div', { class: 'experience-company', 'data-exp-company': exp.company}, [exp.company]);
+        const compEl  = createElement('div', { class: 'experience-company', 'data-exp-company':  exp.company }, [exp.company]);
 
-        const descEl = createElement('div', { class: 'experience-desc'});
-        // description can come as a string with HTML or as an array
-        if(Array.isArray(exp.description)) {
+        const descEl = createElement('div', { class: 'experience-desc' });
+        if (Array.isArray(exp.description)) {
             const ul = createElement('ul');
             exp.description.forEach(item => ul.appendChild(createElement('li', {}, [item])));
             descEl.appendChild(ul);
         } else {
-            // Allows HTML within the string(lists, etc.)
             descEl.innerHTML = exp.description || '';
         }
+
         const content = createElement('div', { class: 'experience-content' }, [dateEl, titleEl, compEl, descEl]);
-        const item = createElement('div', { class: 'experience-item' }, [dot, content]);
+        const item    = createElement('div', { class: 'experience-item' },    [dot, content]);
         timeline.appendChild(item);
     });
 
-    //── ACHIEVEMENTS PANEL ───────────────────────────────────────────
-    const achPanel = createElement('div', {id: 'ach-panel', class: 'achievements-grid' });
-    achPanel.style.display = 'none';
+    // ── PANEL LOGROS ──────────────────────────────────────────
+    const achPanel = createElement('div', { id: 'ach-panel' });
+    achPanel.style.display = 'none'; // ✅ corregido
 
-    const iconMap = {unity: '🎮', android: '📱', software: '💻'}
+    // Sub-filtros
+    const filterBar = createElement('div', { class: 'ach-filter-bar' });
+    [
+        { key: 'all',         i18n: 'ach.filter.all',  fallback: 'Todos'           },
+        { key: 'achievement', i18n: 'ach.filter.ach',  fallback: 'Logros técnicos' },
+        { key: 'project',     i18n: 'ach.filter.proj', fallback: 'Proyectos'       }
+    ].forEach(f => {
+        filterBar.appendChild(createElement('button', {
+            class: `ach-filter-btn${f.key === 'all' ? ' active' : ''}`,
+            'data-ach-filter': f.key,
+            'data-i18n': f.i18n
+        }, [getTranslation(f.i18n) || f.fallback]));
+    });
+    achPanel.appendChild(filterBar);
+
+    // Grid unificado
+    const achGrid = createElement('div', { class: 'achievements-grid', id: 'ach-grid' });
+
+    // ── Tarjetas de logros técnicos (achievements array) ──────
+    const categoryIconMap = {
+        support:       '🛠️',
+        certification: '🎓',
+        technical:     '⚙️',
+        default:       '⚡'
+    };
+
+    achievements.forEach(ach => {
+        const name = currentLang === 'en' ? (ach.title_en       || ach.title)       : ach.title;
+        const desc = currentLang === 'en' ? (ach.description_en || ach.description) : ach.description;
+
+        const techTags = createElement('div', { class: 'ach-tags' });
+        (ach.technologies || []).forEach(t =>
+            techTags.appendChild(createElement('span', { class: 'ach-badge' }, [t])));
+
+        const card = createElement('div', {
+            class: 'achievement-card',
+            'data-ach-type': 'achievement'
+        }, [
+            createElement('div', { class: 'ach-icon' },
+                [categoryIconMap[ach.category] || categoryIconMap.default]),
+            createElement('div', { class: 'ach-body' }, [
+                createElement('span', { class: 'ach-year' },  [ach.year || '']),
+                createElement('h3',   { class: 'ach-title', 'data-ach-id':   ach.id }, [name]),
+                createElement('p',    { class: 'ach-desc',  'data-ach-desc': ach.id }, [desc || '']),
+                techTags
+            ])
+        ]);
+        achGrid.appendChild(card);
+    });
+
+    // ── Tarjetas de proyectos ─────────────────────────────────
+    const projIconMap = { unity: '🎮', android: '📱', software: '💻' };
+
     projects.forEach(proj => {
-        const name = currentLang === 'en' ? (proj.name_en || proj.name) : proj.name;
-        const desc = currentLang === 'en' 
-           ? (proj.shortDescription_en || proj.shortDescription)
-           : proj.shortDescription;
+        const name = currentLang === 'en' ? (proj.name_en            || proj.name)            : proj.name;
+        const desc = currentLang === 'en' ? (proj.shortDescription_en || proj.shortDescription) : proj.shortDescription;
 
-        // Tecnology tags
-        const techTags = createElement('div', { class: 'ach-tags'});
+        const techTags = createElement('div', { class: 'ach-tags' });
         (proj.technologies || []).forEach(t =>
             techTags.appendChild(createElement('span', { class: 'ach-badge' }, [t])));
 
-        // Links - reuse data-link-type so that applyTranslation() translates itself
-          const linksEl = createElement('div', { class: 'ach-links' });
+        const linksEl = createElement('div', { class: 'ach-links' });
         if (proj.links?.github) {
             const a = createElement('a', { href: proj.links.github, target: '_blank',
                 class: 'ach-link', 'data-link-type': 'code' });
             a.appendChild(createElement('i', { class: 'fab fa-github' }));
-            a.appendChild(createElement('span', { 'data-i18n': 'projects.code' },
-                [getTranslation('projects.code')]));
+            const text = getTranslation('projects.code');
+            const span = createElement('span', { 'data-i18n': 'projects.code' }, [' ' + text]);
+            a.appendChild(span);
             linksEl.appendChild(a);
         }
         if (proj.links?.play) {
             const a = createElement('a', { href: proj.links.play, target: '_blank',
                 class: 'ach-link', 'data-link-type': 'view' });
             a.appendChild(createElement('i', { class: 'fas fa-external-link-alt' }));
-            a.appendChild(createElement('span', { 'data-i18n': 'projects.view' },
-                [getTranslation('projects.view')]));
+            const text2 = getTranslation('projects.view');
+            const span2 = createElement('span', { 'data-i18n': 'projects.view' }, [' ' + text2]);
+            a.appendChild(span2);
             linksEl.appendChild(a);
         }
         if (proj.links?.download) {
             const a = createElement('a', { href: proj.links.download, download: '',
                 class: 'ach-link', 'data-link-type': 'download' });
             a.appendChild(createElement('i', { class: 'fas fa-download' }));
-            a.appendChild(createElement('span', { 'data-i18n': 'projects.download' },
-                [getTranslation('projects.download')]));
+            const text3 = getTranslation('projects.download');
+            const span3 = createElement('span', { 'data-i18n': 'projects.download' }, [' ' + text3]);
+            a.appendChild(span3);
             linksEl.appendChild(a);
         }
 
-        const body = createElement('div', { class: 'ach-body' }, [
-            createElement('span', { class: 'ach-year' }, [proj.year || '']),
-            createElement('h3',   { class: 'ach-title', 'data-ach-id':   proj.id }, [name]),
-            createElement('p',    { class: 'ach-desc',  'data-ach-desc': proj.id }, [desc || '']),
-            techTags,
-            linksEl
-        ]);
-
         const thumb = proj.thumbnail || (proj.gallery && proj.gallery[0]);
-        const card  = createElement('div', { class: 'achievement-card' });
+        const card  = createElement('div', { class: 'achievement-card', 'data-ach-type': 'project' });
 
         if (thumb) {
             card.appendChild(createElement('img', {
                 src: thumb, alt: proj.name, class: 'ach-thumb', loading: 'lazy' }));
         } else {
             card.appendChild(createElement('div', { class: 'ach-icon' },
-                [iconMap[proj.category] || '⚡']));
+                [projIconMap[proj.category] || '⚡']));
         }
 
-        card.appendChild(body);
-        achPanel.appendChild(card);
+        card.appendChild(createElement('div', { class: 'ach-body' }, [
+            createElement('span', { class: 'ach-year' },  [proj.year || '']),
+            createElement('h3',   { class: 'ach-title', 'data-ach-id':   proj.id }, [name]),
+            createElement('p',    { class: 'ach-desc',  'data-ach-desc': proj.id }, [desc || '']),
+            techTags,
+            linksEl
+        ]));
+        achGrid.appendChild(card);
     });
+
+    achPanel.appendChild(achGrid);
     section.appendChild(achPanel);
 
-    // ── TABS LOGIC ────────────────────────────────────────
-    function switchTab(active) {
+    // ── Lógica sub-filtros ────────────────────────────────────
+    filterBar.querySelectorAll('.ach-filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBar.querySelectorAll('.ach-filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const f = btn.dataset.achFilter;
+            achGrid.querySelectorAll('.achievement-card').forEach(card => {
+                const show = f === 'all'
+                    || (f === 'achievement' && card.dataset.achType === 'achievement')
+                    || (f === 'project'     && card.dataset.achType === 'project');
+                card.style.display = show ? '' : 'none';
+            });
+        });
+    });
+
+    // ── Lógica tabs principales ───────────────────────────────
+    function switchTab(active) {                             // ✅ nombre correcto
         tabsDiv.querySelectorAll('.exp-tab-btn').forEach(b => b.classList.remove('active'));
         active.classList.add('active');
         const isExp = active === btnExp;
-        timeline.style.display = isExp ? '' : 'none';
-        achPanel.style.display = isExp ? 'none' : 'grid';
+        timeline.style.display  = isExp ? ''     : 'none';
+        achPanel.style.display  = isExp ? 'none' : 'block';
     }
-    btnExp.addEventListener('click', () => switchTab(btnExp));
-    btnAch.addEventListener('click', () => switchTab(btnAch));
+    btnExp.addEventListener('click', () => switchTab(btnExp)); // ✅ 'click'
+    btnAch.addEventListener('click', () => switchTab(btnAch)); // ✅ 'click'
 }
+
 
 function renderProfile(data) {
         const { profile } = data;
