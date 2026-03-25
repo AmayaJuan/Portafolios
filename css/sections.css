@@ -778,8 +778,14 @@
         text-align: center;
     }
     
-    /* Foto responsive móvil - DESPUES del título */
+    /* Foto responsive móvil DESPUES del nombre */
+    .hero-code {
+        order: 2;
+        margin-top: var(--spacing-xl);
+    }
+    
     .hero-visual {
+        order: 1;
         display: flex !important;
         width: 100%;
         justify-content: center;
@@ -1217,8 +1223,7 @@
     content: '';
     position: absolute;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 25px;
     width: 3px;
     height: 100%;
     background: linear-gradient(to bottom, var(--color-accent), transparent);
@@ -1291,8 +1296,8 @@
     background: var(--color-accent);
     border-radius: 50%;
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 25px;
+    transform: none;
     z-index: 1;
     box-shadow: 0 0 0 4px var(--color-bg-primary);
 }

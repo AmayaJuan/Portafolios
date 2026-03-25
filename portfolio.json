@@ -1,99 +1,98 @@
+{
+  "profile": {
+    "name": "Juan Pablo Velez Amaya",
+    "tagline": "Creando experiencias interactivas con Unity, Android y más",
+    "tagline_en": "Creating interactive experiences with Unity, Android and more",
+    "bio": "Desarrollador de Software en formación con experiencia en Python (IA y Deep Learning), C#, Java y JavaScript. Desarrollo de aplicaciones en Unity y Android Studio.",
+    "bio_en": "Software Developer in training with experience in Python (AI & Deep Learning), C#, Java and JavaScript. Building applications with Unity and Android Studio..",
+    "fullBio": "Desarrollador de Software en formación y Tecnólogo en Desarrollo de Videojuegos, con experiencia en soporte técnico, desarrollo de aplicaciones y soluciones multiplataforma. He trabajado en la creación de videojuegos en Unity y aplicaciones en Android, enfocándome en la lógica de negocio, la interactividad y la experiencia de usuario. \n Cuento con conocimientos en Python aplicado a Inteligencia Artificial y Deep Learning, así como en C#, Java, JavaScript y tecnologías web (HTML/CSS). He desarrollado proyectos orientados a la automatización de procesos y desarrollo de soluciones tipo SaaS. \n Me destaco por mi pensamiento lógico, capacidad de resolución de problemas y trabajo en equipo, con enfoque en el aprendizaje continuo y la construcción de soluciones tecnológicas eficientes.",
+    "fullBio_en": "Software Developer in training and Video Game Development Technologist with experience in technical support, application development, and cross-platform solutions. Experienced in building interactive games using Unity and mobile applications with Android Studio, focusing on user experience and business logic. Skilled in Python with a focus on Artificial Intelligence and Deep Learning, as well as C#, Java, JavaScript, and web technologies (HTML/CSS). Experience in developing projects related to process automation and SaaS solutions.Strong problem-solving skills, logical thinking, and teamwork, with a continuous learning mindset and a focus on building efficient technological solutions.",
+    "avatar": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773422593/Portafolios/profile/copy_of_juan_dz1lnh_1aed6f.png",
+    "location": "Medellín, Colombia",
+    "email": "velezamayajuanpablo@gmail.com",
+    "availability": "Disponible para proyectos freelance",
+    "social": {
+      "github": "https://github.com/AmayaJuan",
+      "gitlab": "https://gitlab.com/jpva360",
+      "linkedin": "https://linkedin.com/in/tuusuario",
+      "itchio": "https://tuusuario.itch.io"
+    }
+  },
+  "skills": [
     {
-      "profile": {
-        "name": "Juan Pablo Velez Amaya",
-        "tagline": "Creando experiencias interactivas con Unity, Android y más",
-        "tagline_en": "Creating interactive experiences with Unity, Android and more",
-        "bio": "Desarrollador de Software en formación con experiencia en Python (IA y Deep Learning), C#, Java y JavaScript. Desarrollo de aplicaciones en Unity y Android Studio.",
-        "bio_en": "Software Developer in training with experience in Python (AI & Deep Learning), C#, Java and JavaScript. Building applications with Unity and Android Studio..",
-        "fullBio": "Desarrollador de Software en formación y Tecnólogo en Desarrollo de Videojuegos, con experiencia en soporte técnico, desarrollo de aplicaciones y soluciones multiplataforma. He trabajado en la creación de videojuegos en Unity y aplicaciones en Android, enfocándome en la lógica de negocio, la interactividad y la experiencia de usuario. \n Cuento con conocimientos en Python aplicado a Inteligencia Artificial y Deep Learning, así como en C#, Java, JavaScript y tecnologías web (HTML/CSS). He desarrollado proyectos orientados a la automatización de procesos y desarrollo de soluciones tipo SaaS. \n Me destaco por mi pensamiento lógico, capacidad de resolución de problemas y trabajo en equipo, con enfoque en el aprendizaje continuo y la construcción de soluciones tecnológicas eficientes.",
-        "fullBio_en": "Software Developer in training and Video Game Development Technologist with experience in technical support, application development, and cross-platform solutions. Experienced in building interactive games using Unity and mobile applications with Android Studio, focusing on user experience and business logic. Skilled in Python with a focus on Artificial Intelligence and Deep Learning, as well as C#, Java, JavaScript, and web technologies (HTML/CSS). Experience in developing projects related to process automation and SaaS solutions.Strong problem-solving skills, logical thinking, and teamwork, with a continuous learning mindset and a focus on building efficient technological solutions.",
-        "avatar": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773422593/Portafolios/profile/copy_of_juan_dz1lnh_1aed6f.png",
-        "location": "Medellín, Colombia",
-        "email": "velezamayajuanpablo@gmail.com",
-        "availability": "Disponible para proyectos freelance",
-        "social": {
-          "github": "https://github.com/AmayaJuan",
-          "gitlab": "https://gitlab.com/jpva360",
-          "linkedin": "https://linkedin.com/in/tuusuario",
-          "twitter": "https://twitter.com/tuusuario",
-          "itchio": "https://tuusuario.itch.io"
-        }
-      },
-      "skills": [
-        {
-          "name": "Android Studio",
-          "category": "engine",
-          "icon": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773421281/android_a9yqza.png",
-          "level": 85
-        },
-        {
-          "name": "C#",
-          "category": "language",
-          "icon": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773422788/Csharp_Logo_rbozg9.png",
-          "level": 85
-        },
-        {
-          "name": "HTML/CSS",
-          "category": "language",
-          "icon": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773421789/html_e3r3ba.png",
-          "level": 90
-        },
-        {
-          "name": "Java",
-          "category": "language",
-          "icon": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773424037/java_xlah7x.jpg",
-          "level": 85
-        },
-        {
-          "name": "JavaScript",
-          "category": "language",
-          "icon": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773422002/javascript_ycsvzg.png",
-          "level": 90
-        },
-        {
-          "name": "Python",
-          "category": "language",
-          "icon": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773422142/python_isimiq.png",
-          "level": 80
-        },
-        {
-          "name": "Unity",
-          "category": "engine",
-          "icon": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773424114/unity_gdgnjd.jpg",
-          "level": 90
-        }
+      "name": "Android Studio",
+      "category": "engine",
+      "icon": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773421281/android_a9yqza.png",
+      "level": 85
+    },
+    {
+      "name": "C#",
+      "category": "language",
+      "icon": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773422788/Csharp_Logo_rbozg9.png",
+      "level": 85
+    },
+    {
+      "name": "HTML/CSS",
+      "category": "language",
+      "icon": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773421789/html_e3r3ba.png",
+      "level": 90
+    },
+    {
+      "name": "Java",
+      "category": "language",
+      "icon": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773424037/java_xlah7x.jpg",
+      "level": 85
+    },
+    {
+      "name": "JavaScript",
+      "category": "language",
+      "icon": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773422002/javascript_ycsvzg.png",
+      "level": 90
+    },
+    {
+      "name": "Python",
+      "category": "language",
+      "icon": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773422142/python_isimiq.png",
+      "level": 80
+    },
+    {
+      "name": "Unity",
+      "category": "engine",
+      "icon": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773424114/unity_gdgnjd.jpg",
+      "level": 90
+    }
+  ],
+  "projects": [
+    {
+      "id": "unity-01",
+      "name": "Space Shooter",
+      "category": "unity",
+      "shortDescription": "Juego de naves espaciales con shooter clásico",
+      "shortDescription_en": "Classic space shooter game",
+      "description": "Un juego de naves espaciales donde el jugador debe destruir enemigos y asteroides. Incluye sistema de puntuación, power-ups y múltiples niveles de dificultad.",
+      "description_en": "A space shooter game where the player must destroy enemies and asteroids. Features a scoring system, power-ups and multiple difficulty levels.",
+      "thumbnail": "assets/img/projects/unity/space-shooter-thumb.jpg",
+      "gallery": [
+        "assets/img/projects/unity/space-shooter-1.jpg",
+        "assets/img/projects/unity/space-shooter-2.jpg"
       ],
-      "projects": [
-        {
-          "id": "unity-01",
-          "name": "Space Shooter",
-          "category": "unity",
-          "shortDescription": "Juego de naves espaciales con shooter clásico",
-          "shortDescription_en": "Classic space shooter game",
-          "description": "Un juego de naves espaciales donde el jugador debe destruir enemigos y asteroides. Incluye sistema de puntuación, power-ups y múltiples niveles de dificultad.",
-          "description_en": "A space shooter game where the player must destroy enemies and asteroids. Features a scoring system, power-ups and multiple difficulty levels.",
-          "thumbnail": "assets/img/projects/unity/space-shooter-thumb.jpg",
-          "gallery": [
-            "assets/img/projects/unity/space-shooter-1.jpg",
-            "assets/img/projects/unity/space-shooter-2.jpg"
-          ],
-          "technologies": ["Unity", "C#", "Raycasting"],
-          "featured": true,
-          "links": {
-            "play": "builds/unity/space-shooter/index.html",
-            "github": "https://github.com/tuusuario/space-shooter",
-            "download": null
-          },
-          "year": "2024"
+        "technologies": ["Unity", "C#", "Raycasting"],
+        "featured": true,
+        "links": {
+          "play": "builds/unity/space-shooter/index.html",
+          "github": "https://github.com/tuusuario/space-shooter",
+          "download": null
         },
-        {
-          "id": "unity-02",
-          "name": "Puzzle Adventure",
-          "category": "unity",
-          "shortDescription": "Juego de puzzles en 3D con narrativa",
-          "shortDescription_en": "3D puzzle game with branching narrative",
-          "description": "Adventure puzzle game con mecánicas de física y narrativa ramificada. El jugador resuelve puzzles para avanzar en la historia.",
-          "description_en": "An adventure puzzle game with physics mechanics and branching narrative. The player solves puzzles to progress through the story.",
+       "year": "2024"
+    },
+    {
+      "id": "unity-02",
+      "name": "Puzzle Adventure",
+      "category": "unity",
+      "shortDescription": "Juego de puzzles en 3D con narrativa",
+      "shortDescription_en": "3D puzzle game with branching narrative",
+      "description": "Adventure puzzle game con mecánicas de física y narrativa ramificada. El jugador resuelve puzzles para avanzar en la      historia.",
+      "description_en": "An adventure puzzle game with physics mechanics and branching narrative. The player solves puzzles to progress through the story.",
           "thumbnail": "assets/img/projects/unity/puzzle-adventure-thumb.jpg",
           "gallery": [
             "assets/img/projects/unity/puzzle-adventure-1.jpg"
@@ -151,8 +150,10 @@
       "experience": [
         {
           "company": "Parlantes & Sonidos",
-          "position": "Diseñador y Desarrollador Web Freelance",
+          "position": "Desarrollador Web Freelance",
+          "position_en": "Freelance Web Developer",
           "period": "Marzo 2026 - Presente",
+          "period_en": "March 2026 - Present",
           "description": "Diseño y desarrollo de sitio web corporativo desde cero para empresa de audio profesional, enfocado en catálogo de productos y conversión. <ul><li>Desarrollo de interfaz moderna y responsive con HTML, CSS y JavaScript.</li><li>Integración y organización de contenido proporcionado por el cliente.</li><li>Implementación de catálogo de productos con navegación optimizada.</li><li>Optimización de recursos multimedia utilizando Cloudinary.</li><li>Gestión de versiones mediante GitHub.</li><li>Implementación de contacto directo por WhatsApp.</li><li>Mejora de la experiencia de usuario (UX/UI).</li><li>Proyecto actualmente en fase de ajustes finales.</li></ul>"
         },
         {
