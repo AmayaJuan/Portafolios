@@ -1,65 +1,67 @@
 {
-  "nav": {
-    "initiation": "Home",
-    "about": "About Me",
-    "education": "Education",
-    "experience": "Experience",
-    "projects": "Projects",
-    "skills": "Skills",
-    "contact": "Contact",
-    "cv": "Download CV"
+  "nav":{
+   "initiation":"Home",
+   "about":"About Me",
+   "education":"Education",
+   "experience":"Experience",
+   "projects":"Projects",
+   "skills":"Skills",
+   "contact":"Contact",
+   "cv":"CV"
   },
-  "hero": {
-    "badge": "Game & Software Developer",
-    "greeting": "Hi, I'm",
-    "cta_projects": "View Projects",
-    "cta_contact": "Contact Me"
+  "hero":{
+    "badge":"Game & Software Developer",
+    "greeting":"Hi, I'm",
+    "cta_projects":"View Projects",
+    "cta_contact":"Contact Me"
   },
-  "about": {
-    "title": "About Me",
-    "projects": "Projects",
-    "years": "Years Experience",
-    "clients": "Clients"
+  "about":{
+    "title":"About Me",
+    "projects":"Projects",
+    "years":"Years Experience",
+    "clients":"Clients"
   },
-  "projects": {
-    "title": "My Projects",
-    "all": "All",
-    "unity": "Unity",
-    "android": "Android",
-    "software": "Software",
-    "code": "Code",
-    "view": "View",
-    "download": "Download"
+  "projects":{
+    "title":"My Projects",
+    "all":"All",
+    "unity":"Unity",
+    "android":"Android",
+    "software":"Software",
+    "code":"Code",
+    "view":"View",
+    "download":"Download"
   },
-  "skills": {
-    "title": "Technical Skills",
-    "count": "skills"
+  "skills":{
+    "title":"Technical Skills",
+    "count":"skills"
   },
-  "cv": {
-    "title": "Curriculum Vitae",
-    "intro": "Download my CV to see my full work experience and education.",
-    "download": "Download CV"
+  "cv":{
+    "title":"Curriculum Vitae",
+    "intro":"View or download my CV in your language:",
+    "view":"View CV","download":"Download CV"
   },
-  "contact": {
-    "title": "Contact",
-    "introTitle": "Got a project in mind?",
-    "introText": "Contact me and let's talk about how I can help bring your idea to life.",
-    "name": "Name",
-    "email": "Email",
-    "message": "Message",
-    "send": "Send Message"
+  "contact":{
+    "title":"Contact",
+    "introTitle":"Got a project in mind?",
+    "introText":"Contact me and let's talk about how I can help bring your idea to life.",
+    "name":"Name",
+    "email":"Email",
+    "message":"Message",
+    "send":"Send Message"
   },
-  "footer": {
-    "rights": "All rights reserved."
+  "footer":{
+    "rights":"All rights reserved."
   },
-  "education": {
-    "title": "Education & Courses",
-    "technical": "Technical",
-    "technologist": "Technologist",
-    "course": "Courses",
-    "certificate": "View certificate"
+  "education":{
+    "title":"Education & Courses",
+    "technical":"Technical",
+    "technologist":"Technologist",
+    "course":"Courses",
+    "certificate":"View certificate"
   },
-  "experience": {
-    "title": "Work Experience"
+  "experience":{
+    "title":"Work Experience",
+    "tab_exp":"Experience",
+    "tab_ach":"Achievements"
   }
 }

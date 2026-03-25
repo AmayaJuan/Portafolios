@@ -65,9 +65,61 @@
             document.documentElement.lang = lang;
             applyTranslation();
             updateButtonsLanguage(lang);
+            
+            // Actualizar CV al cambiar idioma
+            if (appState.data && appState.data.cv) {
+                setupCVButtons(appState.data.cv);
+            }
         } catch (error) {
             console.error('Error loading language:', error);
         }
+    }
+
+    // Función para obtener URL CV por idioma
+    function getCVUrl(cvData) {
+        return (currentLang === 'en' && cvData.file_en) ? cvData.file_en : cvData.file;
+    }
+
+    // Modal CV (PDF iframe)
+    function openCVModal(cvUrl) {
+        const cvFrame = $('#cvFrame');
+        const cvModalTitle = $('#cvModalTitle');
+        if (cvFrame && cvUrl) {
+            cvFrame.src = cvUrl + '#view=FitH&toolbar=1&navpanes=0';
+            cvModalTitle.textContent = currentLang === 'en' ? 'Curriculum Vitae' : 'Currículum Vitae';
+            $('#cvModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    function closeCVModal() {
+        $('#cvFrame').src = '';
+        $('#cvModal').classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    // Actualiza botones CV (onclick en lugar de href)
+    function setupCVButtons(cvData) {
+        const cvViewBtn = $('#cvViewBtn');
+        const cvDownloadBtn = $('#cvDownloadBtn');
+        const downloadCV = $('#downloadCV');
+        const cvUrl = getCVUrl(cvData);
+        const downloadName = cvData.downloadName || (currentLang === 'en' ? 'CV_JuanPablo_EN.pdf' : 'CV_JuanPablo_ES.pdf');
+
+        if (cvViewBtn) cvViewBtn.onclick = (e) => {
+            e.preventDefault();
+            openCVModal(cvUrl);
+        };
+        if (cvDownloadBtn) {
+            cvDownloadBtn.href = cvUrl;
+            cvDownloadBtn.download = downloadName;
+        }
+        if (downloadCV) {
+            downloadCV.href = cvUrl;
+            downloadCV.download = downloadName;
+        }
+        
+        console.log(`CV configurado ${currentLang.toUpperCase()}: ${cvUrl}`);
     }
 
     function applyTranslation() {
@@ -225,8 +277,9 @@
     // ============================================
 
 function renderExperience() {
-    const experiences = portfolioData.experience || [];
+    const experiences = appState.data.experience || [];
     const projects = appState.data.projects || [];
+    const achievements = appState.data.achievements || [];
     const section = document.querySelector('#experience .container');
     const timeline = $('.experience-timeline');
     if (!timeline || experiences.length === 0) return;
@@ -589,7 +642,7 @@ function renderProfile(data) {
     // Contact Render
     // ============================================
 
-    function renderContact(data) {
+function renderContact(data) {
         const { contact } = data;
         if (contact?.fields) {
             const n = $('#name'), e = $('#email'), m = $('#message');
@@ -597,11 +650,10 @@ function renderProfile(data) {
             if (e && contact.fields.email) e.placeholder = contact.fields.email;
             if (m && contact.fields.message) m.placeholder = contact.fields.message;
         }
-        if (data.cv?.file) {
-            const cvBtn = $('#cvDownloadBtn');
-            const downloadCV = $('#downloadCV');
-            if (cvBtn) { cvBtn.href = data.cv.file; if (data.cv.downloadName) cvBtn.download = data.cv.downloadName; }
-            if (downloadCV) { downloadCV.href = data.cv.file; if (data.cv.downloadName) downloadCV.download = data.cv.downloadName; }
+        
+        // Inicializar CV con modales
+        if (data.cv) {
+            setupCVButtons(data.cv);
         }
     }
 
@@ -942,10 +994,11 @@ async function init() {
             if (modalClose) modalClose.addEventListener('click', closeGameModal);
             const gameModal = $('#gameModal');
             if (gameModal) gameModal.addEventListener('click', e => { if (e.target.id === 'gameModal') closeGameModal(); });
-            document.addEventListener('keydown', e => { 
+    document.addEventListener('keydown', e => { 
                 if (e.key === 'Escape') {
                      closeGameModal(); 
                      closeDiplomaModal();
+                     closeCVModal();
                 }
             });
 
@@ -955,6 +1008,14 @@ async function init() {
             const diplomaModal = $('#diplomaModal');
             if(diplomaModal) diplomaModal.addEventListener('click', e => {
                if(e.target.id === 'diplomaModal') closeDiplomaModal();
+            });
+            
+            // Modal CV events
+            const cvModal = $('#cvModal');
+            const cvClose = $('#cvClose');
+            if (cvClose) cvClose.addEventListener('click', closeCVModal);
+            if (cvModal) cvModal.addEventListener('click', e => {
+                if (e.target.id === 'cvModal') closeCVModal();
             });
 
             document.body.classList.remove('content-loading');

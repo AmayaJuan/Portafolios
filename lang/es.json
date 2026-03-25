@@ -1,65 +1,68 @@
 {
-  "nav": {
-    "initiation": "Inicio",
-    "about": "Sobre mí",
-    "education": "Educación",
-    "experience": "Experiencia",
-    "projects": "Proyectos",
-    "skills": "Habilidades",
-    "contact": "Contacto",
-    "cv": "Descargar CV"
+  "nav":{
+    "initiation":"Inicio",
+    "about":"Sobre mí",
+    "education":"Educación",
+    "experience":"Experiencia",
+    "projects":"Proyectos",
+    "skills":"Habilidades",
+    "contact":"Contacto",
+    "cv":"CV"
   },
-  "hero": {
-    "badge": "Desarrollador de Videojuegos & Software",
-    "greeting": "Hola, soy",
-    "cta_projects": "Ver Proyectos",
-    "cta_contact": "Contactar"
+  "hero":{
+    "badge":"Desarrollador de Videojuegos & Software",
+    "greeting":"Hola, soy",
+    "cta_projects":"Ver Proyectos",
+    "cta_contact":"Contactar"
   },
-  "about": {
-    "title": "Sobre Mí",
-    "projects": "Proyectos",
-    "years": "Años Experiencia",
-    "clients": "Clientes"
+  "about":{
+    "title":"Sobre Mí",
+    "projects":"Proyectos",
+    "years":"Años Experiencia",
+    "clients":"Clientes"
   },
-  "projects": {
-    "title": "Mis Proyectos",
-    "all": "Todos",
-    "unity": "Unity",
-    "android": "Android",
-    "software": "Software",
-    "code": "Código",
-    "view": "Ver",
-    "download": "Descargar"
+  "projects":{
+    "title":"Mis Proyectos",
+    "all":"Todos",
+    "unity":"Unity",
+    "android":"Android",
+    "software":"Software",
+    "code":"Código",
+    "view":"Ver",
+    "download":"Descargar"
   },
-  "skills": {
-    "title": "Habilidades Técnicas",
-    "count": "habilidades"
+  "skills":{
+    "title":"Habilidades Técnicas",
+    "count":"habilidades"
   },
-  "cv": {
-    "title": "Currículum Vitae",
-    "intro": "Descarga mi CV para ver mi experiencia laboral completa y educación.",
-    "download": "Descargar CV"
+  "cv":{
+    "title":"Currículum Vitae",
+    "intro":"Visualiza o descarga mi currículum en tu idioma:",
+    "view":"Ver CV",
+    "download":"Descargar CV"
   },
-  "contact": {
-    "title": "Contacto",
-    "introTitle": "¿Tienes un proyecto en mente?",
-    "introText": "Contáctame y hablemos sobre cómo puedo ayudarte a materializar tu idea.",
-    "name": "Nombre",
-    "email": "Email",
-    "message": "Mensaje",
-    "send": "Enviar Mensaje"
+  "contact":{
+    "title":"Contacto",
+    "introTitle":"¿Tienes un proyecto en mente?",
+    "introText":"Contáctame y hablemos sobre cómo puedo ayudarte a materializar tu idea.",
+    "name":"Nombre",
+    "email":"Email",
+    "message":"Mensaje",
+    "send":"Enviar Mensaje"
   },
-  "footer": {
-    "rights": "Todos los derechos reservados."
+  "footer":{
+    "rights":"Todos los derechos reservados."
   },
-  "education": {
-    "title": "Educación & Cursos",
-    "technical": "Tecnico",
-    "technologist": "Tecnólogo",
-    "course": "Cursos",
-    "certificate": "Ver certificado"
+  "education":{
+    "title":"Educación & Cursos",
+    "technical":"Técnico",
+    "technologist":"Tecnólogo",
+    "course":"Cursos",
+    "certificate":"Ver certificado"
   },
-  "experience": {
-    "title": "Experiencia Laboral"
+  "experience":{
+    "title":"Experiencia Laboral",
+    "tab_exp":"Experiencia",
+    "tab_ach":"Logros"
   }
 }

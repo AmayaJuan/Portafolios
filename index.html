@@ -212,16 +212,23 @@
                 </div>
             </section>
 
-            <!-- CV Section -->
+            <!-- Sección CV restaurada -->
             <section id="cv" class="section">
                 <div class="container">
                     <h2 class="section-title" data-i18n="cv.title">Currículum Vitae</h2>
                     <div class="cv-preview">
-                        <div class="cv-info">
-                            <p data-i18n="cv.intro"></p>
-                            <a href="assets/cv/cv.pdf" class="btn btn-primary" download id="cvDownloadBtn" data-i18n="cv.download">
-                                <i class="fas fa-download"></i> 
-                            </a>
+                        <div class="cv-content">
+                            <p data-i18n="cv.intro">Descarga mi currículum en el idioma que prefieras:</p>
+            <div class="cv-buttons">
+                                <a href="#" class="btn btn-primary" id="cvViewBtn" data-i18n="[onclick]cv.view">
+                                    <i class="fas fa-eye"></i> 
+                                    <span data-i18n="cv.view">Ver CV</span>
+                                </a>
+                                <a href="#" class="btn btn-secondary" id="cvDownloadBtn" data-i18n="[onclick]cv.download">
+                                    <i class="fas fa-download"></i> 
+                                    <span data-i18n="cv.download">Descargar CV</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -267,11 +274,24 @@
                         </form>
                     </div>
             </section>
+            <!-- Modal Certificados (IMG responsive) -->
             <div class="modal" id="diplomaModal">
                 <div class="modal-content diploma-modal-content">
-                    <button class="modal-close" id="diplomaClose">&times;</button>
-                    <div class="modal-body diploma-modal-body">
+                    <span class="modal-title">Certificado</span>
+                    <button class="modal-close" id="diplomaClose" title="Cerrar">&times;</button>
+                    <div class="modal-body">
                         <img id="diplomaImg" src="" alt="Diploma" class="diploma-img"/>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal CV (PDF iframe) -->
+            <div class="modal" id="cvModal">
+                <div class="modal-content cv-modal-content">
+                    <span class="modal-title" id="cvModalTitle">Currículum Vitae</span>
+                    <button class="modal-close" id="cvClose" title="Cerrar">&times;</button>
+                    <div class="modal-body">
+                        <iframe id="cvFrame" src="" class="cv-frame"></iframe>
                     </div>
                 </div>
             </div>
