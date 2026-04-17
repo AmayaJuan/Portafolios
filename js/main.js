@@ -514,17 +514,29 @@ function renderProfile(data) {
             const card = createElement('div', { class: 'project-card', dataset: { category: project.category } });
             const imageUrl = project.thumbnail || (project.gallery && project.gallery[0]) || null;
 
-            if (imageUrl) {
-                card.appendChild(createElement('img', {
-                    src: imageUrl, alt: project.name, class: 'card-image', loading: 'lazy',
-                    onerror: "this.style.display='none'; this.nextElementSibling.style.display='flex'"
-                }));
-            }
-
-            card.appendChild(createElement('div', {
+            const placeholderEl = createElement('div', {
                 class: 'card-image-placeholder',
                 style: 'display: ' + (imageUrl ? 'none' : 'flex')
-            }, [getCategoryIcon(project.category)]));
+            }, [getCategoryIcon(project.category)]);
+
+            if (imageUrl) {
+                const imgEl = createElement('img', {
+                    src: imageUrl,
+                    alt: project.name,
+                    class: 'card-image',
+                    loading: 'lazy',
+                    decoding: 'async'
+                });
+                imgEl.addEventListener('error', function onImgFail() {
+                    this.style.display = 'none';
+                    const ph = this.closest('.project-card')?.querySelector('.card-image-placeholder');
+                    if (ph) ph.style.display = 'flex';
+                    this.removeEventListener('error', onImgFail);
+                });
+                card.appendChild(imgEl);
+            }
+
+            card.appendChild(placeholderEl);
 
             if (project.category === 'unity' && project.links?.play) {
                 const pb = createElement('button', { class: 'play-btn', title: 'Game' });

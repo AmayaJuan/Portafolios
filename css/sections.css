@@ -442,8 +442,16 @@
 
 .project-card .card-links {
     display: flex;
+    flex-wrap: wrap;
     gap: var(--spacing-sm);
     margin-top: var(--spacing-md);
+}
+
+/* En móvil el botón play no debe depender del hover */
+@media (hover: none) {
+    .project-card .play-btn {
+        opacity: 0.9;
+    }
 }
 
 .play-btn {
