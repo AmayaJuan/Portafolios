@@ -419,11 +419,26 @@
     height: calc(90vh - 4.5rem);
     border: 0;
     border-radius: var(--radius-md);
-    background: var(--color-bg-tertiary);
+    background: #f0f0f2;
     display: block;
 }
 
 .diploma-pdf-frame[hidden] {
     display: none !important;
+}
+
+/* PDF embebido: modal más ancho y alto, fondo claro (más parecido al certificado en imagen) */
+#diplomaModal.diploma-modal--pdf .diploma-modal-content {
+    max-width: min(920px, 98vw);
+}
+
+#diplomaModal.diploma-modal--pdf .diploma-pdf-frame {
+    min-height: min(85vh, 900px);
+    height: calc(92vh - 4rem);
+    background: #fff;
+}
+
+#diplomaModal.diploma-modal--pdf .modal-body {
+    max-height: calc(92vh - 3.25rem);
 }
 

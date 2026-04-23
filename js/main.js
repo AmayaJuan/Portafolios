@@ -813,13 +813,18 @@ function renderContact(data) {
         return url.split('?')[0].toLowerCase().endsWith('.pdf');
     }
 
-    /** PDF en Cloudinary: primera página como JPG en el modal (misma experiencia que certificados imagen). */
+    /**
+     * PDF en Cloudinary: primera página como imagen (misma UX que certificados .jpg).
+     * @see https://cloudinary.com/documentation/paged_and_layered_media — cambiar .pdf por .jpg en la URL.
+     */
     function cloudinaryPdfAsImageUrl(pdfUrl) {
         if (!pdfUrl || typeof pdfUrl !== 'string') return null;
         const clean = pdfUrl.split('?')[0];
         if (!clean.toLowerCase().endsWith('.pdf')) return null;
         if (!clean.includes('res.cloudinary.com') || !clean.includes('/image/upload/')) return null;
-        return clean.replace('/image/upload/', '/image/upload/f_jpg,q_auto:good/');
+        return clean
+            .replace('/image/upload/', '/image/upload/w_1600,c_limit,q_auto/')
+            .replace(/\.pdf$/i, '.jpg');
     }
 
     function openDiplomaModal(mediaUrl) {
@@ -828,7 +833,20 @@ function renderContact(data) {
         const frame = $('#diplomaPdfFrame');
         if (!modal || !img) return;
 
+        modal.classList.remove('diploma-modal--pdf');
+
         const pdfPreviewImg = cloudinaryPdfAsImageUrl(mediaUrl);
+
+        const showPdfIframe = (url) => {
+            if (!frame) return;
+            img.onerror = null;
+            img.hidden = true;
+            img.removeAttribute('src');
+            frame.hidden = false;
+            const base = url.split('#')[0];
+            frame.src = `${base}#view=FitH&toolbar=0&navpanes=0`;
+            modal.classList.add('diploma-modal--pdf');
+        };
 
         if (pdfPreviewImg) {
             if (frame) {
@@ -836,18 +854,19 @@ function renderContact(data) {
                 frame.removeAttribute('src');
             }
             img.hidden = false;
+            img.onerror = () => {
+                img.onerror = null;
+                showPdfIframe(mediaUrl);
+            };
             img.src = pdfPreviewImg;
         } else if (isCertificatePdf(mediaUrl) && frame) {
-            img.hidden = true;
-            img.removeAttribute('src');
-            frame.hidden = false;
-            const base = mediaUrl.split('#')[0];
-            frame.src = `${base}#view=FitH&toolbar=1&navpanes=0`;
+            showPdfIframe(mediaUrl);
         } else {
             if (frame) {
                 frame.hidden = true;
                 frame.removeAttribute('src');
             }
+            img.onerror = null;
             img.hidden = false;
             img.src = mediaUrl;
         }
@@ -867,6 +886,7 @@ function renderContact(data) {
         const frame = $('#diplomaPdfFrame');
         const modal = $('#diplomaModal');
         if (img) {
+            img.onerror = null;
             img.removeAttribute('src');
             img.hidden = false;
         }
@@ -874,7 +894,10 @@ function renderContact(data) {
             frame.removeAttribute('src');
             frame.hidden = true;
         }
-        if (modal) modal.classList.remove('active');
+        if (modal) {
+            modal.classList.remove('active');
+            modal.classList.remove('diploma-modal--pdf');
+        }
         document.body.style.overflow = '';
     }
 
