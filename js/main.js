@@ -675,6 +675,8 @@ function renderProfile(data) {
         container.append(...courses.map(item => {
             const card = createElement('div', { class: 'course-card' });
 
+            const head = createElement('div', { class: 'course-card-head' });
+
             const platform = createElement('span', {
                 class: 'course-platform',
                 'data-course-platform': item.id
@@ -684,6 +686,8 @@ function renderProfile(data) {
                 class: 'course-name',
                 'data-course-id': item.id
             }, [currentLang === 'en' ? item.name_en : item.name]);
+
+            head.append(platform, name);
 
             const footer = createElement('div', { class: 'course-footer' });
             footer.appendChild(createElement('span', {
@@ -713,7 +717,7 @@ function renderProfile(data) {
                 footer.appendChild(link);
             }
 
-            card.append(platform, name, footer);
+            card.append(head, footer);
             return card;
         }));
     }   
@@ -809,13 +813,31 @@ function renderContact(data) {
         return url.split('?')[0].toLowerCase().endsWith('.pdf');
     }
 
+    /** PDF en Cloudinary: primera página como JPG en el modal (misma experiencia que certificados imagen). */
+    function cloudinaryPdfAsImageUrl(pdfUrl) {
+        if (!pdfUrl || typeof pdfUrl !== 'string') return null;
+        const clean = pdfUrl.split('?')[0];
+        if (!clean.toLowerCase().endsWith('.pdf')) return null;
+        if (!clean.includes('res.cloudinary.com') || !clean.includes('/image/upload/')) return null;
+        return clean.replace('/image/upload/', '/image/upload/f_jpg,q_auto:good/');
+    }
+
     function openDiplomaModal(mediaUrl) {
         const modal = $('#diplomaModal');
         const img = $('#diplomaImg');
         const frame = $('#diplomaPdfFrame');
         if (!modal || !img) return;
 
-        if (isCertificatePdf(mediaUrl) && frame) {
+        const pdfPreviewImg = cloudinaryPdfAsImageUrl(mediaUrl);
+
+        if (pdfPreviewImg) {
+            if (frame) {
+                frame.hidden = true;
+                frame.removeAttribute('src');
+            }
+            img.hidden = false;
+            img.src = pdfPreviewImg;
+        } else if (isCertificatePdf(mediaUrl) && frame) {
             img.hidden = true;
             img.removeAttribute('src');
             frame.hidden = false;
