@@ -251,7 +251,8 @@
     padding: var(--spacing-2xl) var(--spacing-xl) var(--spacing-2xl);
     background: var(--gradient-hero);
     position: relative;
-    overflow: hidden;
+    /* visible evita recortar avatar y sombra; body usa overflow-x: hidden */
+    overflow: visible;
 }
 
 .hero::before {
@@ -267,24 +268,20 @@
 
 .hero-content {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    gap: var(--spacing-3xl);
+    grid-template-areas: "code text visual";
+    /* Columna visual: espacio mínimo para avatar + borde + sombra (~360px) */
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1.25fr);
+    gap: clamp(var(--spacing-lg), 4vw, var(--spacing-3xl));
     align-items: center;
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 0 var(--spacing-lg);
+    padding: 0 clamp(var(--spacing-md), 3vw, var(--spacing-2xl));
     width: 100%;
 }
 
-.hero-content {
-    grid-template-areas: "code text visual";
-    grid-template-columns: 1fr 2fr 1fr;
-    gap: var(--spacing-3xl);
-}
-
-.hero-code { grid-area: code; }
-.hero-text { grid-area: text; }
-.hero-visual { grid-area: visual; }
+.hero-code { grid-area: code; min-width: 0; }
+.hero-text { grid-area: text; min-width: 0; }
+.hero-visual { grid-area: visual; min-width: 0; }
 
 .hero-badge {
     display: inline-block;
@@ -375,12 +372,18 @@
     justify-content: center;
     align-items: center;
     height: 100%;
+    min-width: 0;
+    /* Aire para box-shadow / glow sin tocar el borde del viewport */
+    padding: var(--spacing-md) clamp(var(--spacing-sm), 2vw, var(--spacing-lg));
+    box-sizing: border-box;
 }
 
 .profile-image-container {
-    width: 320px;
-    height: 320px;
-    max-height: 90vh;
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 1;
+    height: auto;
+    max-height: min(90vh, 360px);
     border-radius: 50%;
     overflow: hidden;
     border: 4px solid var(--color-accent);
@@ -389,13 +392,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 
 .profile-image {
     width: 100%;
-    height: auto;
-    max-height: 100%;
+    height: 100%;
     object-fit: cover;
+    object-position: center top;
+    display: block;
 }
 
 @keyframes float {
@@ -837,10 +842,19 @@
  */
 @media (max-width: 1024px) {
     .hero-content {
-        grid-template-areas: 
-            "content"
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "code"
+            "text"
             "visual";
+        gap: var(--spacing-xl);
+        justify-items: center;
         text-align: center;
+    }
+
+    .hero-text {
+        align-items: center;
+        padding-right: 0;
     }
     
     .hero-actions {
@@ -852,8 +866,7 @@
     }
     
     .profile-image-container {
-        width: 280px;
-        height: 280px;
+        max-width: 280px;
     }
     
     .about-content {
@@ -1428,13 +1441,32 @@
     line-height: 1.6;
 }
 
+/* base.css quita list-style en todos los ul; aquí recuperamos viñetas tipo CV */
 .experience-desc ul {
-    padding-left: 20px;
-    margin-top: 10px;
+    list-style: none;
+    padding-left: 0;
+    margin: var(--spacing-sm) 0 0;
 }
 
 .experience-desc li {
-    margin-bottom: 6px;
+    position: relative;
+    padding-left: 1.15em;
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.55;
+}
+
+.experience-desc li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--color-accent);
+    font-weight: 700;
+    line-height: inherit;
+}
+
+.experience-desc li + li {
+    margin-top: 2px;
 }
 
 .experience-dot {

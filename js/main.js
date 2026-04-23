@@ -224,6 +224,25 @@
                 : (proj.shortDescription || '');
             });
         }
+
+        // 9. Work experience (timeline)
+        appState.data?.experience?.forEach(exp => {
+            if (!exp.id) return;
+            const item = document.querySelector(`[data-experience-id="${exp.id}"]`);
+            if (!item) return;
+            const dateEl = item.querySelector('.experience-date');
+            const titleEl = item.querySelector('.experience-title');
+            const compEl = item.querySelector('.experience-company');
+            const descEl = item.querySelector('.experience-desc');
+            const period = currentLang === 'en' ? (exp.period_en || exp.period) : exp.period;
+            const company = currentLang === 'en' ? (exp.company_en || exp.company) : exp.company;
+            const position = currentLang === 'en' ? (exp.position_en || exp.position) : exp.position;
+            const descHtml = currentLang === 'en' ? (exp.description_en || exp.description) : exp.description;
+            if (dateEl) dateEl.textContent = period || '';
+            if (compEl) compEl.textContent = company || '';
+            if (titleEl) titleEl.textContent = position || '';
+            if (descEl && descHtml != null) descEl.innerHTML = descHtml;
+        });
 }
     function updateButtonsLanguage(lang) {
         document.querySelectorAll('.language-switch [data-lang]').forEach(btn => {
@@ -296,23 +315,26 @@ function renderExperience() {
     }
 
     experiences.forEach(exp => {
-        const dot     = createElement('div', { class: 'experience-dot' });
-        const dateEl  = createElement('div', { class: 'experience-date',    'data-exp-period':   exp.company }, [exp.period]);
-        const titleEl = createElement('h3',  { class: 'experience-title',   'data-exp-position': exp.company },
+        const dot = createElement('div', { class: 'experience-dot' });
+        const periodText = currentLang === 'en' ? (exp.period_en || exp.period) : exp.period;
+        const dateEl = createElement('div', { class: 'experience-date' }, [periodText]);
+        const titleEl = createElement('h3', { class: 'experience-title' },
             [currentLang === 'en' ? (exp.position_en || exp.position) : exp.position]);
-        const compEl  = createElement('div', { class: 'experience-company', 'data-exp-company':  exp.company }, [exp.company]);
+        const companyText = currentLang === 'en' ? (exp.company_en || exp.company) : exp.company;
+        const compEl = createElement('div', { class: 'experience-company' }, [companyText]);
 
         const descEl = createElement('div', { class: 'experience-desc' });
-        if (Array.isArray(exp.description)) {
+        const descHtml = currentLang === 'en' ? (exp.description_en || exp.description) : exp.description;
+        if (Array.isArray(exp.description) && !exp.description_en) {
             const ul = createElement('ul');
-            exp.description.forEach(item => ul.appendChild(createElement('li', {}, [item])));
+            exp.description.forEach(liText => ul.appendChild(createElement('li', {}, [liText])));
             descEl.appendChild(ul);
         } else {
-            descEl.innerHTML = exp.description || '';
+            descEl.innerHTML = descHtml || '';
         }
 
         const content = createElement('div', { class: 'experience-content' }, [dateEl, titleEl, compEl, descEl]);
-        const item    = createElement('div', { class: 'experience-item' },    [dot, content]);
+        const item = createElement('div', { class: 'experience-item', dataset: { experienceId: exp.id || '' } }, [dot, content]);
         timeline.appendChild(item);
     });
 
