@@ -59,7 +59,8 @@
     
     /* Layout */
     --max-width: 1200px;
-    --navbar-height: 70px;
+    --navbar-height: 60px;
+    --sidebar-width: 260px;
     
     /* Sources */
     --font-primary: 'Segoe UI', system-ui, -apple-system, sans-serif;

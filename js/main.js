@@ -54,7 +54,8 @@
         return key.split('.').reduce((obj, k) => obj && obj[k], translations) || key;
     }
 
-    async function loadLanguage(lang) {
+    async function loadLanguage(lang, options = {}) {
+        const skipApply = options.skipApply === true;
         try {
             const response = await fetch(`lang/${lang}.json`);
             if (!response.ok) throw new Error(`Could not load lang/${lang}.json`);
@@ -63,7 +64,7 @@
             currentLang = lang;
             localStorage.setItem('lang', lang);
             document.documentElement.lang = lang;
-            applyTranslation();
+            if (!skipApply) applyTranslation();
             updateButtonsLanguage(lang);
             
             // Actualizar CV al cambiar idioma
@@ -225,8 +226,10 @@
         }
 }
     function updateButtonsLanguage(lang) {
-        document.querySelectorAll('.language-switch button').forEach(btn => {
-            btn.classList.toggle('active', btn.textContent.toLowerCase() === lang.toLowerCase());
+        document.querySelectorAll('.language-switch [data-lang]').forEach(btn => {
+            const on = btn.dataset.lang === lang;
+            btn.classList.toggle('active', on);
+            btn.setAttribute('aria-pressed', on ? 'true' : 'false');
         });
     }
 
@@ -590,6 +593,13 @@ function renderProfile(data) {
     // Render Education
     // ==========================================
 
+    function isEducationCompleted(item) {
+        const st = String(item.status || '').toLowerCase();
+        const stEn = String(item.status_en || '').toLowerCase();
+        if (st.includes('curso') || stEn.includes('progress')) return false;
+        return true;
+    }
+
         function renderEducation(items, containerId) {
         const container = $(`#${containerId}`);
         if (!container || !items || items.length === 0) return;
@@ -616,13 +626,14 @@ function renderProfile(data) {
                 'data-edu-status': item.id
             }, [currentLang === 'en' ? item.status_en : item.status]);
 
-            if(item.certificate) {
+            const showCert = item.certificate && isEducationCompleted(item);
+            if (showCert) {
                 const certLink = createElement('a', {
                      href: '#',
-                     class: 'course-cert-link'
+                     class: 'course-cert-link education-cert-link'
                 });
-                certLink.appendChild(createElement('i', {class: 'fas fas fa-certificate'}));
-                certLink.appendChild(document.createTextNode('' + getTranslation('education.certificate')));
+                certLink.appendChild(createElement('i', { class: 'fas fa-certificate', 'aria-hidden': 'true' }));
+                certLink.appendChild(createElement('span', { 'data-i18n': 'education.certificate' }, [getTranslation('education.certificate')]));
                 certLink.addEventListener('click', (e) => {
                    e.preventDefault();
                    openDiplomaModal(item.certificate);
@@ -663,15 +674,14 @@ function renderProfile(data) {
             if (item.certificate) {
                 const link = createElement('a', {
                     href: '#',
-                    class: 'course-cert-link',
-                    'data-i18n': 'education.certificate'
+                    class: 'course-cert-link'
                 });
-                link.appendChild(createElement('i', { class: 'fas fa-certificate' }));
-                link.appendChild(document.createTextNode(' ' + getTranslation('education.certificate')));
+                link.appendChild(createElement('i', { class: 'fas fa-certificate', 'aria-hidden': 'true' }));
+                link.appendChild(createElement('span', { 'data-i18n': 'education.certificate' }, [getTranslation('education.certificate')]));
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
                     openDiplomaModal(item.certificate);
-                })
+                });
 
                 footer.appendChild(link);
             }
@@ -797,16 +807,68 @@ function renderContact(data) {
     // ============================================
 
     function setupNavigation() {
+        const sidebar = $('#sidebar');
+        const backdrop = $('#sidebarBackdrop');
+        const sidebarToggle = $('#sidebarToggle');
+        const isMobileNav = () => window.matchMedia('(max-width: 768px)').matches;
+
+        function closeSidebar() {
+            if (!sidebar || !backdrop || !sidebarToggle) return;
+            sidebar.classList.remove('active');
+            backdrop.classList.remove('active');
+            backdrop.setAttribute('aria-hidden', 'true');
+            sidebarToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+
+        function openSidebar() {
+            if (!sidebar || !backdrop || !sidebarToggle) return;
+            sidebar.classList.add('active');
+            backdrop.classList.add('active');
+            backdrop.setAttribute('aria-hidden', 'false');
+            sidebarToggle.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function toggleSidebar() {
+            if (sidebar?.classList.contains('active')) closeSidebar();
+            else openSidebar();
+        }
+
+        if (sidebarToggle && sidebar && backdrop) {
+            sidebarToggle.addEventListener('click', () => toggleSidebar());
+            backdrop.addEventListener('click', () => closeSidebar());
+        }
+
+        window.addEventListener('resize', () => {
+            if (!isMobileNav()) closeSidebar();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && sidebar?.classList.contains('active')) closeSidebar();
+        });
+
         $$('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (!href || href === '#' || href.length < 2) return;
+                const target = $(href);
+                if (!target) return;
                 e.preventDefault();
-                const target = $(this.getAttribute('href'));
-                if (target) target.scrollIntoView({ behavior: 'smooth' });
+                target.scrollIntoView({ behavior: 'smooth' });
+                if (isMobileNav()) closeSidebar();
+            });
+        });
+
+        document.querySelectorAll('.language-switch [data-lang]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const lang = btn.dataset.lang;
+                if (lang && lang !== currentLang) loadLanguage(lang);
             });
         });
 
         const sections = $$('section[id]');
-        const navLinks = $$('.nav-link');
+        const navLinks = $$('.sidebar .nav-link');
         let scrollTimeout;
 
         window.addEventListener('scroll', () => {
@@ -821,13 +883,6 @@ function renderContact(data) {
                 });
             }, 100);
         });
-
-        const navToggle = $('#navToggle');
-        const navMenu = $('#navMenu');
-        if (navToggle && navMenu) {
-            navToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
-            navLinks.forEach(link => link.addEventListener('click', () => navMenu.classList.remove('active')));
-        }
     }
 
     // ============================================
@@ -1096,6 +1151,7 @@ async function init() {
 
     document.addEventListener('DOMContentLoaded', async () => {
         const lang = localStorage.getItem('lang') || 'es';
+        await loadLanguage(lang, { skipApply: true });
         await init();
-        await loadLanguage(lang);
+        applyTranslation();
     });

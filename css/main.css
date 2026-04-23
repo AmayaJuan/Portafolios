@@ -92,7 +92,9 @@ html {
 
 /* Print styles */
 @media print {
-    .navbar,
+    .topbar,
+    .sidebar,
+    .sidebar-backdrop,
     .hero-visual,
     .hero-actions,
     .hero-social,
@@ -175,7 +177,8 @@ html {
 
 /* Hide content during load */
 body.content-loading #mainContent,
-body.content-loading .navbar {
+body.content-loading .topbar,
+body.content-loading .sidebar {
     opacity: 0 !important;
     pointer-events: none;
     transition: opacity 0.3s ease;

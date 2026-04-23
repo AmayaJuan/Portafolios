@@ -23,40 +23,51 @@
             <div class="loader-spinner"></div>
         </div>
 
-        <!-- Navigation -->
-        <nav class="navbar" id="navbar">
-
-            <div class="nav-container">
-                <a href="#home" class="nav-logo">
-                    <span class="logo-text">Dev</span><span class="logo-accent">Portfolio</span>
+        <!-- Barra superior: logo + idioma -->
+        <header class="topbar" id="topbar">
+            <div class="topbar-inner">
+                <a href="#home" class="nav-logo" id="topbarLogo" aria-label="Inicio">
+                    <i class="fas fa-code logo-mark" aria-hidden="true"></i>
+                    <span class="logo-text-wrap">
+                        <span class="logo-text">Dev</span><span class="logo-accent">Portfolio</span>
+                    </span>
                 </a>
-                
-                <button class="nav-toggle" id="navToggle" aria-label="Toggle Menu">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </button>
-                
-                <ul class="nav-menu" id="navMenu">
-                    <li><a href="#home" class="nav-link active" data-i18n="nav.initiation"></a></li>
-                    <li><a href="#about" class="nav-link" data-i18n="nav.about"></a></li>
-                    <li><a href="#education" class="nav-link" data-i18n="nav.education"></a></li>
-                    <li><a href="#experience" class="nav-link" data-i18n="nav.experience"></a></li>
-                    <li><a href="#projects" class="nav-link" data-i18n="nav.projects"></a></li>
-                    <li><a href="#skills" class="nav-link" data-i18n="nav.skills"></a></li>
-                    <li><a href="#contact" class="nav-link" data-i18n="nav.contact"></a></li>
-                    <li><a href="#cv" class="nav-link btn-download" id="downloadCV">
-                        <i class="fas fa-download"></i> CV
-                    </a></li>
-                </ul>
-
-                <!-- Language switch buttons -->
-                <div class="language-switch">
-                    <button onclick="loadLanguage('es')">ES</button>
-                    <button onclick="loadLanguage('en')">EN</button>
+                <div class="topbar-right">
+                    <div class="language-switch" role="group" aria-label="Idioma">
+                        <button type="button" class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+                        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+                    </div>
+                    <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="sidebarNav">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
                 </div>
             </div>
-        </nav>
+        </header>
+
+        <!-- Menú lateral -->
+        <div class="sidebar-backdrop" id="sidebarBackdrop" aria-hidden="true"></div>
+        <aside class="sidebar" id="sidebar" aria-label="Navegación principal">
+            <nav class="sidebar-nav" id="sidebarNav">
+                <p class="sidebar-section-label" data-i18n="nav.section_menu"></p>
+                <ul class="sidebar-menu">
+                    <li><a href="#home" class="nav-link active"><i class="fas fa-home" aria-hidden="true"></i><span data-i18n="nav.initiation"></span></a></li>
+                    <li><a href="#about" class="nav-link"><i class="fas fa-user" aria-hidden="true"></i><span data-i18n="nav.about"></span></a></li>
+                    <li><a href="#education" class="nav-link"><i class="fas fa-graduation-cap" aria-hidden="true"></i><span data-i18n="nav.education"></span></a></li>
+                    <li><a href="#experience" class="nav-link"><i class="fas fa-briefcase" aria-hidden="true"></i><span data-i18n="nav.experience"></span></a></li>
+                    <li><a href="#projects" class="nav-link"><i class="fas fa-folder-open" aria-hidden="true"></i><span data-i18n="nav.projects"></span></a></li>
+                    <li><a href="#skills" class="nav-link"><i class="fas fa-code" aria-hidden="true"></i><span data-i18n="nav.skills"></span></a></li>
+                    <li><a href="#contact" class="nav-link"><i class="fas fa-envelope" aria-hidden="true"></i><span data-i18n="nav.contact"></span></a></li>
+                    <li class="sidebar-menu-cv">
+                        <a href="#cv" class="nav-link nav-link-cv" id="downloadCV">
+                            <i class="fas fa-file-pdf" aria-hidden="true"></i>
+                            <span data-i18n="nav.cv"></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
 
         <!-- Main Content -->
         <main id="mainContent">
