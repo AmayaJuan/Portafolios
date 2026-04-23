@@ -271,6 +271,17 @@
           "hours": "352 horas",
           "hours_en": "352 hours",
           "certificate": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773897649/habilidadesblandas_n80wz5.jpg"
+        },
+        {
+          "id": "course-04",
+          "platform": "Estud-IA",
+          "name": "Inteligencia Artificial - Deep Learning Avanzado",
+          "name_en": "Artificial Intelligence - Advanced Deep Learning",
+          "period": "Marzo 2026",
+          "period_en": "March 2026",
+          "hours": "117 horas",
+          "hours_en": "117 hours",
+          "certificate": "https://res.cloudinary.com/dulyljo7w/image/upload/v1776987959/certificado_curso_758ab65d-efc6-42a1-9228-2812a7d54256_itocc1.pdf"
         }
       ]
     },

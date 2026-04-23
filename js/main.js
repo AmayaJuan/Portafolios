@@ -206,9 +206,11 @@
         // 7. Courses
         appState.data?.education?.courses?.forEach(item => {
             const nameEl = document.querySelector(`[data-course-id="${item.id}"]`);
+            const platformEl = document.querySelector(`[data-course-platform="${item.id}"]`);
             const periodEl = document.querySelector(`[data-course-period="${item.id}"]`);
             const hoursEl = document.querySelector(`[data-course-hours="${item.id}"]`);
             if (nameEl) nameEl.textContent = currentLang === 'en' ? item.name_en : item.name;
+            if (platformEl) platformEl.textContent = currentLang === 'en' ? (item.platform_en || item.platform) : item.platform;
             if (periodEl) periodEl.textContent = currentLang === 'en' ? (item.period_en || item.period) : item.period;
             if (hoursEl) hoursEl.textContent = currentLang === 'en' ? (item.hours_en || item.hours) : item.hours;
         });
@@ -673,7 +675,10 @@ function renderProfile(data) {
         container.append(...courses.map(item => {
             const card = createElement('div', { class: 'course-card' });
 
-            const platform = createElement('span', { class: 'course-platform' }, [item.platform]);
+            const platform = createElement('span', {
+                class: 'course-platform',
+                'data-course-platform': item.id
+            }, [currentLang === 'en' ? (item.platform_en || item.platform) : item.platform]);
 
             const name = createElement('h3', {
                 class: 'course-name',
@@ -799,9 +804,32 @@ function renderContact(data) {
         $$('.project-card').forEach(card => card.classList.toggle('hidden', category !== 'all' && card.dataset.category !== category));
     }
 
-    function openDiplomaModal(imgUrl) {
-        $('#diplomaImg').src = imgUrl;
-        $('#diplomaModal').classList.add('active');
+    function isCertificatePdf(url) {
+        if (!url || typeof url !== 'string') return false;
+        return url.split('?')[0].toLowerCase().endsWith('.pdf');
+    }
+
+    function openDiplomaModal(mediaUrl) {
+        const modal = $('#diplomaModal');
+        const img = $('#diplomaImg');
+        const frame = $('#diplomaPdfFrame');
+        if (!modal || !img) return;
+
+        if (isCertificatePdf(mediaUrl) && frame) {
+            img.hidden = true;
+            img.removeAttribute('src');
+            frame.hidden = false;
+            const base = mediaUrl.split('#')[0];
+            frame.src = `${base}#view=FitH&toolbar=1&navpanes=0`;
+        } else {
+            if (frame) {
+                frame.hidden = true;
+                frame.removeAttribute('src');
+            }
+            img.hidden = false;
+            img.src = mediaUrl;
+        }
+        modal.classList.add('active');
         document.body.style.overflow = 'hidden';
     }
 
@@ -813,8 +841,18 @@ function renderContact(data) {
     }
 
     function closeDiplomaModal() {
-        $('#diplomaImg').src = '';
-        $('#diplomaModal').classList.remove('active');
+        const img = $('#diplomaImg');
+        const frame = $('#diplomaPdfFrame');
+        const modal = $('#diplomaModal');
+        if (img) {
+            img.removeAttribute('src');
+            img.hidden = false;
+        }
+        if (frame) {
+            frame.removeAttribute('src');
+            frame.hidden = true;
+        }
+        if (modal) modal.classList.remove('active');
         document.body.style.overflow = '';
     }
 
