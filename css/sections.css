@@ -602,10 +602,9 @@
     justify-content: center;
     color: white;
     font-size: 1.5rem;
-    opacity: 0.95;
+    opacity: 0;
     transition: all var(--transition-normal);
     z-index: 5;
-    box-shadow: var(--shadow-lg);
 }
 
 .project-card:hover .play-btn {
