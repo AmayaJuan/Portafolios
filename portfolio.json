@@ -121,7 +121,7 @@
           "technologies": ["Unity", "C#"],
           "featured": true,
           "links": {
-            "play": null,
+            "play": "games/maskcore/index.html",
             "gitlab": "https://gitlab.com/jpva360/ggj2026_maskcore",
             "download": null
           },
