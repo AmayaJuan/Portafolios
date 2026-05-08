@@ -106,6 +106,28 @@
           "year": "2023"
         },
         {
+          "id": "unity-03",
+          "name": "SPIRIT MASK: ECHOES IN MOTION",
+          "name_en": "SPIRIT MASK: ECHOES IN MOTION",
+          "category": "unity",
+          "shortDescription": "Runner 2D de saltos y evasión con tensión constante",
+          "shortDescription_en": "2D runner focused on jumps, dodging and constant tension",
+          "description": "Runner 2D donde controlas una máscara espiritual que avanza sin detenerse por un mundo frío y silencioso. Debes esquivar enemigos terrestres con saltos precisos y ajustes de movimiento; un error termina la carrera. Mientras corres, el Coleccionista de Rostros permanece al fondo como amenaza constante, reforzando la sensación de que siempre estás siendo observado.",
+          "description_en": "A 2D runner where you control a spirit mask moving constantly through a cold, silent world. You must dodge ground enemies with precise jumps and small movement adjustments; one mistake ends the run. Throughout the level, the Face Collector remains in the background as a constant threat, reinforcing the feeling that you are always being watched.",
+          "thumbnail": "https://res.cloudinary.com/dulyljo7w/image/upload/v1778208150/Featured_2_wtipeh.png",
+          "gallery": [
+            "https://res.cloudinary.com/dulyljo7w/image/upload/v1778208150/Featured_2_wtipeh.png"
+          ],
+          "technologies": ["Unity", "C#"],
+          "featured": true,
+          "links": {
+            "play": null,
+            "gitlab": "https://gitlab.com/jpva360/ggj2026_maskcore",
+            "download": null
+          },
+          "year": "2026"
+        },
+        {
           "id": "android-01",
           "name": "Task Manager Pro",
           "category": "android",
