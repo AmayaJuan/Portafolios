@@ -121,6 +121,25 @@
         "download": null
       },
       "year": "2026"
+    },
+    {
+      "id": "android-01",
+      "name": "CaptionsAI",
+      "name_en": "CaptionsAI",
+      "category": "android",
+      "shortDescription": "Aplicación móvil que genera captions usando IA para contenido multimedia.",
+      "shortDescription_en": "A mobile app that generates captions using AI for multimedia content.",
+      "thumbnail": "https://res.cloudinary.com/dulyljo7w/image/upload/v1781666903/unnamed_shtfvi.webp",
+      "gallery": [
+        "https://res.cloudinary.com/dulyljo7w/image/upload/v1781666903/unnamed_shtfvi.webp"
+      ],
+      "technologies": ["Android", "Kotlin", "ML/AI"],
+      "featured": false,
+      "links": {
+        "github": "https://github.com/AmayaJuan/CaptionsAI",
+        "play": "https://play.google.com/store/apps/details?id=com.jpva.captionsai"
+      },
+      "year": "2026"
     }
   ],
   "experience": [
