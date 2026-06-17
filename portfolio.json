@@ -14,8 +14,7 @@
     "social": {
       "github": "https://github.com/AmayaJuan",
       "gitlab": "https://gitlab.com/jpva360",
-      "linkedin": "https://linkedin.com/in/tuusuario",
-      "itchio": "https://tuusuario.itch.io"
+      "linkedin": "https://linkedin.com/in/tuusuario"
     }
   },
   "skills": [
@@ -63,231 +62,232 @@
     }
   ],
   "projects": [
-        {
-          "id": "unity-03",
-          "name": "SPIRIT MASK: ECHOES IN MOTION",
-          "name_en": "SPIRIT MASK: ECHOES IN MOTION",
-          "category": "unity",
-          "shortDescription": "Runner 2D de saltos y evasión con tensión constante",
-          "shortDescription_en": "2D runner focused on jumps, dodging and constant tension",
-          "description": "Runner 2D donde controlas una máscara espiritual que avanza sin detenerse por un mundo frío y silencioso. Debes esquivar enemigos terrestres con saltos precisos y ajustes de movimiento; un error termina la carrera. Mientras corres, el Coleccionista de Rostros permanece al fondo como amenaza constante, reforzando la sensación de que siempre estás siendo observado.",
-          "description_en": "A 2D runner where you control a spirit mask moving constantly through a cold, silent world. You must dodge ground enemies with precise jumps and small movement adjustments; one mistake ends the run. Throughout the level, the Face Collector remains in the background as a constant threat, reinforcing the feeling that you are always being watched.",
-          "thumbnail": "https://res.cloudinary.com/dulyljo7w/image/upload/v1778208150/Featured_2_wtipeh.png",
-          "gallery": [
-            "https://res.cloudinary.com/dulyljo7w/image/upload/v1778208150/Featured_2_wtipeh.png"
-          ],
-          "technologies": ["Unity", "C#"],
-          "featured": true,
-          "links": {
-            "play": "games/maskcore/index.html",
-            "gitlab": "https://gitlab.com/jpva360/ggj2026_maskcore",
-            "download": null
-          },
-          "year": "2026"
-        },
-        {
-          "id": "software-01",
-          "name": "PA Acoustic",
-          "category": "software",
-          "shortDescription": "Sitio web de catálogo para empresa de audio profesional en Medellín",
-          "shortDescription_en": "Catalog website for professional audio company in Medellín",
-          "thumbnail": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773887480/amayajuan.github.io_PGW_upa2bg.png",
-          "gallery": [
-            "https://res.cloudinary.com/dulyljo7w/image/upload/v1773887480/amayajuan.github.io_PGW_upa2bg.png"
-          ],
-          "technologies": ["HTML5", "CSS3", "JavaScript"],
-          "featured": false,
-          "links": {
-            "play": "https://p-acoustic.com.co/",
-            "github": "https://github.com/AmayaJuan/PGW",
-            "download": null
-          },
-          "year": "2026"
-        },
-        {
-          "id": "software-02",
-          "name": "GanaderiaApp",
-          "category": "software",
-          "shortDescription": "GanaderíaApp contempla la integración de modelos de inteligencia artificial para apoyar la predicción de peso y el análisis sanitario a partir de los datos históricos registrados por los usuarios.",
-          "shortDescription_en": "GanaderiaApp includes the integration of artificial intelligence models to support weight prediction and health analysis based on historical data recorded by users.",
-          "thumbnail": "https://res.cloudinary.com/dulyljo7w/image/upload/v1781646488/GanaderiaApp_fpcbmf.png",
-          "gallery": [
-            ""
-          ],
-          "technologies": ["Flutter", "Dart", "Supabase", "PostgreSQL", "Python(IA en desarrollo)"],
-          "featured": false,
-          "links": {
-            "play": "https://amayajuan.github.io/ganaderia_app/",
-            "github": "https://github.com/AmayaJuan/ganaderia_app",
-            "download": null
-          },
-          "year": "2026"
-        }
+    {
+      "id": "unity-03",
+      "name": "SPIRIT MASK: ECHOES IN MOTION",
+      "name_en": "SPIRIT MASK: ECHOES IN MOTION",
+      "category": "unity",
+      "shortDescription": "Runner 2D de saltos y evasión con tensión constante",
+      "shortDescription_en": "2D runner focused on jumps, dodging and constant tension",
+      "description": "Runner 2D donde controlas una máscara espiritual que avanza sin detenerse por un mundo frío y silencioso. Debes esquivar enemigos terrestres con saltos precisos y ajustes de movimiento; un error termina la carrera. Mientras corres, el Coleccionista de Rostros permanece al fondo como amenaza constante, reforzando la sensación de que siempre estás siendo observado.",
+      "description_en": "A 2D runner where you control a spirit mask moving constantly through a cold, silent world. You must dodge ground enemies with precise jumps and small movement adjustments; one mistake ends the run. Throughout the level, the Face Collector remains in the background as a constant threat, reinforcing the feeling that you are always being watched.",
+      "thumbnail": "https://res.cloudinary.com/dulyljo7w/image/upload/v1778208150/Featured_2_wtipeh.png",
+      "gallery": [
+        "https://res.cloudinary.com/dulyljo7w/image/upload/v1778208150/Featured_2_wtipeh.png"
       ],
-      "experience": [
-        {
-          "id": "exp-parlantes",
-          "company": "Parlantes & Sonidos, Medellín",
-          "company_en": "Parlantes & Sonidos, Medellín",
-          "position": "Desarrollador Web Freelance",
-          "position_en": "Freelance Web Developer",
-          "period": "Febrero 2026 - Abril 2026",
-          "period_en": "Feb 2026 - Apr 2026",
-          "description": "<ul><li>Desarrollo de sitio web corporativo desde cero, definiendo la estructura general, el layout y los componentes clave.</li><li>Construcción de interfaz responsive con HTML, CSS y JavaScript para un despliegue óptimo en distintos dispositivos.</li><li>Optimización de recursos multimedia con Cloudinary para mejorar tiempos de carga y la gestión de medios.</li><li>Implementación de catálogo de productos para presentar la oferta de forma clara y navegable.</li><li>Integración de contacto por WhatsApp para agilizar la comunicación directa con los visitantes.</li></ul>",
-          "description_en": "<ul><li>Developed a corporate website from scratch, defining the overall structure, layout, and key components.</li><li>Built a responsive user interface using HTML, CSS, and JavaScript to ensure optimal display across devices.</li><li>Optimized multimedia assets with Cloudinary to improve loading performance and media handling.</li><li>Implemented a product catalog to showcase offerings in a clear and navigable format.</li><li>Integrated WhatsApp contact functionality to streamline direct communication with visitors.</li></ul>"
-        },
-        {
-          "id": "exp-rs-soluciones",
-          "company": "R & S Soluciones, Medellín",
-          "company_en": "R & S Soluciones, Medellín",
-          "position": "Técnico de Soporte IT (Freelance)",
-          "position_en": "IT Support Technician (Freelance)",
-          "period": "Nov 2025 - Feb 2026",
-          "period_en": "Nov 2025 - Feb 2026",
-          "description": "<ul><li>Soporte técnico y mantenimiento rutinario de equipos de cómputo y periféricos.</li><li>Instalación y configuración de aplicaciones según requerimientos de usuarios finales y estándares de la empresa.</li><li>Diagnóstico y resolución de incidencias de software, asegurando la recuperación oportuna de la funcionalidad del sistema.</li></ul>",
-          "description_en": "<ul><li>Provided technical support and routine maintenance for computer hardware and peripheral equipment.</li><li>Installed and configured software applications according to end-user requirements and company standards.</li><li>Diagnosed and resolved software issues, ensuring timely restoration of system functionality.</li></ul>"
-        },
-        {
-          "id": "exp-logytech",
-          "company": "LOGYTECH MOBILE SAS (CLARO), Medellín",
-          "company_en": "LOGYTECH MOBILE SAS (CLARO), Medellín",
-          "position": "Técnico de Reparación y Soporte",
-          "position_en": "Repair & Support Technician",
-          "period": "Mar 2022 - Mar 2025",
-          "period_en": "Mar 2022 - Mar 2025",
-          "description": "<ul><li>Diagnóstico y reparación de dispositivos móviles y computadores, abordando fallas de hardware y software para restablecer la funcionalidad completa.</li><li>Actualización de software en equipos Samsung y Motorola, asegurando instalación y configuración adecuadas.</li><li>Gestión de validación de garantías, verificando elegibilidad y coordinando procedimientos de reparación o reemplazo.</li><li>Soporte técnico de primer nivel a usuarios: resolución de incidencias y orientación clara sobre el uso del equipo.</li></ul>",
-          "description_en": "<ul><li>Diagnosed and repaired mobile devices and computers, addressing hardware and software issues to restore full functionality.</li><li>Performed software updates for Samsung and Motorola devices, ensuring proper installation and configuration.</li><li>Managed warranty validation processes, verifying eligibility and coordinating repair or replacement procedures.</li><li>Delivered first-level technical support to users, troubleshooting incidents and providing clear guidance on device usage and basic issue resolution.</li></ul>"
-        },
-        {
-          "id": "exp-st-tech",
-          "company": "S&T Technology SAS, Medellín",
-          "company_en": "S&T Technology SAS, Medellín",
-          "position": "Técnico de Soporte IT",
-          "position_en": "IT Support Technician",
-          "period": "Ene 2019 - Sep 2021",
-          "period_en": "Jan 2019 - Sep 2021",
-          "description": "<ul><li>Mantenimiento preventivo y correctivo de equipos TI para asegurar rendimiento óptimo y reducir tiempos fuera de servicio.</li><li>Instalación y configuración de aplicaciones conforme a estándares organizacionales y requerimientos de usuarios.</li><li>Soporte a usuarios en hardware y software: diagnóstico de incidentes y apoyo en la resolución de problemas técnicos.</li></ul>",
-          "description_en": "<ul><li>Performed preventive and corrective maintenance on IT equipment to ensure optimal performance and minimize downtime.</li><li>Installed and configured software applications in accordance with organizational standards and user requirements.</li><li>Provided user support for hardware and software issues, troubleshooting incidents and assisting users in resolving technical problems.</li></ul>"
-        },
-        {
-          "id": "exp-sena-intern",
-          "company": "SENA, Medellín",
-          "company_en": "SENA, Medellín",
-          "position": "Pasante de Desarrollo de Videojuegos",
-          "position_en": "Game Developer Intern",
-          "period": "Jul 2016",
-          "period_en": "Jul 2016",
-          "description": "<ul><li>Diseño de conceptos de juego y mecánicas alineadas con la visión del proyecto para experiencias de juego atractivas.</li><li>Desarrollo de lógica de gameplay y sistemas interactivos para un flujo de juego fluido y responsivo.</li><li>Implementación de assets artísticos e integración de audio para mejorar la sensación de juego y la inmersión.</li><li>Depuración de características de gameplay y optimización del rendimiento para mejorar estabilidad y capacidad de respuesta.</li></ul>",
-          "description_en": "<ul><li>Designed core game concepts and mechanics aligned with project vision for engaging player experiences.</li><li>Developed gameplay logic and interactive systems to support smooth and responsive game flow.</li><li>Implemented art assets and integrated audio elements to enhance overall game feel and immersion.</li><li>Debugged gameplay features and optimized game performance to improve stability and responsiveness.</li></ul>"
-        }
-      ],
-      "education": {
-        "technical":[
-          {
-            "id": "tec-01",
-            "institution": "ESCOLME",
-            "degree": "Técnico en Sistemas y Redes",
-            "degree_en": "Systems and Networks Technician",
-            "period": "2009 - 2010",
-            "status": "Graduado",
-            "status_en": "Graduated",
-            "certificate": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773938118/sistemas_y_redes_oso4bh.jpg"
-        }
-      ],
-      "technologist":[
-        {
-          "id": "tec-02",
-          "institution": "SENA",
-          "degree": "Tecnólogo en Desarrollo de Videojuegos",
-          "degree_en": "Video Game Development Technologist",
-          "period": "2015 - 2017",
-          "status": "Graduado",
-          "status_en": "Graduated",
-          "certificate": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773935551/Desarrollo_de_VideoJuegos_otwcic.jpg"
-        },
-        {
-          "id": "tec-03",
-          "institution": "ITM",
-          "degree": "Diseño y Programación de Solución de Software como servicio",
-          "degree_en": "Software as a Service Solution Design and Programming",
-          "period": "2024 - Presente",
-          "period_en": "2024 - Present",
-          "status":"En Curso",
-          "status_en":"In progress"
-        }
-      ],
-      "courses": [
-        {
-          "id": "course-01",
-          "platform": "Academy by Polygonus",
-          "name": "Desarrollo de VideoJuegos con Unity",
-          "name_en": "Video Game Development in Unity",
-          "period": "Diciembre 2025",
-          "period_en": "December 2025",
-          "hours": "352 horas",
-          "hours_en": "352 hours",
-          "certificate":"https://res.cloudinary.com/dulyljo7w/image/upload/v1773897650/desarrollovideojuegos_svbfcr.jpg"
-        },
-        {
-          "id":"course-02",
-          "platform":"Academy by Polygonus",
-          "name": "Ingles Especializado",
-          "name_en":"Specialized English",
-          "period": "Diciembre 2025",
-          "period_en": "December 2025",
-          "hours": "352 houras",
-          "hours_en": "352 hours",
-          "certificate": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773894534/ingles_skjo7x.jpg"
-        },
-        {
-          "id": "course-03",
-          "platform": "Academy by Polygonus",
-          "name": "Habilidades Blandas",
-          "name_en": "Soft Skills",
-          "period": "Diciembre 2025",
-          "period_en": "December 2025",
-          "hours": "352 horas",
-          "hours_en": "352 hours",
-          "certificate": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773897649/habilidadesblandas_n80wz5.jpg"
-        },
-        {
-          "id": "course-04",
-          "platform": "Estud-IA",
-          "name": "Inteligencia Artificial - Deep Learning Avanzado",
-          "name_en": "Artificial Intelligence - Advanced Deep Learning",
-          "period": "Marzo 2026",
-          "period_en": "March 2026",
-          "hours": "117 horas",
-          "hours_en": "117 hours",
-          "certificate": "https://res.cloudinary.com/dulyljo7w/image/upload/v1776987959/certificado_curso_758ab65d-efc6-42a1-9228-2812a7d54256_itocc1.pdf"
-        }
-      ]
+      "technologies": ["Unity", "C#"],
+      "featured": true,
+      "links": {
+        "play": "games/maskcore/index.html",
+        "gitlab": "https://gitlab.com/jpva360/ggj2026_maskcore",
+        "download": null
+      },
+      "year": "2026"
     },
-      "contact": {
-        "email": "velezamayajuanpablo@gmail.com",
-        "subject": "Contacto desde Portafolio Web",
-        "successMessage": "¡Gracias por contactarme! Te responderé pronto.",
-        "fields": {
-          "name": "Nombre",
-          "email": "Email",
-          "subject": "Asunto",
-          "message": "Mensaje"
-        },
-        "emailjs": {
-          "publicKey": "qr2Q8A7CGohDxK5_8",
-          "serviceId": "service_gj0z1c7",
-          "templateId": "template_likc0ei"
-        }
+    {
+      "id": "software-01",
+      "name": "PA Acoustic",
+      "category": "software",
+      "shortDescription": "Sitio web de catálogo para empresa de audio profesional en Medellín",
+      "shortDescription_en": "Catalog website for professional audio company in Medellín",
+      "thumbnail": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773887480/amayajuan.github.io_PGW_upa2bg.png",
+      "gallery": [
+        "https://res.cloudinary.com/dulyljo7w/image/upload/v1773887480/amayajuan.github.io_PGW_upa2bg.png"
+      ],
+      "technologies": ["HTML5", "CSS3", "JavaScript"],
+      "featured": false,
+      "links": {
+        "play": "https://p-acoustic.com.co/",
+        "github": "https://github.com/AmayaJuan/PGW",
+        "download": null
       },
-      "cv": {
-        "file": "https://res.cloudinary.com/dulyljo7w/image/upload/v1774400854/CV_ES_sqznh9.pdf",
-        "file_en": "https://res.cloudinary.com/dulyljo7w/image/upload/v1774400854/CV_EN_oqpe3l.pdf",
-        "downloadName": "Juan_Pablo_Velez_Amaya_CV.pdf"
+      "year": "2026"
+    },
+    {
+      "id": "software-02",
+      "name": "GanaderiaApp",
+      "category": "software",
+      "shortDescription": "GanaderíaApp contempla la integración de modelos de inteligencia artificial para apoyar la predicción de peso y el análisis sanitario a partir de los datos históricos registrados por los usuarios.",
+      "shortDescription_en": "GanaderiaApp includes the integration of artificial intelligence models to support weight prediction and health analysis based on historical data recorded by users.",
+      "thumbnail": "https://res.cloudinary.com/dulyljo7w/image/upload/v1781646488/GanaderiaApp_fpcbmf.png",
+      "gallery": [
+        ""
+      ],
+      "technologies": ["Flutter", "Dart", "Supabase", "PostgreSQL", "Python(IA en desarrollo)"],
+      "featured": false,
+      "links": {
+        "play": "https://amayajuan.github.io/ganaderia_app/",
+        "github": "https://github.com/AmayaJuan/ganaderia_app",
+        "download": null
       },
-      "settings": {
-        "theme": "dark",
-        "language": "es",
-        "animations": true,
-        "projectsPerPage": 6
-      }
+      "year": "2026"
     }
+  ],
+  "experience": [
+    {
+      "id": "exp-parlantes",
+      "company": "Parlantes & Sonidos, Medellín",
+      "company_en": "Parlantes & Sonidos, Medellín",
+      "position": "Desarrollador Web Freelance",
+      "position_en": "Freelance Web Developer",
+      "period": "Febrero 2026 - Abril 2026",
+      "period_en": "Feb 2026 - Apr 2026",
+      "description": "<ul><li>Desarrollo de sitio web corporativo desde cero, definiendo la estructura general, el layout y los componentes clave.</li><li>Construcción de interfaz responsive con HTML, CSS y JavaScript para un despliegue óptimo en distintos dispositivos.</li><li>Optimización de recursos multimedia con Cloudinary para mejorar tiempos de carga y la gestión de medios.</li><li>Implementación de catálogo de productos para presentar la oferta de forma clara y navegable.</li><li>Integración de contacto por WhatsApp para agilizar la comunicación directa con los visitantes.</li></ul>",
+      "description_en": "<ul><li>Developed a corporate website from scratch, defining the overall structure, layout, and key components.</li><li>Built a responsive user interface using HTML, CSS, and JavaScript to ensure optimal display across devices.</li><li>Optimized multimedia assets with Cloudinary to improve loading performance and media handling.</li><li>Implemented a product catalog to showcase offerings in a clear and navigable format.</li><li>Integrated WhatsApp contact functionality to streamline direct communication with visitors.</li></ul>"
+    },
+    {
+      "id": "exp-rs-soluciones",
+      "company": "R & S Soluciones, Medellín",
+      "company_en": "R & S Soluciones, Medellín",
+      "position": "Técnico de Soporte IT (Freelance)",
+      "position_en": "IT Support Technician (Freelance)",
+      "period": "Nov 2025 - Feb 2026",
+      "period_en": "Nov 2025 - Feb 2026",
+      "description": "<ul><li>Soporte técnico y mantenimiento rutinario de equipos de cómputo y periféricos.</li><li>Instalación y configuración de aplicaciones según requerimientos de usuarios finales y estándares de la empresa.</li><li>Diagnóstico y resolución de incidencias de software, asegurando la recuperación oportuna de la funcionalidad del sistema.</li></ul>",
+      "description_en": "<ul><li>Provided technical support and routine maintenance for computer hardware and peripheral equipment.</li><li>Installed and configured software applications according to end-user requirements and company standards.</li><li>Diagnosed and resolved software issues, ensuring timely restoration of system functionality.</li></ul>"
+    },
+    {
+      "id": "exp-logytech",
+      "company": "LOGYTECH MOBILE SAS (CLARO), Medellín",
+      "company_en": "LOGYTECH MOBILE SAS (CLARO), Medellín",
+      "position": "Técnico de Reparación y Soporte",
+      "position_en": "Repair & Support Technician",
+      "period": "Mar 2022 - Mar 2025",
+      "period_en": "Mar 2022 - Mar 2025",
+      "description": "<ul><li>Diagnóstico y reparación de dispositivos móviles y computadores, abordando fallas de hardware y software para restablecer la funcionalidad completa.</li><li>Actualización de software en equipos Samsung y Motorola, asegurando instalación y configuración adecuadas.</li><li>Gestión de validación de garantías, verificando elegibilidad y coordinando procedimientos de reparación o reemplazo.</li><li>Soporte técnico de primer nivel a usuarios: resolución de incidencias y orientación clara sobre el uso del equipo.</li></ul>",
+      "description_en": "<ul><li>Diagnosed and repaired mobile devices and computers, addressing hardware and software issues to restore full functionality.</li><li>Performed software updates for Samsung and Motorola devices, ensuring proper installation and configuration.</li><li>Managed warranty validation processes, verifying eligibility and coordinating repair or replacement procedures.</li><li>Delivered first-level technical support to users, troubleshooting incidents and providing clear guidance on device usage and basic issue resolution.</li></ul>"
+    },
+    {
+      "id": "exp-st-tech",
+      "company": "S&T Technology SAS, Medellín",
+      "company_en": "S&T Technology SAS, Medellín",
+      "position": "Técnico de Soporte IT",
+      "position_en": "IT Support Technician",
+      "period": "Ene 2019 - Sep 2021",
+      "period_en": "Jan 2019 - Sep 2021",
+      "description": "<ul><li>Mantenimiento preventivo y correctivo de equipos TI para asegurar rendimiento óptimo y reducir tiempos fuera de servicio.</li><li>Instalación y configuración de aplicaciones conforme a estándares organizacionales y requerimientos de usuarios.</li><li>Soporte a usuarios en hardware y software: diagnóstico de incidentes y apoyo en la resolución de problemas técnicos.</li></ul>",
+      "description_en": "<ul><li>Performed preventive and corrective maintenance on IT equipment to ensure optimal performance and minimize downtime.</li><li>Installed and configured software applications in accordance with organizational standards and user requirements.</li><li>Provided user support for hardware and software issues, troubleshooting incidents and assisting users in resolving technical problems.</li></ul>"
+    },
+    {
+      "id": "exp-sena-intern",
+      "company": "SENA, Medellín",
+      "company_en": "SENA, Medellín",
+      "position": "Pasante de Desarrollo de Videojuegos",
+      "position_en": "Game Developer Intern",
+      "period": "Jul 2016",
+      "period_en": "Jul 2016",
+      "description": "<ul><li>Diseño de conceptos de juego y mecánicas alineadas con la visión del proyecto para experiencias de juego atractivas.</li><li>Desarrollo de lógica de gameplay y sistemas interactivos para un flujo de juego fluido y responsivo.</li><li>Implementación de assets artísticos e integración de audio para mejorar la sensación de juego y la inmersión.</li><li>Depuración de características de gameplay y optimización del rendimiento para mejorar estabilidad y capacidad de respuesta.</li></ul>",
+      "description_en": "<ul><li>Designed core game concepts and mechanics aligned with project vision for engaging player experiences.</li><li>Developed gameplay logic and interactive systems to support smooth and responsive game flow.</li><li>Implemented art assets and integrated audio elements to enhance overall game feel and immersion.</li><li>Debugged gameplay features and optimized game performance to improve stability and responsiveness.</li></ul>"
+    }
+  ],
+  "education": {
+    "technical": [
+      {
+        "id": "tec-01",
+        "institution": "ESCOLME",
+        "degree": "Técnico en Sistemas y Redes",
+        "degree_en": "Systems and Networks Technician",
+        "period": "2009 - 2010",
+        "status": "Graduado",
+        "status_en": "Graduated",
+        "certificate": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773938118/sistemas_y_redes_oso4bh.jpg"
+      }
+    ],
+    "technologist": [
+      {
+        "id": "tec-02",
+        "institution": "SENA",
+        "degree": "Tecnólogo en Desarrollo de Videojuegos",
+        "degree_en": "Video Game Development Technologist",
+        "period": "2015 - 2017",
+        "status": "Graduado",
+        "status_en": "Graduated",
+        "certificate": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773935551/Desarrollo_de_VideoJuegos_otwcic.jpg"
+      },
+      {
+        "id": "tec-03",
+        "institution": "ITM",
+        "degree": "Diseño y Programación de Solución de Software como servicio",
+        "degree_en": "Software as a Service Solution Design and Programming",
+        "period": "2024 - Presente",
+        "period_en": "2024 - Present",
+        "status": "En Curso",
+        "status_en": "In progress"
+      }
+    ],
+    "courses": [
+      {
+        "id": "course-01",
+        "platform": "Academy by Polygonus",
+        "name": "Desarrollo de VideoJuegos con Unity",
+        "name_en": "Video Game Development in Unity",
+        "period": "Diciembre 2025",
+        "period_en": "December 2025",
+        "hours": "352 horas",
+        "hours_en": "352 hours",
+        "certificate": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773897650/desarrollovideojuegos_svbfcr.jpg"
+      },
+      {
+        "id": "course-02",
+        "platform": "Academy by Polygonus",
+        "name": "Ingles Especializado",
+        "name_en": "Specialized English",
+        "period": "Diciembre 2025",
+        "period_en": "December 2025",
+        "hours": "352 houras",
+        "hours_en": "352 hours",
+        "certificate": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773894534/ingles_skjo7x.jpg"
+      },
+      {
+        "id": "course-03",
+        "platform": "Academy by Polygonus",
+        "name": "Habilidades Blandas",
+        "name_en": "Soft Skills",
+        "period": "Diciembre 2025",
+        "period_en": "December 2025",
+        "hours": "352 horas",
+        "hours_en": "352 hours",
+        "certificate": "https://res.cloudinary.com/dulyljo7w/image/upload/v1773897649/habilidadesblandas_n80wz5.jpg"
+      },
+      {
+        "id": "course-04",
+        "platform": "Estud-IA",
+        "name": "Inteligencia Artificial - Deep Learning Avanzado",
+        "name_en": "Artificial Intelligence - Advanced Deep Learning",
+        "period": "Marzo 2026",
+        "period_en": "March 2026",
+        "hours": "117 horas",
+        "hours_en": "117 hours",
+        "certificate": "https://res.cloudinary.com/dulyljo7w/image/upload/v1776987959/certificado_curso_758ab65d-efc6-42a1-9228-2812a7d54256_itocc1.pdf"
+      }
+    ]
+  },
+  "contact": {
+    "email": "velezamayajuanpablo@gmail.com",
+    "subject": "Contacto desde Portafolio Web",
+    "successMessage": "¡Gracias por contactarme! Te responderé pronto.",
+    "fields": {
+      "name": "Nombre",
+      "email": "Email",
+      "subject": "Asunto",
+      "message": "Mensaje"
+    },
+    "emailjs": {
+      "publicKey": "qr2Q8A7CGohDxK5_8",
+      "serviceId": "service_gj0z1c7",
+      "templateId": "template_likc0ei"
+    }
+  },
+  "cv": {
+    "file": "https://res.cloudinary.com/dulyljo7w/image/upload/v1774400854/CV_ES_sqznh9.pdf",
+    "file_en": "https://res.cloudinary.com/dulyljo7w/image/upload/v1774400854/CV_EN_oqpe3l.pdf",
+    "downloadName": "Juan_Pablo_Velez_Amaya_CV.pdf"
+  },
+  "settings": {
+    "theme": "dark",
+    "language": "es",
+    "animations": true,
+    "projectsPerPage": 6
+  }
+}
+

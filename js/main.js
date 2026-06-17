@@ -521,7 +521,6 @@ function renderProfile(data) {
                 { key: 'gitlab',   icon: 'fab fa-gitlab',  title: 'GitLab' },
                 { key: 'linkedin', icon: 'fab fa-linkedin', title: 'LinkedIn' },
                 { key: 'twitter',  icon: 'fab fa-twitter',  title: 'Twitter' },
-                { key: 'itchio',   icon: 'fab fa-itch-io',  title: 'Itch.io' }
             ];
             socials.forEach(({ key, icon, title }) => {
                 if (profile.social[key]) {
