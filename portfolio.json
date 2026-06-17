@@ -63,48 +63,6 @@
     }
   ],
   "projects": [
-    {
-      "id": "unity-01",
-      "name": "Space Shooter",
-      "category": "unity",
-      "shortDescription": "Juego de naves espaciales con shooter clásico",
-      "shortDescription_en": "Classic space shooter game",
-      "description": "Un juego de naves espaciales donde el jugador debe destruir enemigos y asteroides. Incluye sistema de puntuación, power-ups y múltiples niveles de dificultad.",
-      "description_en": "A space shooter game where the player must destroy enemies and asteroids. Features a scoring system, power-ups and multiple difficulty levels.",
-      "thumbnail": "https://placehold.co/640x360/15151f/818cf8/png?text=Space+Shooter",
-      "gallery": [
-        "https://placehold.co/640x360/15151f/818cf8/png?text=Space+Shooter"
-      ],
-        "technologies": ["Unity", "C#", "Raycasting"],
-        "featured": true,
-        "links": {
-          "play": "builds/unity/space-shooter/index.html",
-          "github": "https://github.com/tuusuario/space-shooter",
-          "download": null
-        },
-       "year": "2024"
-    },
-    {
-      "id": "unity-02",
-      "name": "Puzzle Adventure",
-      "category": "unity",
-      "shortDescription": "Juego de puzzles en 3D con narrativa",
-      "shortDescription_en": "3D puzzle game with branching narrative",
-      "description": "Adventure puzzle game con mecánicas de física y narrativa ramificada. El jugador resuelve puzzles para avanzar en la      historia.",
-      "description_en": "An adventure puzzle game with physics mechanics and branching narrative. The player solves puzzles to progress through the story.",
-          "thumbnail": "https://placehold.co/640x360/1e1b4b/c4b5fd/png?text=Puzzle+Adventure",
-          "gallery": [
-            "https://placehold.co/640x360/1e1b4b/c4b5fd/png?text=Puzzle+Adventure"
-          ],
-          "technologies": ["Unity", "C#", "Narrative Designer"],
-          "featured": true,
-          "links": {
-            "play": "builds/unity/puzzle-adventure/index.html",
-            "github": "https://github.com/tuusuario/puzzle-adventure",
-            "download": null
-          },
-          "year": "2023"
-        },
         {
           "id": "unity-03",
           "name": "SPIRIT MASK: ECHOES IN MOTION",
@@ -128,27 +86,6 @@
           "year": "2026"
         },
         {
-          "id": "android-01",
-          "name": "Task Manager Pro",
-          "category": "android",
-          "shortDescription": "Aplicación de gestión de tareas con Material Design",
-          "shortDescription_en": "Task management app with Material Design",
-          "description": "Aplicación móvil para gestión de tareas diarias con funcionalidades de categorías, recordatorios y sincronización en la nube.",
-          "description_en": "Mobile app for daily task management with category features, reminders and cloud synchronization.",
-          "thumbnail": "https://placehold.co/640x360/0f172a/34d399/png?text=Task+Manager+Pro",
-          "gallery": [
-            "https://placehold.co/640x360/0f172a/34d399/png?text=Task+Manager+Pro"
-          ],
-          "technologies": ["Android Studio", "Java", "Room Database", "Material Design"],
-          "featured": true,
-          "links": {
-            "play": "https://play.google.com/store/apps/details?id=com.tuusuario.taskmanager",
-            "github": "https://github.com/tuusuario/task-manager",
-            "download": "assets/downloads/task-manager.apk"
-          },
-          "year": "2023"
-        },
-        {
           "id": "software-01",
           "name": "PA Acoustic",
           "category": "software",
@@ -163,6 +100,25 @@
           "links": {
             "play": "https://p-acoustic.com.co/",
             "github": "https://github.com/AmayaJuan/PGW",
+            "download": null
+          },
+          "year": "2026"
+        },
+        {
+          "id": "software-02",
+          "name": "GanaderiaApp",
+          "category": "software",
+          "shortDescription": "GanaderíaApp contempla la integración de modelos de inteligencia artificial para apoyar la predicción de peso y el análisis sanitario a partir de los datos históricos registrados por los usuarios.",
+          "shortDescription_en": "Website for technology solutions company in Medellín",
+          "thumbnail": "https://res.cloudinary.com/dulyljo7w/image/upload/v1781646488/GanaderiaApp_fpcbmf.png",
+          "gallery": [
+            ""
+          ],
+          "technologies": ["Flutter", "Dart", "Supabase", "PostgreSQL", "Python(IA en desarrollo)"],
+          "featured": false,
+          "links": {
+            "play": "https://amayajuan.github.io/ganaderia_app/",
+            "github": "https://github.com/AmayaJuan/ganaderia_app",
             "download": null
           },
           "year": "2026"
